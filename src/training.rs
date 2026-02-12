@@ -5,7 +5,7 @@ use crate::{
 };
 use burn::{
     prelude::*,
-    optim::AdamConfig,
+    optim::{AdamConfig, Optimizer, GradientsParams},
     nn::loss::CrossEntropyLoss,
     tensor::backend::AutodiffBackend,
     record::{BinFileRecorder, FullPrecisionSettings},
@@ -36,8 +36,8 @@ fn calculate_loss<B: AutodiffBackend>(
     let [_batch_size, seq_length, _] = logits.dims();
 
     // Split logits into start and end
-    let start_logits: Tensor<B, 2> = logits.clone().slice([0.._batch_size, 0..seq_length, 0..1]).squeeze();
-    let end_logits: Tensor<B, 2> = logits.slice([0.._batch_size, 0..seq_length, 1..2]).squeeze();
+    let start_logits: Tensor<B, 2> = logits.clone().slice([0.._batch_size, 0..seq_length, 0..1]).squeeze_dim(2);
+    let end_logits: Tensor<B, 2> = logits.slice([0.._batch_size, 0..seq_length, 1..2]).squeeze_dim(2);
 
     // Calculate cross-entropy loss for both start and end positions
     let loss_start = CrossEntropyLoss::new(None, device).forward(start_logits, start_positions.clone());
@@ -55,10 +55,12 @@ pub fn run_training<B: AutodiffBackend>(device: B::Device) {
     ).unwrap();
 
     // Initialize model
-    let model: crate::model::QAModel<B> = config.model.init::<B>(&device);
+    let mut model: crate::model::QAModel<B> = config.model.init::<B>(&device);
+    let mut optim = config.optimizer.init();
 
-    // Load dataset and tokenize into batch items (simple in-memory batching)
-    let dataset = crate::data::load_dummy_dataset();
+    // Load dataset from the 'data' folder
+    let dataset = crate::data::load_dataset_from_data_folder("data")
+        .expect("Failed to load dataset. Make sure .docx files have corresponding .json files.");
     let processor = QAProcessor::new("data/tokenizer.json", config.model.max_seq_length);
     let tokenized_items: Vec<QABatchItem> = dataset
         .iter()
@@ -76,12 +78,10 @@ pub fn run_training<B: AutodiffBackend>(device: B::Device) {
             let logits = model.forward(batch.tokens, batch.token_type_ids, batch.attention_mask);
             let loss = calculate_loss(logits, batch.start_indices, batch.end_indices, &device);
 
-            // Backpropagation (compute gradients).
-            // NOTE: converting gradients into optimizer-specific params and
-            // applying the optimizer step depends on the Autodiff backend
-            // and optimizer implementation. Implementing the conversion is
-            // left as a TODO for the specific backend used.
-            let _grads = loss.backward();
+            // Backpropagation and optimizer step
+            let grads = loss.backward();
+            let grads = GradientsParams::from_grads(grads, &model);
+            model = optim.step(config.learning_rate, model, grads);
 
             if iter_idx % 10 == 0 {
                 println!("Epoch {} | Iter {} | Loss: {:.4}", epoch, iter_idx, loss.into_scalar());

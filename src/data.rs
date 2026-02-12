@@ -2,7 +2,8 @@
 use burn::data::dataloader::batcher::Batcher;
 use burn::tensor::{backend::Backend, Bool, Int, Tensor};
 use serde::{Deserialize, Serialize};
-use std::fs::File;
+use docx_rs::read_docx;
+use std::fs::{self, File};
 use std::io::Read;
 use std::path::Path;
 use tokenizers::{Encoding, Tokenizer};
@@ -32,10 +33,25 @@ pub fn extract_text_from_docx(path: &Path) -> anyhow::Result<String> {
     let mut reader = std::io::BufReader::new(file);
     let mut buf = Vec::new();
     reader.read_to_end(&mut buf)?;
-    // Fallback: return a UTF-8 best-effort conversion of the raw .docx bytes.
-    // Proper .docx parsing would require traversing the document XML; for now
-    // return a best-effort string to keep the pipeline functional.
-    let text_content = String::from_utf8_lossy(&buf).to_string();
+    let docx = read_docx(&buf).map_err(|e| anyhow::anyhow!("Failed to parse .docx: {}", e))?;
+
+    let mut text_content = String::new();
+    for child in docx.document.children {
+        if let docx_rs::DocumentChild::Paragraph(p) = child {
+            let mut paragraph_text = String::new();
+            for p_child in p.children {
+                if let docx_rs::ParagraphChild::Run(run) = p_child {
+                    for r_child in run.children {
+                        if let docx_rs::RunChild::Text(text) = r_child {
+                            paragraph_text.push_str(&text.text);
+                        }
+                    }
+                }
+            }
+            text_content.push_str(&paragraph_text);
+            text_content.push('\n'); // Add newlines between paragraphs
+        }
+    }
     Ok(text_content)
 }
 
@@ -86,24 +102,46 @@ impl QAProcessor {
     }
 }
 
-// In a real scenario, you would load a dataset like SQuAD.
-// For this assignment, you can manually create a few examples from your docs.
-pub fn load_dummy_dataset() -> Vec<QAItem> {
-    let items = vec![
-        QAItem {
-            context: "The 2026 End of year Graduation Ceremony will be held on December 15th. The HDC met 4 times in 2024.".to_string(),
-            question: "What is the Month and date will the 2026 End of year Graduation Ceremony be held?".to_string(),
-            answer_start: 58, // char index of "December 15th"
-            answer_text: "December 15th".to_string(),
-        },
-        QAItem {
-            context: "The 2026 End of year Graduation Ceremony will be held on December 15th. The HDC met 4 times in 2024.".to_string(),
-            question: "How many times did the HDC hold their meetings in 2024".to_string(),
-            answer_start: 88, // char index of "4 times"
-            answer_text: "4 times".to_string(),
-        },
-    ];
-    items
+/// Loads a dataset by finding all .docx files in a directory and pairing them
+/// with a corresponding .json file that contains the questions and answers.
+pub fn load_dataset_from_data_folder(data_path: &str) -> anyhow::Result<Vec<QAItem>> {
+    let mut all_items = Vec::new();
+    let entries = fs::read_dir(data_path)?;
+
+    for entry in entries {
+        let entry = entry?;
+        let path = entry.path();
+
+        if path.extension().and_then(|s| s.to_str()) == Some("docx") {
+            let docx_path = path;
+            let json_path = docx_path.with_extension("json");
+
+            if json_path.exists() {
+                println!("Loading training data from: {:?}", &docx_path);
+                let context = extract_text_from_docx(&docx_path)?;
+                let json_content = fs::read_to_string(&json_path)?;
+
+                #[derive(Deserialize)]
+                struct RawQAItem {
+                    question: String,
+                    answer_start: usize,
+                    answer_text: String,
+                }
+
+                let raw_items: Vec<RawQAItem> = serde_json::from_str(&json_content)?;
+
+                for raw_item in raw_items {
+                    all_items.push(QAItem {
+                        context: context.clone(),
+                        question: raw_item.question,
+                        answer_start: raw_item.answer_start,
+                        answer_text: raw_item.answer_text,
+                    });
+                }
+            }
+        }
+    }
+    Ok(all_items)
 }
 
 #[derive(Clone, Debug)]
