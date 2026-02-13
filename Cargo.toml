@@ -19,3 +19,9 @@ clap = { version = "4.0", features = ["derive"] }
 
 [dev-dependencies]
 burn = { version = "0.20.1" } # , features = ["test"] | version 0.20.1 does not have feature called test
+
+# Workaround for Rust compiler ICE with complex trait bounds
+[profile.release]
+lto = false
+opt-level = 2
+incremental = false

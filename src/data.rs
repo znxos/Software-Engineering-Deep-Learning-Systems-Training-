@@ -198,24 +198,25 @@ impl<BT: Backend> Batcher<BT, QABatchItem, QABatch<BT>> for QABatcher<BT> {
             end_indices_vec.push(end_idx as i64);
         }
 
-        let tokens_tensor = Tensor::<BT, 2, Int>::from_data(
+        // Create 1D tensors first, then reshape to 2D
+        let tokens_1d = Tensor::<BT, 1, Int>::from_data(
             tokens_vec.iter().map(|&x| x as i64).collect::<Vec<_>>().as_slice(),
             device,
-        )
-        .reshape([batch_size, max_len]);
+        );
+        let tokens_tensor = tokens_1d.reshape([batch_size, max_len]);
 
-        let token_type_ids_tensor = Tensor::<BT, 2, Int>::from_data(
+        let token_type_ids_1d = Tensor::<BT, 1, Int>::from_data(
             token_type_ids_vec.iter().map(|&x| x as i64).collect::<Vec<_>>().as_slice(),
             device,
-        )
-        .reshape([batch_size, max_len]);
+        );
+        let token_type_ids_tensor = token_type_ids_1d.reshape([batch_size, max_len]);
 
-        let attention_mask_tensor = Tensor::<BT, 2, Int>::from_data(
+        let attention_mask_1d = Tensor::<BT, 1, Int>::from_data(
             attention_mask_vec.iter().map(|&x| x as i64).collect::<Vec<_>>().as_slice(),
             device,
-        )
-        .reshape([batch_size, max_len])
-        .equal_elem(1);
+        );
+        let attention_mask_tensor = attention_mask_1d.reshape([batch_size, max_len])
+            .equal_elem(1);
 
         QABatch {
             tokens: tokens_tensor,
