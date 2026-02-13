@@ -99,6 +99,11 @@ pub fn run_training<B: AutodiffBackend>(device: B::Device) {
     let split_index = (tokenized_items.len() as f64 * 0.9).floor() as usize;
     let val_items = tokenized_items.split_off(split_index);
 
+    let train_count = tokenized_items.len();
+    let val_count = val_items.len();
+
+    println!("Dataset sizes — train: {} | val: {}", train_count, val_count);
+
     let train_dataset = InMemDataset::new(tokenized_items);
     let val_dataset = InMemDataset::new(val_items);
 
@@ -148,8 +153,14 @@ pub fn run_training<B: AutodiffBackend>(device: B::Device) {
             val_batches += 1;
         }
 
-        let avg_val_loss = total_val_loss / val_batches as f32;
-        let avg_val_accuracy = total_val_accuracy / val_batches as f32;
+        let avg_val_loss = if val_batches == 0 {
+            println!("Warning: no validation batches were produced — skipping averaging.");
+            0.0
+        } else {
+            total_val_loss / val_batches as f32
+        };
+
+        let avg_val_accuracy = if val_batches == 0 { 0.0 } else { total_val_accuracy / val_batches as f32 };
         println!("\n--- Epoch {} Validation ---", epoch);
         println!("Avg Loss: {:.4} | Avg Accuracy: {:.4}\n", avg_val_loss, avg_val_accuracy);
 
