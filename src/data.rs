@@ -168,63 +168,61 @@ impl<B: Backend> QABatcher<B> {
 
 impl<BT: Backend> Batcher<BT, QABatchItem, QABatch<BT>> for QABatcher<BT> {
     fn batch(&self, items: Vec<QABatchItem>, device: &BT::Device) -> QABatch<BT> {
-        let mut tokens_vec: Vec<Tensor<BT, 1, Int>> = Vec::new();
-        let mut token_type_ids_vec: Vec<Tensor<BT, 1, Int>> = Vec::new();
-        let mut attention_masks_vec: Vec<Tensor<BT, 1, Int>> = Vec::new();
-        let mut start_indices_vec: Vec<i64> = Vec::new();
-        let mut end_indices_vec: Vec<i64> = Vec::new();
+        let mut tokens_vec = Vec::new();
+        let mut token_type_ids_vec = Vec::new();
+        let mut attention_mask_vec = Vec::new();
+        let mut start_indices_vec = Vec::new();
+        let mut end_indices_vec = Vec::new();
 
-        // Find max length in the batch for padding
         let max_len = items.iter().map(|item| item.tokens.len()).max().unwrap_or(0);
+        let batch_size = items.len();
 
-        for mut item in items {
-            // Ensure indices are within valid range
-            let start_idx = item.start_token_idx.min(item.tokens.len().saturating_sub(1));
-            let end_idx = item.end_token_idx.min(item.tokens.len().saturating_sub(1));
+        for item in items {
+            let mut item_tokens = item.tokens;
+            let mut item_token_type_ids = item.token_type_ids;
+            let mut item_attention_mask = item.attention_mask;
+
+            let pad_len = max_len - item_tokens.len();
+            item_tokens.extend(vec![0; pad_len]);
+            item_token_type_ids.extend(vec![0; pad_len]);
+            item_attention_mask.extend(vec![0; pad_len]);
+
+            tokens_vec.extend(item_tokens);
+            token_type_ids_vec.extend(item_token_type_ids);
+            attention_mask_vec.extend(item_attention_mask);
+
+            let start_idx = item.start_token_idx.min(max_len.saturating_sub(1));
+            let end_idx = item.end_token_idx.min(max_len.saturating_sub(1));
             
-            // Clamp to ensure start <= end
-            let (start_idx, end_idx) = if start_idx <= end_idx {
-                (start_idx, end_idx)
-            } else {
-                (end_idx, start_idx)
-            };
-
             start_indices_vec.push(start_idx as i64);
             end_indices_vec.push(end_idx as i64);
-
-            // Pad with 0s (assuming 0 is the padding token ID)
-            let pad_size = max_len - item.tokens.len();
-            item.tokens.extend(vec![0; pad_size]);
-            item.token_type_ids.extend(vec![0; pad_size]);
-            item.attention_mask.extend(vec![0; pad_size]);
-
-            let tokens_data = item.tokens.into_iter().map(|t| t as i64).collect::<Vec<i64>>();
-            tokens_vec.push(Tensor::<BT, 1, Int>::from_data(tokens_data.as_slice(), device));
-
-            let token_type_ids_data = item.token_type_ids.into_iter().map(|t| t as i64).collect::<Vec<i64>>();
-            token_type_ids_vec.push(Tensor::<BT, 1, Int>::from_data(token_type_ids_data.as_slice(), device));
-
-            let attention_mask_data = item.attention_mask.into_iter().map(|t| t as i64).collect::<Vec<i64>>();
-            attention_masks_vec.push(Tensor::<BT, 1, Int>::from_data(attention_mask_data.as_slice(), device));
         }
 
-        // Stack the tensors to create a batch and move to the correct device
-        let tokens = Tensor::stack(tokens_vec, 0).to_device(device);
-        let token_type_ids = Tensor::stack(token_type_ids_vec, 0).to_device(device);
-        let attention_mask_int = Tensor::stack(attention_masks_vec, 0).to_device(device);
+        let tokens_tensor = Tensor::<BT, 2, Int>::from_data(
+            tokens_vec.iter().map(|&x| x as i64).collect::<Vec<_>>().as_slice(),
+            device,
+        )
+        .reshape([batch_size, max_len]);
 
-        // Convert attention mask to boolean (where 1 is true, 0 is false)
-        let attention_mask = attention_mask_int.equal_elem(1);
+        let token_type_ids_tensor = Tensor::<BT, 2, Int>::from_data(
+            token_type_ids_vec.iter().map(|&x| x as i64).collect::<Vec<_>>().as_slice(),
+            device,
+        )
+        .reshape([batch_size, max_len]);
 
-        let start_indices = Tensor::<BT, 1, Int>::from_data(start_indices_vec.as_slice(), device);
-        let end_indices = Tensor::<BT, 1, Int>::from_data(end_indices_vec.as_slice(), device);
+        let attention_mask_tensor = Tensor::<BT, 2, Int>::from_data(
+            attention_mask_vec.iter().map(|&x| x as i64).collect::<Vec<_>>().as_slice(),
+            device,
+        )
+        .reshape([batch_size, max_len])
+        .equal_elem(1);
 
         QABatch {
-            tokens,
-            token_type_ids,
-            attention_mask,
-            start_indices,
-            end_indices,
+            tokens: tokens_tensor,
+            token_type_ids: token_type_ids_tensor,
+            attention_mask: attention_mask_tensor,
+            start_indices: Tensor::<BT, 1, Int>::from_data(start_indices_vec.as_slice(), device),
+            end_indices: Tensor::<BT, 1, Int>::from_data(end_indices_vec.as_slice(), device),
         }
     }
 }

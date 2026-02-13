@@ -1,3 +1,4 @@
+
 {
   "model": {
     "vocab_size": 30522,
@@ -14,7 +15,7 @@
     "epsilon": 1e-8,
     "weight_decay": null
   },
-  "num_epochs": 12,
+  "num_epochs": 10,
   "batch_size": 4,
   "seed": 42,
   "learning_rate": 0.00003

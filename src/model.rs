@@ -90,7 +90,7 @@ impl<B: Backend> QAModel<B> {
         let x = token_embeds + pos_embeds + token_type_embeds;
 
         // Transformer Encoder
-        let input = TransformerEncoderInput::new(x).mask_pad(mask);
+        let input = TransformerEncoderInput::new(x).mask_pad(mask.equal_elem(false));
         let encoded = self.transformer.forward(input);
 
         // Output layer

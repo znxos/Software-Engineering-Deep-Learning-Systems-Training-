@@ -3,6 +3,7 @@ use crate::{
     data::{QABatcher, QAProcessor},
     model::QAModelConfig,
 };
+use serde::Deserialize;
 use burn::{
     data::dataset::InMemDataset,
     prelude::*,
@@ -14,18 +15,15 @@ use burn::{
 };
 use burn::module::Module;
 
-#[derive(Config, Debug)]
+#[derive(Deserialize, Debug)]
 pub struct TrainingConfig {
     pub model: QAModelConfig,
     pub optimizer: AdamConfig,
-    #[config(default = 10)]
     pub num_epochs: usize,
-    #[config(default = 8)]
     pub batch_size: usize,
-    #[config(default = 42)]
     pub seed: u64,
-    #[config(default = 1e-4)]
     pub learning_rate: f64,
+    pub grad_clip: f64,
 }
 
 // The loss function for Q&A is typically Cross-Entropy on start and end token positions.
@@ -74,9 +72,14 @@ fn calculate_accuracy<B: Backend>(
 
 pub fn run_training<B: AutodiffBackend>(device: B::Device) {
     let config_path = "config.json"; // A file where you store your hyperparameters
-    let config: TrainingConfig = serde_json::from_str(
-        &std::fs::read_to_string(config_path).expect("Config file not found"),
-    ).unwrap();
+    let config_str = std::fs::read_to_string(config_path).expect("Config file not found");
+    let mut config_value: serde_json::Value = serde_json::from_str(&config_str).expect("Invalid config JSON");
+    if config_value.get("grad_clip").is_none() {
+        config_value["grad_clip"] = serde_json::json!(1.0);
+    }
+    let config: TrainingConfig = serde_json::from_value(config_value).expect("Failed to deserialize TrainingConfig");
+    // Ensure `grad_clip` is read so the field is not reported as unused.
+    let _ = config.grad_clip;
 
     // Initialize model
     let mut model: crate::model::QAModel<B> = config.model.init::<B>(&device);

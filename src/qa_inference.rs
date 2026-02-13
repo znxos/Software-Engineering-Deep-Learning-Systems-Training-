@@ -19,13 +19,16 @@ pub fn run_inference<B: Backend>(
 ) -> Result<()> {
     // 1. Load configurations from the same file used for training.
     let config_str = std::fs::read_to_string("config.json")?;
-    let config: TrainingConfig = serde_json::from_str(&config_str)?;
+    let mut config_value: serde_json::Value = serde_json::from_str(&config_str)?;
+    if config_value.get("grad_clip").is_none() {
+        config_value["grad_clip"] = serde_json::json!(1.0);
+    }
+    let config: TrainingConfig = serde_json::from_value(config_value)?;
     let model_config = config.model;
 
-    // NOTE: Ensure you have the tokenizer file at this path.
+    // NOTE: Ensure you have the tokenizer file at `data/tokenizer.json`.
     // You can download it from the Hugging Face Hub for 'bert-base-uncased'.
-    let tokenizer_path = "data/tokenizer.json";
-    let processor = QAProcessor::new(tokenizer_path, model_config.max_seq_length);
+    let processor = QAProcessor::new("data/tokenizer.json", model_config.max_seq_length);
 
     // 2. Load the trained model weights.
     println!("Loading model from {}...", &model_path);
