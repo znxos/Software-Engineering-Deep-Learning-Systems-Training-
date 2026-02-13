@@ -46,8 +46,9 @@ fn main() {
             training::run_training::<MyAutodiffBackend>(device);
         }
         Action::Infer { doc_path, question, model_path } => {
-            // This now calls the complete inference pipeline.
-            qa_inference::run_inference::<MyBackend>(doc_path, question, model_path, device);
+            if let Err(e) = qa_inference::run_inference::<MyBackend>(doc_path, question, model_path, device) {
+                eprintln!("Inference failed: {}", e);
+            }
         }
     }
 }

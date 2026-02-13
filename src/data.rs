@@ -144,6 +144,8 @@ pub fn load_dataset_from_data_folder(data_path: &str) -> anyhow::Result<Vec<QAIt
     Ok(all_items)
 }
 
+
+
 #[derive(Clone, Debug)]
 pub struct QABatch<B: Backend> {
     pub tokens: Tensor<B, 2, Int>,
@@ -153,6 +155,7 @@ pub struct QABatch<B: Backend> {
     pub end_indices: Tensor<B, 1, Int>,
 }
 
+#[derive(Clone)]
 pub struct QABatcher<B: Backend> {
     _device: B::Device,
 }
@@ -175,8 +178,19 @@ impl<BT: Backend> Batcher<BT, QABatchItem, QABatch<BT>> for QABatcher<BT> {
         let max_len = items.iter().map(|item| item.tokens.len()).max().unwrap_or(0);
 
         for mut item in items {
-            start_indices_vec.push(item.start_token_idx as i64);
-            end_indices_vec.push(item.end_token_idx as i64);
+            // Ensure indices are within valid range
+            let start_idx = item.start_token_idx.min(item.tokens.len().saturating_sub(1));
+            let end_idx = item.end_token_idx.min(item.tokens.len().saturating_sub(1));
+            
+            // Clamp to ensure start <= end
+            let (start_idx, end_idx) = if start_idx <= end_idx {
+                (start_idx, end_idx)
+            } else {
+                (end_idx, start_idx)
+            };
+
+            start_indices_vec.push(start_idx as i64);
+            end_indices_vec.push(end_idx as i64);
 
             // Pad with 0s (assuming 0 is the padding token ID)
             let pad_size = max_len - item.tokens.len();
