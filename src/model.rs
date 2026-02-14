@@ -13,6 +13,7 @@ use burn::{
 pub struct QAModel<B: Backend> {
     embedding: Embedding<B>,
     pos_embedding: Embedding<B>,
+    token_type_embedding: Embedding<B>,
     transformer: TransformerEncoder<B>,
     output_projection: Linear<B>,
     vocab_size: usize,
@@ -40,12 +41,14 @@ impl QAModelConfig {
 
         let embedding = EmbeddingConfig::new(self.vocab_size, self.d_model).init(device);
         let pos_embedding = EmbeddingConfig::new(self.max_seq_length, self.d_model).init(device);
+        let token_type_embedding = EmbeddingConfig::new(2, self.d_model).init(device); // For segment embeddings (question/context)
         let transformer = transformer_config.init(device);
         let output_projection = LinearConfig::new(self.d_model, 2).init(device); // 2 outputs: start_logit, end_logit
 
         QAModel {
             embedding,
             pos_embedding,
+            token_type_embedding,
             transformer,
             output_projection,
             vocab_size: self.vocab_size,
@@ -66,7 +69,7 @@ impl<B: Backend> QAModel<B> {
     pub fn forward(
         &self,
         tokens: Tensor<B, 2, Int>,
-        _token_type_ids: Tensor<B, 2, Int>, // Used to distinguish question/context
+        token_type_ids: Tensor<B, 2, Int>, // Used to distinguish question/context
         mask: Tensor<B, 2, Bool>,
     ) -> Tensor<B, 3> {
         let [batch_size, seq_length] = tokens.dims();
@@ -80,14 +83,30 @@ impl<B: Backend> QAModel<B> {
         let positions = positions.expand([batch_size, seq_length]); // [batch_size, seq_length]
         let pos_embeds = self.pos_embedding.forward(positions);
 
-        // Combine embeddings
-        let x = token_embeds + pos_embeds;
+        // Token type embeddings
+        let token_type_embeds = self.token_type_embedding.forward(token_type_ids);
+
+        // Combine embeddings (token + position + token type)
+        let x = token_embeds + pos_embeds + token_type_embeds;
 
         // Transformer Encoder
-        let input = TransformerEncoderInput::new(x).mask_pad(mask);
+        let input = TransformerEncoderInput::new(x).mask_pad(mask.equal_elem(false));
         let encoded = self.transformer.forward(input);
 
         // Output layer
         self.output_projection.forward(encoded)
+    }
+
+    /// Set the model to training mode.
+    /// The #[derive(Module)] macro handles training mode internally.
+    pub fn train(self) -> Self {
+        self
+    }
+
+    /// Set the model to evaluation mode.
+    /// The #[derive(Module)] macro handles eval mode internally.
+    #[allow(dead_code)]
+    pub fn eval(self) -> Self {
+        self
     }
 }

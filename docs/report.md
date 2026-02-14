@@ -25,5 +25,23 @@ cargo run -- infer --doc-path "path\to\your\document.docx" --question "What is t
 
 By following these steps—correcting your Cargo.toml, ensuring your PATH is set, and using cargo commands—you will be able to compile and run your project as intended.
 
+cargo run -- infer --doc-path "data\calander_2026.docx" --question "When is the 
+start of year administrative staff?" --model-path "model_epoch_12"
+
 # Tokenizer
 https://huggingface.co/google-bert/bert-base-uncased/tree/main
+
+
+# Inaccuary Issues
+
+PS C:\Users\CPUT\Downloads\2026\Software Engineering\Semester_1> cargo run -- infer --doc-path "data\calander_2026.docx" --question "When is autumn  graduation?" --model-path "model_epoch_10"
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.20s
+     Running `target\debug\word-doc-qa.exe infer --doc-path data\calander_2026.docx --question "When is autumn  graduation?" --model-path model_epoch_10`
+Loading model from model_epoch_10...
+Model loaded successfully.
+Processing document: data\calander_2026.docx
+Running inference...
+
+Question: When is autumn  graduation?
+Answer: april 2026 may 2026 june 2026 july 2026 august 2026 september 2026 october 2026 november 2026 december
+PS C:\Users\CPUT\Downloads\2026\Software Engineering\Semester_1> 

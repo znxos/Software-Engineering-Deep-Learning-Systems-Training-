@@ -2,7 +2,7 @@
 use burn::data::dataloader::batcher::Batcher;
 use burn::tensor::{backend::Backend, Bool, Int, Tensor};
 use serde::{Deserialize, Serialize};
-use docx_rs::read_docx;
+use docx_rs::{read_docx, DocumentChild, ParagraphChild, RunChild};
 use std::fs::{self, File};
 use std::io::Read;
 use std::path::Path;
@@ -27,7 +27,6 @@ pub struct QABatchItem {
     pub end_token_idx: usize,
 }
 
-/// Extracts text from a .docx file.
 pub fn extract_text_from_docx(path: &Path) -> anyhow::Result<String> {
     let file = File::open(path)?;
     let mut reader = std::io::BufReader::new(file);
@@ -35,24 +34,37 @@ pub fn extract_text_from_docx(path: &Path) -> anyhow::Result<String> {
     reader.read_to_end(&mut buf)?;
     let docx = read_docx(&buf).map_err(|e| anyhow::anyhow!("Failed to parse .docx: {}", e))?;
 
-    let mut text_content = String::new();
-    for child in docx.document.children {
-        if let docx_rs::DocumentChild::Paragraph(p) = child {
-            let mut paragraph_text = String::new();
-            for p_child in p.children {
-                if let docx_rs::ParagraphChild::Run(run) = p_child {
-                    for r_child in run.children {
-                        if let docx_rs::RunChild::Text(text) = r_child {
-                            paragraph_text.push_str(&text.text);
-                        }
+    let mut full_text = Vec::new();
+
+    fn extract_paragraph_text(p: &docx_rs::Paragraph) -> String {
+        let mut text = String::new();
+        for p_child in &p.children {
+            if let ParagraphChild::Run(run) = p_child {
+                for r_child in &run.children {
+                    if let RunChild::Text(t) = r_child {
+                        text.push_str(&t.text);
                     }
                 }
             }
-            text_content.push_str(&paragraph_text);
-            text_content.push('\n'); // Add newlines between paragraphs
+        }
+        text
+    }
+
+    // Extract text from all paragraphs in the document
+    for child in docx.document.children {
+        match child {
+            DocumentChild::Paragraph(p) => {
+                let text = extract_paragraph_text(&p).trim().to_string();
+                if !text.is_empty() {
+                    full_text.push(text);
+                }
+            }
+            // Tables in docx-rs 0.4 have a complex structure; we focus on paragraphs for now
+            _ => {}
         }
     }
-    Ok(text_content)
+    
+    Ok(full_text.join("\n"))
 }
 
 /// Processes raw data into tokenized items for the Q&A model.
@@ -144,6 +156,8 @@ pub fn load_dataset_from_data_folder(data_path: &str) -> anyhow::Result<Vec<QAIt
     Ok(all_items)
 }
 
+
+
 #[derive(Clone, Debug)]
 pub struct QABatch<B: Backend> {
     pub tokens: Tensor<B, 2, Int>,
@@ -153,6 +167,7 @@ pub struct QABatch<B: Backend> {
     pub end_indices: Tensor<B, 1, Int>,
 }
 
+#[derive(Clone)]
 pub struct QABatcher<B: Backend> {
     _device: B::Device,
 }
@@ -165,52 +180,62 @@ impl<B: Backend> QABatcher<B> {
 
 impl<BT: Backend> Batcher<BT, QABatchItem, QABatch<BT>> for QABatcher<BT> {
     fn batch(&self, items: Vec<QABatchItem>, device: &BT::Device) -> QABatch<BT> {
-        let mut tokens_vec: Vec<Tensor<BT, 1, Int>> = Vec::new();
-        let mut token_type_ids_vec: Vec<Tensor<BT, 1, Int>> = Vec::new();
-        let mut attention_masks_vec: Vec<Tensor<BT, 1, Int>> = Vec::new();
-        let mut start_indices_vec: Vec<i64> = Vec::new();
-        let mut end_indices_vec: Vec<i64> = Vec::new();
+        let mut tokens_vec = Vec::new();
+        let mut token_type_ids_vec = Vec::new();
+        let mut attention_mask_vec = Vec::new();
+        let mut start_indices_vec = Vec::new();
+        let mut end_indices_vec = Vec::new();
 
-        // Find max length in the batch for padding
         let max_len = items.iter().map(|item| item.tokens.len()).max().unwrap_or(0);
+        let batch_size = items.len();
 
-        for mut item in items {
-            start_indices_vec.push(item.start_token_idx as i64);
-            end_indices_vec.push(item.end_token_idx as i64);
+        for item in items {
+            let mut item_tokens = item.tokens;
+            let mut item_token_type_ids = item.token_type_ids;
+            let mut item_attention_mask = item.attention_mask;
 
-            // Pad with 0s (assuming 0 is the padding token ID)
-            let pad_size = max_len - item.tokens.len();
-            item.tokens.extend(vec![0; pad_size]);
-            item.token_type_ids.extend(vec![0; pad_size]);
-            item.attention_mask.extend(vec![0; pad_size]);
+            let pad_len = max_len - item_tokens.len();
+            item_tokens.extend(vec![0; pad_len]);
+            item_token_type_ids.extend(vec![0; pad_len]);
+            item_attention_mask.extend(vec![0; pad_len]);
 
-            let tokens_data = item.tokens.into_iter().map(|t| t as i64).collect::<Vec<i64>>();
-            tokens_vec.push(Tensor::<BT, 1, Int>::from_data(tokens_data.as_slice(), device));
+            tokens_vec.extend(item_tokens);
+            token_type_ids_vec.extend(item_token_type_ids);
+            attention_mask_vec.extend(item_attention_mask);
 
-            let token_type_ids_data = item.token_type_ids.into_iter().map(|t| t as i64).collect::<Vec<i64>>();
-            token_type_ids_vec.push(Tensor::<BT, 1, Int>::from_data(token_type_ids_data.as_slice(), device));
-
-            let attention_mask_data = item.attention_mask.into_iter().map(|t| t as i64).collect::<Vec<i64>>();
-            attention_masks_vec.push(Tensor::<BT, 1, Int>::from_data(attention_mask_data.as_slice(), device));
+            let start_idx = item.start_token_idx.min(max_len.saturating_sub(1));
+            let end_idx = item.end_token_idx.min(max_len.saturating_sub(1));
+            
+            start_indices_vec.push(start_idx as i64);
+            end_indices_vec.push(end_idx as i64);
         }
 
-        // Stack the tensors to create a batch and move to the correct device
-        let tokens = Tensor::stack(tokens_vec, 0).to_device(device);
-        let token_type_ids = Tensor::stack(token_type_ids_vec, 0).to_device(device);
-        let attention_mask_int = Tensor::stack(attention_masks_vec, 0).to_device(device);
+        // Create 1D tensors first, then reshape to 2D
+        let tokens_1d = Tensor::<BT, 1, Int>::from_data(
+            tokens_vec.iter().map(|&x| x as i64).collect::<Vec<_>>().as_slice(),
+            device,
+        );
+        let tokens_tensor = tokens_1d.reshape([batch_size, max_len]);
 
-        // Convert attention mask to boolean (where 1 is true, 0 is false)
-        let attention_mask = attention_mask_int.equal_elem(1);
+        let token_type_ids_1d = Tensor::<BT, 1, Int>::from_data(
+            token_type_ids_vec.iter().map(|&x| x as i64).collect::<Vec<_>>().as_slice(),
+            device,
+        );
+        let token_type_ids_tensor = token_type_ids_1d.reshape([batch_size, max_len]);
 
-        let start_indices = Tensor::<BT, 1, Int>::from_data(start_indices_vec.as_slice(), device);
-        let end_indices = Tensor::<BT, 1, Int>::from_data(end_indices_vec.as_slice(), device);
+        let attention_mask_1d = Tensor::<BT, 1, Int>::from_data(
+            attention_mask_vec.iter().map(|&x| x as i64).collect::<Vec<_>>().as_slice(),
+            device,
+        );
+        let attention_mask_tensor = attention_mask_1d.reshape([batch_size, max_len])
+            .equal_elem(1);
 
         QABatch {
-            tokens,
-            token_type_ids,
-            attention_mask,
-            start_indices,
-            end_indices,
+            tokens: tokens_tensor,
+            token_type_ids: token_type_ids_tensor,
+            attention_mask: attention_mask_tensor,
+            start_indices: Tensor::<BT, 1, Int>::from_data(start_indices_vec.as_slice(), device),
+            end_indices: Tensor::<BT, 1, Int>::from_data(end_indices_vec.as_slice(), device),
         }
     }
 }
