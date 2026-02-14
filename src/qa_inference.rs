@@ -95,9 +95,23 @@ pub fn run_inference<B: Backend>(
     let all_token_ids = encoding.get_ids();
     if best_start_index <= best_end_index && best_end_index < all_token_ids.len() {
         let answer_tokens = &all_token_ids[best_start_index..=best_end_index];
-        let answer = processor.tokenizer.decode(answer_tokens, true)
+        let mut answer = processor.tokenizer.decode(answer_tokens, true)
             .map_err(|e| anyhow::anyhow!("Failed to decode answer tokens: {}", e))?;
-        println!("\nQuestion: {}\nAnswer: {}", question, answer);
+        
+        // Clean up the answer: remove extra whitespace and special tokens
+        answer = answer
+            .replace("[CLS]", "")
+            .replace("[SEP]", "")
+            .replace("[PAD]", "")
+            .trim()
+            .to_string();
+        
+        // Ensure answer is not empty or just special tokens
+        if answer.is_empty() || answer.len() < 2 {
+            println!("\nQuestion: {}\nAnswer: No answer found (model confidence too low)", question);
+        } else {
+            println!("\nQuestion: {}\nAnswer: {}", question, answer);
+        }
     } else {
         println!("\nQuestion: {}\nAnswer: Could not find a valid answer in the document.", question);
     }

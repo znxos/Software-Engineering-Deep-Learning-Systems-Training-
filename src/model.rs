@@ -105,6 +105,7 @@ impl<B: Backend> QAModel<B> {
 
     /// Set the model to evaluation mode.
     /// The #[derive(Module)] macro handles eval mode internally.
+    #[allow(dead_code)]
     pub fn eval(self) -> Self {
         self
     }

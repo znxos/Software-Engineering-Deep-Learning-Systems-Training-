@@ -1,5 +1,5 @@
 // src/main.rs
-use burn::backend::{wgpu::WgpuDevice, Autodiff, Wgpu};
+use burn::backend::{ndarray::NdArrayDevice, Autodiff, NdArray};
 use clap::Parser;
 
 mod data;
@@ -7,7 +7,7 @@ mod model;
 mod training;
 mod qa_inference;
 
-type MyBackend = Wgpu;
+type MyBackend = NdArray;
 type MyAutodiffBackend = Autodiff<MyBackend>;
 
 #[derive(Parser, Debug)]
@@ -39,7 +39,7 @@ enum Action {
 
 fn main() {
     let args = Args::parse();
-    let device = WgpuDevice::default();
+    let device = NdArrayDevice::default();
 
     match args.action {
         Action::Train => {

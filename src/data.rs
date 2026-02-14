@@ -2,7 +2,7 @@
 use burn::data::dataloader::batcher::Batcher;
 use burn::tensor::{backend::Backend, Bool, Int, Tensor};
 use serde::{Deserialize, Serialize};
-use docx_rs::read_docx;
+use docx_rs::{read_docx, DocumentChild, ParagraphChild, RunChild};
 use std::fs::{self, File};
 use std::io::Read;
 use std::path::Path;
@@ -27,7 +27,6 @@ pub struct QABatchItem {
     pub end_token_idx: usize,
 }
 
-/// Extracts text from a .docx file.
 pub fn extract_text_from_docx(path: &Path) -> anyhow::Result<String> {
     let file = File::open(path)?;
     let mut reader = std::io::BufReader::new(file);
@@ -35,24 +34,37 @@ pub fn extract_text_from_docx(path: &Path) -> anyhow::Result<String> {
     reader.read_to_end(&mut buf)?;
     let docx = read_docx(&buf).map_err(|e| anyhow::anyhow!("Failed to parse .docx: {}", e))?;
 
-    let mut text_content = String::new();
-    for child in docx.document.children {
-        if let docx_rs::DocumentChild::Paragraph(p) = child {
-            let mut paragraph_text = String::new();
-            for p_child in p.children {
-                if let docx_rs::ParagraphChild::Run(run) = p_child {
-                    for r_child in run.children {
-                        if let docx_rs::RunChild::Text(text) = r_child {
-                            paragraph_text.push_str(&text.text);
-                        }
+    let mut full_text = Vec::new();
+
+    fn extract_paragraph_text(p: &docx_rs::Paragraph) -> String {
+        let mut text = String::new();
+        for p_child in &p.children {
+            if let ParagraphChild::Run(run) = p_child {
+                for r_child in &run.children {
+                    if let RunChild::Text(t) = r_child {
+                        text.push_str(&t.text);
                     }
                 }
             }
-            text_content.push_str(&paragraph_text);
-            text_content.push('\n'); // Add newlines between paragraphs
+        }
+        text
+    }
+
+    // Extract text from all paragraphs in the document
+    for child in docx.document.children {
+        match child {
+            DocumentChild::Paragraph(p) => {
+                let text = extract_paragraph_text(&p).trim().to_string();
+                if !text.is_empty() {
+                    full_text.push(text);
+                }
+            }
+            // Tables in docx-rs 0.4 have a complex structure; we focus on paragraphs for now
+            _ => {}
         }
     }
-    Ok(text_content)
+    
+    Ok(full_text.join("\n"))
 }
 
 /// Processes raw data into tokenized items for the Q&A model.
