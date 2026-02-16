@@ -7,7 +7,7 @@
     "n_layers": 6,
     "d_ff": 3072,
     "dropout": 0.1,
-    "max_seq_length": 512
+    "max_seq_length": 256
   },
   "optimizer": {
     "beta_1": 0.9,
@@ -15,7 +15,7 @@
     "epsilon": 1e-8,
     "weight_decay": null
   },
-  "num_epochs": 1,
+  "num_epochs": 10,
   "batch_size": 4,
   "seed": 42,
   "learning_rate": 0.00003

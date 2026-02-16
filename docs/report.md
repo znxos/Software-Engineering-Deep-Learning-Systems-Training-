@@ -17,6 +17,7 @@ To run the training process:
 
 sh
 cargo run -- train
+cargo run --release -- train // for faster training
 To run the inference (question-answering) process:
 
 sh

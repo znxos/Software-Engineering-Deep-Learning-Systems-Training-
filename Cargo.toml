@@ -22,6 +22,7 @@ burn = { version = "0.20.1" } # , features = ["test"] | version 0.20.1 does not 
 
 # Workaround for Rust compiler ICE with complex trait bounds
 [profile.release]
-lto = false
-opt-level = 2
-incremental = false
+lto = "thin"
+opt-level = 3
+codegen-units = 1
+panic = "abort"
