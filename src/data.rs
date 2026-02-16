@@ -2,7 +2,7 @@
 use burn::data::dataloader::batcher::Batcher;
 use burn::tensor::{backend::Backend, Bool, Int, Tensor};
 use serde::{Deserialize, Serialize};
-use docx_rs::{read_docx, DocumentChild, ParagraphChild, RunChild};
+use docx_rs::{read_docx, DocumentChild, ParagraphChild, RunChild, TableCellContent, TableChild, TableRowChild};
 use std::fs::{self, File};
 use std::io::Read;
 use std::path::Path;
@@ -59,7 +59,22 @@ pub fn extract_text_from_docx(path: &Path) -> anyhow::Result<String> {
                     full_text.push(text);
                 }
             }
-            // Tables in docx-rs 0.4 have a complex structure; we focus on paragraphs for now
+            DocumentChild::Table(table) => {
+                for row in table.rows {
+                    let TableChild::TableRow(tr) = row;
+                    for cell in tr.cells {
+                        let TableRowChild::TableCell(tc) = cell;
+                        for content in tc.children {
+                            if let TableCellContent::Paragraph(p) = content {
+                                let text = extract_paragraph_text(&p).trim().to_string();
+                                if !text.is_empty() {
+                                    full_text.push(text);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
             _ => {}
         }
     }
@@ -70,13 +85,13 @@ pub fn extract_text_from_docx(path: &Path) -> anyhow::Result<String> {
 /// Processes raw data into tokenized items for the Q&A model.
 pub struct QAProcessor {
     pub tokenizer: Tokenizer,
-    _max_length: usize,
+    max_length: usize,
 }
 
 impl QAProcessor {
     pub fn new(tokenizer_path: &str, max_length: usize) -> Self {
         let tokenizer = Tokenizer::from_file(tokenizer_path).expect("Failed to load tokenizer");
-        Self { tokenizer, _max_length: max_length }
+        Self { tokenizer, max_length }
     }
 
     /// Tokenizes a context and question for inference.
@@ -93,23 +108,69 @@ impl QAProcessor {
     }
 
     pub fn process(&self, item: &QAItem) -> Option<QABatchItem> {
-        let final_encoding = self.tokenizer
-            .encode((item.question.clone(), item.context.clone()), true)
-            .ok()?;
+        // 1. Tokenize Question and Context separately to handle windowing manually
+        let q_encoding = self.tokenizer.encode(item.question.clone(), false).ok()?;
+        let c_encoding = self.tokenizer.encode(item.context.clone(), false).ok()?;
+
+        let q_ids = q_encoding.get_ids();
+        let c_ids = c_encoding.get_ids();
 
         let answer_char_end = item.answer_start + item.answer_text.len();
+        
+        // Map character positions to token positions in the context
+        let start_token_idx_c = c_encoding.char_to_token(item.answer_start, 0)?;
+        let end_token_idx_c = c_encoding.char_to_token(answer_char_end.saturating_sub(1), 0)?;
 
-        // The context is the second part of the pair, so its sequence ID is 1.
-        // The char_to_token method will correctly find the token index within the combined sequence.
-        let start_token_idx = final_encoding.char_to_token(item.answer_start, 1)?;
-        let end_token_idx = final_encoding.char_to_token(answer_char_end.saturating_sub(1), 1)?;
+        // 2. Create a window around the answer
+        // Format: [CLS] Question [SEP] Context_Window [SEP]
+        // Max context length = max_seq_len - q_len - 3 (special tokens)
+        let max_context_len = self.max_length.saturating_sub(q_ids.len() + 3);
+        
+        // Determine window bounds centered around the answer if possible
+        let _answer_len = end_token_idx_c - start_token_idx_c + 1;
+        let half_window = max_context_len / 2;
+        
+        let mut window_start = start_token_idx_c.saturating_sub(half_window);
+        let mut window_end = window_start + max_context_len;
+
+        if window_end > c_ids.len() {
+            window_end = c_ids.len();
+            window_start = window_end.saturating_sub(max_context_len);
+        }
+
+        let context_window = &c_ids[window_start..window_end];
+
+        // 3. Construct final token sequence
+        let mut tokens = Vec::new();
+        let mut token_type_ids = Vec::new();
+
+        // [CLS] Question [SEP]
+        tokens.push(101); // CLS
+        tokens.extend_from_slice(q_ids);
+        tokens.push(102); // SEP
+        let context_start_offset = tokens.len();
+
+        // Context Window [SEP]
+        tokens.extend_from_slice(context_window);
+        tokens.push(102); // SEP
+
+        // Token Type IDs: 0 for Question, 1 for Context
+        token_type_ids.extend(vec![0; context_start_offset]);
+        token_type_ids.extend(vec![1; tokens.len() - context_start_offset]);
+
+        // Calculate new answer positions relative to the final sequence
+        let new_start_idx = context_start_offset + (start_token_idx_c - window_start);
+        let new_end_idx = context_start_offset + (end_token_idx_c - window_start);
+
+        // Attention mask is all 1s for valid tokens (padding handled by batcher)
+        let attention_mask = vec![1; tokens.len()];
 
         Some(QABatchItem {
-            tokens: final_encoding.get_ids().iter().map(|&x| x as u32).collect(),
-            token_type_ids: final_encoding.get_type_ids().iter().map(|&x| x as u32).collect(),
-            attention_mask: final_encoding.get_attention_mask().iter().map(|&x| x as u32).collect(),
-            start_token_idx,
-            end_token_idx,
+            tokens: tokens.iter().map(|&x| x as u32).collect(),
+            token_type_ids: token_type_ids.iter().map(|&x| x as u32).collect(),
+            attention_mask: attention_mask.iter().map(|&x| x as u32).collect(),
+            start_token_idx: new_start_idx,
+            end_token_idx: new_end_idx,
         })
     }
 }
@@ -143,10 +204,19 @@ pub fn load_dataset_from_data_folder(data_path: &str) -> anyhow::Result<Vec<QAIt
                 let raw_items: Vec<RawQAItem> = serde_json::from_str(&json_content)?;
 
                 for raw_item in raw_items {
+                    // Re-find the answer in the Rust-extracted text to ensure indices are correct
+                    // The Python extraction might differ slightly from Rust extraction
+                    let actual_start = if let Some(idx) = context.find(&raw_item.answer_text) {
+                        idx
+                    } else {
+                        // If exact match fails, fallback to the provided index (might be risky)
+                        raw_item.answer_start
+                    };
+
                     all_items.push(QAItem {
                         context: context.clone(),
                         question: raw_item.question,
-                        answer_start: raw_item.answer_start,
+                        answer_start: actual_start,
                         answer_text: raw_item.answer_text,
                     });
                 }
