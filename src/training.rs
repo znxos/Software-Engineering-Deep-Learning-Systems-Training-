@@ -74,11 +74,11 @@ fn calculate_accuracy<B: Backend>(
         return 0.0;
     }
     
-    let start_logits = logits.clone().slice([0..batch_size, 0..seq_length, 0..1]).squeeze_dim(2);
-    let end_logits = logits.slice([0..batch_size, 0..seq_length, 1..2]).squeeze_dim(2);
+    let start_logits = logits.clone().slice([0..batch_size, 0..seq_length, 0..1]).reshape([batch_size, seq_length]);
+    let end_logits = logits.slice([0..batch_size, 0..seq_length, 1..2]).reshape([batch_size, seq_length]);
 
-    let start_pred = start_logits.argmax(1);
-    let end_pred = end_logits.argmax(1);
+    let start_pred = start_logits.argmax(1).squeeze();
+    let end_pred = end_logits.argmax(1).squeeze();
 
     let correct_starts = start_pred.clone().equal(start_positions.clone()).int().sum().into_scalar();
     let correct_ends = end_pred.equal(end_positions).int().sum().into_scalar();
@@ -142,6 +142,12 @@ pub fn run_training<B: AutodiffBackend>(device: B::Device) {
         model = model.train();
         for (iter_idx, batch) in train_dataloader.iter().enumerate() {
             let logits = model.forward(batch.tokens, batch.token_type_ids, batch.attention_mask);
+            // Defensive check: ensure logits has the expected last-dimension (2 logits: start/end).
+            let dims = logits.dims();
+            if dims[2] < 2 {
+                eprintln!("Warning: skipping batch due to unexpected logits shape: {:?}", dims);
+                continue;
+            }
             let loss = calculate_loss(logits, batch.start_indices, batch.end_indices, &device);
             
             // Backpropagation and optimizer step
@@ -162,6 +168,11 @@ pub fn run_training<B: AutodiffBackend>(device: B::Device) {
 
         for batch in val_dataloader.iter() {
             let logits = model.forward(batch.tokens, batch.token_type_ids, batch.attention_mask);
+            let dims = logits.dims();
+            if dims[2] < 2 {
+                eprintln!("Warning: skipping validation batch due to unexpected logits shape: {:?}", dims);
+                continue;
+            }
             let loss = calculate_loss(logits.clone(), batch.start_indices.clone(), batch.end_indices.clone(), &device);
             let accuracy = calculate_accuracy(logits, batch.start_indices, batch.end_indices);
 
