@@ -77,8 +77,8 @@ fn calculate_accuracy<B: Backend>(
     let start_logits = logits.clone().slice([0..batch_size, 0..seq_length, 0..1]).reshape([batch_size, seq_length]);
     let end_logits = logits.slice([0..batch_size, 0..seq_length, 1..2]).reshape([batch_size, seq_length]);
 
-    let start_pred = start_logits.argmax(1).squeeze();
-    let end_pred = end_logits.argmax(1).squeeze();
+    let start_pred = start_logits.argmax(1).squeeze_dim(1);
+    let end_pred = end_logits.argmax(1).squeeze_dim(1);
 
     let correct_starts = start_pred.clone().equal(start_positions.clone()).int().sum().into_scalar();
     let correct_ends = end_pred.equal(end_positions).int().sum().into_scalar();
@@ -136,6 +136,9 @@ pub fn run_training<B: AutodiffBackend>(device: B::Device) {
         .num_workers(4)
         .build(val_dataset);
 
+    // Calculate total iterations per epoch for logging
+    let total_iters = (train_count + config.batch_size - 1) / config.batch_size;
+
     // Training loop
     for epoch in 1..=config.num_epochs {
         // Training phase
@@ -156,7 +159,7 @@ pub fn run_training<B: AutodiffBackend>(device: B::Device) {
             model = optim.step(config.learning_rate, model, grads);
 
             if iter_idx % 10 == 0 {
-                println!("Epoch {} | Train Iter {} | Loss: {:.4}", epoch, iter_idx, loss.into_scalar());
+                println!("Epoch {} | Train Iter {}/{} | Loss: {:.4}", epoch, iter_idx, total_iters, loss.into_scalar());
             }
         }
 
