@@ -101,9 +101,17 @@ impl QAProcessor {
         question: &str,
     ) -> Option<(Encoding, Vec<u32>, Vec<u32>, Vec<u32>)> {
         let encoding = self.tokenizer.encode((question.to_string(), context.to_string()), false).ok()?;
-        let tokens = encoding.get_ids().iter().map(|&x| x as u32).collect();
-        let token_type_ids = encoding.get_type_ids().iter().map(|&x| x as u32).collect();
-        let attention_mask = encoding.get_attention_mask().iter().map(|&x| x as u32).collect();
+        let mut tokens: Vec<u32> = encoding.get_ids().iter().map(|&x| x as u32).collect();
+        let mut token_type_ids: Vec<u32> = encoding.get_type_ids().iter().map(|&x| x as u32).collect();
+        let mut attention_mask: Vec<u32> = encoding.get_attention_mask().iter().map(|&x| x as u32).collect();
+
+        // Truncate to max_length to avoid model panic
+        if tokens.len() > self.max_length {
+            tokens.truncate(self.max_length);
+            token_type_ids.truncate(self.max_length);
+            attention_mask.truncate(self.max_length);
+        }
+
         Some((encoding, tokens, token_type_ids, attention_mask))
     }
 
