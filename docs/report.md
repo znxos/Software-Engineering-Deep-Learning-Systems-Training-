@@ -18,6 +18,8 @@ To run the training process:
 sh
 cargo run -- train
 cargo run --release -- train // for faster training
+cargo run --release -- train --model-path "model_epoch_2"
+
 To run the inference (question-answering) process:
 
 sh

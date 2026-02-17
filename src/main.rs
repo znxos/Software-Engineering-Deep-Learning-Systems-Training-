@@ -20,7 +20,11 @@ struct Args {
 #[derive(Parser, Debug)]
 enum Action {
     /// Train the Q&A model
-    Train,
+    Train {
+        /// Optional path to resume training from a checkpoint
+        #[arg(long)]
+        model_path: Option<String>,
+    },
     /// Ask a question about a document
     Infer {
         /// Path to the .docx document
@@ -42,8 +46,8 @@ fn main() {
     let device = NdArrayDevice::default();
 
     match args.action {
-        Action::Train => {
-            training::run_training::<MyAutodiffBackend>(device);
+        Action::Train { model_path } => {
+            training::run_training::<MyAutodiffBackend>(device, model_path);
         }
         Action::Infer { doc_path, question, model_path } => {
             if let Err(e) = qa_inference::run_inference::<MyBackend>(doc_path, question, model_path, device) {

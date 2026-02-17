@@ -11,7 +11,7 @@ use burn::{
     data::dataloader::DataLoaderBuilder,
     nn::loss::CrossEntropyLoss,
     tensor::backend::AutodiffBackend,
-    record::{BinFileRecorder, FullPrecisionSettings},
+    record::{BinFileRecorder, FullPrecisionSettings, Recorder},
 };
 use burn::module::Module;
 
@@ -87,7 +87,7 @@ fn calculate_accuracy<B: Backend>(
     (correct_starts.to_f32() + correct_ends.to_f32()) / (2.0 * batch_size as f32)
 }
 
-pub fn run_training<B: AutodiffBackend>(device: B::Device) {
+pub fn run_training<B: AutodiffBackend>(device: B::Device, model_path: Option<String>) {
     let config_path = "config.json"; // A file where you store your hyperparameters
     let config_str = std::fs::read_to_string(config_path).expect("Config file not found");
     let mut config_value: serde_json::Value = serde_json::from_str(&config_str).expect("Invalid config JSON");
@@ -100,6 +100,26 @@ pub fn run_training<B: AutodiffBackend>(device: B::Device) {
 
     // Initialize model
     let mut model: crate::model::QAModel<B> = config.model.init::<B>(&device);
+
+    // Load checkpoint if provided
+    let mut start_epoch = 1;
+    if let Some(path) = model_path {
+        println!("Resuming training from {}...", path);
+
+        // Parse the epoch number from the filename (e.g., "model_epoch_5" -> 5)
+        if let Some(idx) = path.rfind("epoch_") {
+            if let Ok(epoch_num) = path[idx + 6..].parse::<usize>() {
+                start_epoch = epoch_num + 1;
+            }
+        }
+
+        let recorder = BinFileRecorder::<FullPrecisionSettings>::new();
+        let record = recorder
+            .load(path.into(), &device)
+            .expect("Failed to load model checkpoint");
+        model = model.load_record(record);
+    }
+
     let mut optim = config.optimizer.init();
 
     // Load dataset from the 'data' folder
@@ -140,7 +160,7 @@ pub fn run_training<B: AutodiffBackend>(device: B::Device) {
     let total_iters = (train_count + config.batch_size - 1) / config.batch_size;
 
     // Training loop
-    for epoch in 1..=config.num_epochs {
+    for epoch in start_epoch..=config.num_epochs {
         // Training phase
         model = model.train();
         for (iter_idx, batch) in train_dataloader.iter().enumerate() {
