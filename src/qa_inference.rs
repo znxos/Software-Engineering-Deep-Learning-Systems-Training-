@@ -42,78 +42,120 @@ pub fn run_inference<B: Backend>(
     println!("Processing document: {}", &doc_path);
     let context = extract_text_from_docx(Path::new(&doc_path))?;
 
-    // 4. Tokenize the context and question for inference.
-    let (encoding, tokens, token_type_ids, attention_mask) =
-        processor.process_for_inference(&context, &question)
-            .ok_or_else(|| anyhow::anyhow!("Failed to tokenize input."))?;
+    // 4. Sliding Window Inference
+    // We tokenize the full context and question, then process in overlapping windows.
+    let q_encoding = processor.tokenizer.encode(question.clone(), false).map_err(|e| anyhow::anyhow!(e))?;
+    let c_encoding = processor.tokenizer.encode(context, false).map_err(|e| anyhow::anyhow!(e))?;
+    
+    let q_ids: Vec<u32> = q_encoding.get_ids().iter().map(|&x| x as u32).collect();
+    let c_ids: Vec<u32> = c_encoding.get_ids().iter().map(|&x| x as u32).collect();
 
-    // Find the start of the context (where token_type_ids are 1) to constrain the search space for the answer.
-    let context_start_pos = token_type_ids.iter().position(|&id| id == 1).unwrap_or(0);
-
-    // 5. Convert data into tensors, adding a batch dimension.
-    let tokens_vec = tokens.into_iter().map(|t| t as i64).collect::<Vec<i64>>();
-    let token_type_vec = token_type_ids.into_iter().map(|t| t as i64).collect::<Vec<i64>>();
-    let attention_vec = attention_mask.into_iter().map(|t| t as i64).collect::<Vec<i64>>();
-
-    let tokens_tensor = Tensor::<B, 1, Int>::from_data(tokens_vec.as_slice(), &device).unsqueeze();
-    let token_type_ids_tensor = Tensor::<B, 1, Int>::from_data(token_type_vec.as_slice(), &device).unsqueeze();
-    let attention_mask_tensor = Tensor::<B, 1, Int>::from_data(attention_vec.as_slice(), &device).unsqueeze();
-    let attention_mask_bool = attention_mask_tensor.equal_elem(1);
-
-    // 6. Run the model's forward pass to get logits.
-    println!("Running inference...");
-    let logits = model.forward(tokens_tensor, token_type_ids_tensor, attention_mask_bool);
-
-    // 7. Find the best start and end token indices from the logits.
-    let logits: Tensor<B, 2> = logits.squeeze(); // Remove batch dimension.
-    let [seq_length, _] = logits.dims();
-
-    let start_logits_tensor: Tensor<B, 1> = logits.clone().slice([0..seq_length, 0..1]).squeeze();
-    let end_logits_tensor: Tensor<B, 1> = logits.slice([0..seq_length, 1..2]).squeeze();
-
-    let start_logits: Vec<f32> = start_logits_tensor.into_data().convert::<f32>().to_vec()?;
-    let end_logits: Vec<f32> = end_logits_tensor.into_data().convert::<f32>().to_vec()?;
-
-    let mut best_start_index = 0;
-    let mut best_end_index = 0;
-    let mut max_score = f32::NEG_INFINITY;
-
-    let max_ans_len = 30; // Maximum length of the answer
-
-    for i in context_start_pos..seq_length {
-        for j in i..(i + max_ans_len).min(seq_length) {
-            let score = start_logits[i] + end_logits[j];
-            if score > max_score {
-                max_score = score;
-                best_start_index = i;
-                best_end_index = j;
-            }
-        }
+    let max_len = model_config.max_seq_length;
+    // Calculate available space for context: max_len - question_len - 3 special tokens ([CLS], [SEP], [SEP])
+    let available_ctx_len = max_len.saturating_sub(q_ids.len() + 3);
+    
+    if available_ctx_len == 0 {
+        return Err(anyhow::anyhow!("Question is too long for the model's max sequence length."));
     }
 
-    // 8. Decode the answer tokens back to a string and print.
-    let all_token_ids = encoding.get_ids();
-    if best_start_index <= best_end_index && best_end_index < all_token_ids.len() {
-        let answer_tokens = &all_token_ids[best_start_index..=best_end_index];
-        let mut answer = processor.tokenizer.decode(answer_tokens, true)
-            .map_err(|e| anyhow::anyhow!("Failed to decode answer tokens: {}", e))?;
+    // Stride determines how much we move the window. 80% of available space is a good balance.
+    let stride = (available_ctx_len as f32 * 0.8) as usize; 
+
+    let mut best_answer = String::from("No answer found");
+    let mut best_score = f32::NEG_INFINITY;
+    let mut found_valid_answer = false;
+
+    println!("Running inference with sliding window (Stride: {})...", stride);
+
+    let mut window_start = 0;
+    while window_start < c_ids.len() {
+        let window_end = (window_start + available_ctx_len).min(c_ids.len());
+        let chunk = &c_ids[window_start..window_end];
+
+        // Construct input: [CLS] Question [SEP] Context_Chunk [SEP]
+        let mut tokens = Vec::new();
+        tokens.push(101); // CLS
+        tokens.extend_from_slice(&q_ids);
+        tokens.push(102); // SEP
+        let context_start_offset = tokens.len();
+        tokens.extend_from_slice(chunk);
+        tokens.push(102); // SEP
+
+        // Pad to max_len
+        let seq_len = tokens.len();
+        let pad_len = max_len.saturating_sub(seq_len);
+        tokens.extend(vec![0; pad_len]);
+
+        // Token Types: 0 for Question, 1 for Context
+        let mut token_type_ids = vec![0; context_start_offset];
+        token_type_ids.extend(vec![1; chunk.len() + 1]); // +1 for trailing SEP
+        token_type_ids.extend(vec![0; pad_len]);
+
+        // Attention Mask
+        let mut attention_mask = vec![1; seq_len];
+        attention_mask.extend(vec![0; pad_len]);
+
+        // Convert to Tensors
+        let tokens_tensor = Tensor::<B, 1, Int>::from_data(
+            tokens.iter().map(|&x| x as i64).collect::<Vec<_>>().as_slice(), 
+            &device
+        ).unsqueeze(); // [1, seq_len]
         
-        // Clean up the answer: remove extra whitespace and special tokens
-        answer = answer
+        let token_type_ids_tensor = Tensor::<B, 1, Int>::from_data(
+            token_type_ids.iter().map(|&x| x as i64).collect::<Vec<_>>().as_slice(), 
+            &device
+        ).unsqueeze();
+
+        let attention_mask_tensor = Tensor::<B, 1, Int>::from_data(
+            attention_mask.iter().map(|&x| x as i64).collect::<Vec<_>>().as_slice(), 
+            &device
+        ).unsqueeze();
+        let attention_mask_bool = attention_mask_tensor.equal_elem(1);
+
+        // Forward pass
+        let logits = model.forward(tokens_tensor, token_type_ids_tensor, attention_mask_bool);
+        let logits: Tensor<B, 2> = logits.squeeze_dim(0); // [seq_len, 2]
+
+        let start_logits: Tensor<B, 1> = logits.clone().slice([0..seq_len, 0..1]).squeeze_dim(1);
+        let end_logits: Tensor<B, 1> = logits.slice([0..seq_len, 1..2]).squeeze_dim(1);
+
+        let start_probs: Vec<f32> = start_logits.into_data().convert::<f32>().to_vec()?;
+        let end_probs: Vec<f32> = end_logits.into_data().convert::<f32>().to_vec()?;
+
+        // Search for best span in this window (only within the context part)
+        let context_end_offset = context_start_offset + chunk.len();
+        
+        for i in context_start_offset..context_end_offset {
+            for j in i..(i + 30).min(context_end_offset) { // Max answer length 30 tokens
+                let score = start_probs[i] + end_probs[j];
+                if score > best_score {
+                    best_score = score;
+                    let answer_tokens = &tokens[i..=j];
+                    if let Ok(decoded) = processor.tokenizer.decode(answer_tokens, true) {
+                        best_answer = decoded;
+                        found_valid_answer = true;
+                    }
+                }
+            }
+        }
+
+        if window_end == c_ids.len() { break; }
+        window_start += stride;
+    }
+
+    // Clean up the answer
+    if found_valid_answer {
+        let clean_answer = best_answer
             .replace("[CLS]", "")
             .replace("[SEP]", "")
             .replace("[PAD]", "")
             .trim()
             .to_string();
         
-        // Ensure answer is not empty or just special tokens
-        if answer.is_empty() || answer.len() < 2 {
-            println!("\nQuestion: {}\nAnswer: No answer found (model confidence too low)", question);
-        } else {
-            println!("\nQuestion: {}\nAnswer: {}", question, answer);
-        }
+        println!("\nQuestion: {}\nAnswer: {}", question, clean_answer);
+        println!("Confidence Score: {:.4}", best_score);
     } else {
-        println!("\nQuestion: {}\nAnswer: Could not find a valid answer in the document.", question);
+        println!("\nQuestion: {}\nAnswer: No valid answer found.", question);
     }
 
     Ok(())

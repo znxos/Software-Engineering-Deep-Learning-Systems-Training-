@@ -6,7 +6,7 @@ use docx_rs::{read_docx, DocumentChild, ParagraphChild, RunChild, TableCellConte
 use std::fs::{self, File};
 use std::io::Read;
 use std::path::Path;
-use tokenizers::{Encoding, Tokenizer};
+use tokenizers::Tokenizer;
 
 // Represents a single Q&A item
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -62,16 +62,24 @@ pub fn extract_text_from_docx(path: &Path) -> anyhow::Result<String> {
             DocumentChild::Table(table) => {
                 for row in table.rows {
                     let TableChild::TableRow(tr) = row;
+                    let mut row_cells = Vec::new();
                     for cell in tr.cells {
                         let TableRowChild::TableCell(tc) = cell;
+                        let mut cell_content = Vec::new();
                         for content in tc.children {
                             if let TableCellContent::Paragraph(p) = content {
                                 let text = extract_paragraph_text(&p).trim().to_string();
                                 if !text.is_empty() {
-                                    full_text.push(text);
+                                    cell_content.push(text);
                                 }
                             }
                         }
+                        if !cell_content.is_empty() {
+                            row_cells.push(cell_content.join("\n"));
+                        }
+                    }
+                    if !row_cells.is_empty() {
+                        full_text.push(row_cells.join("\n"));
                     }
                 }
             }
@@ -92,27 +100,6 @@ impl QAProcessor {
     pub fn new(tokenizer_path: &str, max_length: usize) -> Self {
         let tokenizer = Tokenizer::from_file(tokenizer_path).expect("Failed to load tokenizer");
         Self { tokenizer, max_length }
-    }
-
-    /// Tokenizes a context and question for inference.
-    pub fn process_for_inference(
-        &self,
-        context: &str,
-        question: &str,
-    ) -> Option<(Encoding, Vec<u32>, Vec<u32>, Vec<u32>)> {
-        let encoding = self.tokenizer.encode((question.to_string(), context.to_string()), false).ok()?;
-        let mut tokens: Vec<u32> = encoding.get_ids().iter().map(|&x| x as u32).collect();
-        let mut token_type_ids: Vec<u32> = encoding.get_type_ids().iter().map(|&x| x as u32).collect();
-        let mut attention_mask: Vec<u32> = encoding.get_attention_mask().iter().map(|&x| x as u32).collect();
-
-        // Truncate to max_length to avoid model panic
-        if tokens.len() > self.max_length {
-            tokens.truncate(self.max_length);
-            token_type_ids.truncate(self.max_length);
-            attention_mask.truncate(self.max_length);
-        }
-
-        Some((encoding, tokens, token_type_ids, attention_mask))
     }
 
     pub fn process(&self, item: &QAItem) -> Option<QABatchItem> {

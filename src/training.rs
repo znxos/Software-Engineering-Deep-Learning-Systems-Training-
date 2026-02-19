@@ -38,7 +38,7 @@ fn calculate_loss<B: AutodiffBackend>(
 
     // Guard: must have 2 logits per token (start and end)
     if num_logits < 2 || seq_length == 0 || batch_size == 0 {
-        return Tensor::zeros([batch_size], device);
+        panic!("Invalid logits dimensions for loss calculation: {:?}", logits.dims());
     }
 
     // Extract start and end logits safely
@@ -50,16 +50,9 @@ fn calculate_loss<B: AutodiffBackend>(
     let start_pos_clamped = start_positions.clamp_min(0).clamp_max(max_pos);
     let end_pos_clamped = end_positions.clamp_min(0).clamp_max(max_pos);
 
-    // Use CrossEntropyLoss if batch_size > 1 for better convergence, otherwise use simpler approach
-    if batch_size > 1 {
-        let loss_start = CrossEntropyLoss::new(None, device).forward(start_logits, start_pos_clamped.clone());
-        let loss_end = CrossEntropyLoss::new(None, device).forward(end_logits, end_pos_clamped);
-        (loss_start + loss_end) / 2.0
-    } else {
-        // For batch_size == 1, return a minimal loss to avoid CrossEntropyLoss panics
-        // This is a workaround - validation loss won't be meaningful but training won't crash
-        Tensor::full([1], 1.0, device)
-    }
+    let loss_start = CrossEntropyLoss::new(None, device).forward(start_logits, start_pos_clamped.clone());
+    let loss_end = CrossEntropyLoss::new(None, device).forward(end_logits, end_pos_clamped);
+    (loss_start + loss_end) / 2.0
 }
 
 fn calculate_accuracy<B: Backend>(
