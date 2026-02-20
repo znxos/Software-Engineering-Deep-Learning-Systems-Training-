@@ -1,5 +1,7 @@
+#![recursion_limit = "256"]
 // src/main.rs
-use burn::backend::{ndarray::NdArrayDevice, Autodiff, NdArray};
+use burn::backend::{Autodiff};
+use burn::backend::wgpu::{WgpuDevice, Wgpu};
 use clap::Parser;
 
 mod data;
@@ -7,7 +9,7 @@ mod model;
 mod training;
 mod qa_inference;
 
-type MyBackend = NdArray;
+type MyBackend = Wgpu;
 type MyAutodiffBackend = Autodiff<MyBackend>;
 
 #[derive(Parser, Debug)]
@@ -43,14 +45,21 @@ enum Action {
 
 fn main() {
     let args = Args::parse();
-    let device = NdArrayDevice::default();
+    // Initialize a WGPU device. You can control the underlying graphics API
+    // via the `WGPU_BACKEND` environment variable (e.g. "vulkan", "dx12", "metal").
+    let device = WgpuDevice::default();
+
+    // Optionally initialize the runtime to a specific graphics API. If you
+    // want a specific API, uncomment and change the line below. The project
+    // documentation suggests setting `WGPU_BACKEND` in the environment instead.
+    // burn::backend::wgpu::init_setup::<burn::backend::wgpu::graphics::Vulkan>(&device, Default::default());
 
     match args.action {
         Action::Train { model_path } => {
-            training::run_training::<MyAutodiffBackend>(device, model_path);
+            training::run_training::<MyAutodiffBackend>(device.clone(), model_path);
         }
         Action::Infer { doc_path, question, model_path } => {
-            if let Err(e) = qa_inference::run_inference::<MyBackend>(doc_path, question, model_path, device) {
+            if let Err(e) = qa_inference::run_inference::<MyBackend>(doc_path, question, model_path, device.clone()) {
                 eprintln!("Inference failed: {}", e);
             }
         }
