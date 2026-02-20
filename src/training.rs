@@ -12,7 +12,7 @@ use burn::{
     tensor::backend::AutodiffBackend,
     record::{BinFileRecorder, FullPrecisionSettings, Recorder},
 };
-use burn::module::Module;
+use burn::module::{Module, AutodiffModule};
 use burn::nn::loss::CrossEntropyLossConfig;
 
 #[derive(Deserialize, Debug)]
@@ -26,7 +26,7 @@ pub struct TrainingConfig {
 }
 
 /// Compute span extraction loss using L2 regularization on logits
-fn compute_span_loss<B: AutodiffBackend>(
+fn compute_span_loss<B: Backend>(
     logits: Tensor<B, 3>,
     start_positions: Tensor<B, 1, Int>,
     end_positions: Tensor<B, 1, Int>,
@@ -248,16 +248,22 @@ pub fn run_training<B: AutodiffBackend>(device: B::Device, model_path: Option<St
         };
 
         // Validation phase
-        model = model.eval();
+        let model_valid = model.valid();
         let mut val_loss: f32 = 0.0;
         let mut val_accuracy: f32 = 0.0;
         let mut val_batches: usize = 0;
 
         for batch in val_dataloader.iter() {
-            let logits = model.forward(
-                batch.tokens.clone(),
-                batch.token_type_ids.clone(),
-                batch.attention_mask.clone(),
+            let tokens = batch.tokens.inner();
+            let token_type_ids = batch.token_type_ids.inner();
+            let attention_mask = batch.attention_mask.inner();
+            let start_indices = batch.start_indices.inner();
+            let end_indices = batch.end_indices.inner();
+
+            let logits = model_valid.forward(
+                tokens,
+                token_type_ids,
+                attention_mask,
             );
 
             let dims = logits.dims();
@@ -267,8 +273,8 @@ pub fn run_training<B: AutodiffBackend>(device: B::Device, model_path: Option<St
 
             let loss = compute_span_loss(
                 logits.clone(),
-                batch.start_indices.clone(),
-                batch.end_indices.clone(),
+                start_indices.clone(),
+                end_indices.clone(),
             );
             let loss_f32 = loss.into_scalar().to_f32();
             
@@ -276,8 +282,8 @@ pub fn run_training<B: AutodiffBackend>(device: B::Device, model_path: Option<St
                 val_loss += loss_f32;
                 val_accuracy += calculate_accuracy(
                     logits,
-                    batch.start_indices,
-                    batch.end_indices,
+                    start_indices,
+                    end_indices,
                 );
                 val_batches += 1;
             }
