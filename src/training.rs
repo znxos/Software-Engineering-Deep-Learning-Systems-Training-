@@ -38,6 +38,10 @@ fn compute_span_loss<B: Backend>(
         return Tensor::from_floats([0.1], &device);
     }
 
+    // FIX: Clamp logits to prevent numerical instability (NaNs)
+    // Large logits cause exp() to overflow in softmax. Range [-30, 30] is safe for f32.
+    let logits = logits.clamp(-30.0, 30.0);
+
     // Split logits into start and end: [batch_size, seq_length]
     let start_logits: Tensor<B, 2> = logits
         .clone()
