@@ -38,6 +38,9 @@ fn compute_span_loss<B: Backend>(
         return Tensor::from_floats([0.1], &device);
     }
 
+    // Regularization: Penalize large logits to keep scores reasonable and stable
+    let reg_loss = logits.clone().powf_scalar(2.0).mean() * 0.001;
+
     // FIX: Clamp logits to prevent numerical instability (NaNs)
     // Large logits cause exp() to overflow in softmax. Range [-30, 30] is safe for f32.
     let logits = logits.clamp(-30.0, 30.0);
@@ -57,7 +60,7 @@ fn compute_span_loss<B: Backend>(
     let start_loss = loss_fn.forward(start_logits, start_positions);
     let end_loss = loss_fn.forward(end_logits, end_positions);
 
-    (start_loss + end_loss) / 2.0
+    (start_loss + end_loss) / 2.0 + reg_loss
 }
 
 fn calculate_accuracy<B: Backend>(
