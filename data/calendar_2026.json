@@ -5,9 +5,59 @@
     "answer_text": "NEW YEAR’S DAY"
   },
   {
+    "question": "What is scheduled for January 1, 2026?",
+    "answer_text": "NEW YEAR’S DAY",
+    "answer_start": 72
+  },
+  {
+    "question": "January 1, 2026 - what event?",
+    "answer_text": "NEW YEAR’S DAY",
+    "answer_start": 72
+  },
+  {
+    "question": "January 1, 2026: what's on?",
+    "answer_text": "NEW YEAR’S DAY",
+    "answer_start": 72
+  },
+  {
+    "question": "What's on January 1, 2026?",
+    "answer_text": "NEW YEAR’S DAY",
+    "answer_start": 72
+  },
+  {
+    "question": "Tell me what's scheduled for January 1, 2026",
+    "answer_text": "NEW YEAR’S DAY",
+    "answer_start": 72
+  },
+  {
     "question": "What is scheduled for January 7, 2026?",
     "answer_start": 99,
     "answer_text": "Start of year for Administrative Staff"
+  },
+  {
+    "question": "What event is scheduled for January 7, 2026?",
+    "answer_text": "Start of year for Administrative Staff",
+    "answer_start": 99
+  },
+  {
+    "question": "January 7, 2026 - what event?",
+    "answer_text": "Start of year for Administrative Staff",
+    "answer_start": 99
+  },
+  {
+    "question": "January 7, 2026: what's on?",
+    "answer_text": "Start of year for Administrative Staff",
+    "answer_start": 99
+  },
+  {
+    "question": "What's on January 7, 2026?",
+    "answer_text": "Start of year for Administrative Staff",
+    "answer_start": 99
+  },
+  {
+    "question": "Tell me what's scheduled for January 7, 2026",
+    "answer_text": "Start of year for Administrative Staff",
+    "answer_start": 99
   },
   {
     "question": "What is scheduled for January 12, 2026?",
@@ -15,9 +65,59 @@
     "answer_text": "Start of year for Academic Staff"
   },
   {
+    "question": "What event is scheduled for January 12, 2026?",
+    "answer_text": "Start of year for Academic Staff",
+    "answer_start": 151
+  },
+  {
+    "question": "January 12, 2026 - what event?",
+    "answer_text": "Start of year for Academic Staff",
+    "answer_start": 151
+  },
+  {
+    "question": "January 12, 2026: what's on?",
+    "answer_text": "Start of year for Academic Staff",
+    "answer_start": 151
+  },
+  {
+    "question": "What's on January 12, 2026?",
+    "answer_text": "Start of year for Academic Staff",
+    "answer_start": 151
+  },
+  {
+    "question": "Tell me what's scheduled for January 12, 2026",
+    "answer_text": "Start of year for Academic Staff",
+    "answer_start": 151
+  },
+  {
     "question": "What events are scheduled for January 14, 2026?",
     "answer_start": 194,
     "answer_text": "WCED SCHOOLS OPEN\nManagement Committee (09:00)"
+  },
+  {
+    "question": "What event is scheduled for January 14, 2026?",
+    "answer_text": "WCED SCHOOLS OPEN\nManagement Committee (09:00)",
+    "answer_start": 194
+  },
+  {
+    "question": "What is scheduled for January 14, 2026?",
+    "answer_text": "WCED SCHOOLS OPEN\nManagement Committee (09:00)",
+    "answer_start": 194
+  },
+  {
+    "question": "January 14, 2026 - what event?",
+    "answer_text": "WCED SCHOOLS OPEN\nManagement Committee (09:00)",
+    "answer_start": 194
+  },
+  {
+    "question": "January 14, 2026: what's on?",
+    "answer_text": "WCED SCHOOLS OPEN\nManagement Committee (09:00)",
+    "answer_start": 194
+  },
+  {
+    "question": "What's on January 14, 2026?",
+    "answer_text": "WCED SCHOOLS OPEN\nManagement Committee (09:00)",
+    "answer_start": 194
   },
   {
     "question": "What meetings or calls are scheduled for January 15, 2026?",
@@ -25,9 +125,59 @@
     "answer_text": "Qualifications Evaluation Committee (09:00)\nConference Committee 1st call\nResearch Exchange Programme 1st call"
   },
   {
+    "question": "What event is scheduled for January 15, 2026?",
+    "answer_text": "Qualifications Evaluation Committee (09:00)\nConference Committee 1st call\nResearch Exchange Programme 1st call",
+    "answer_start": 244
+  },
+  {
+    "question": "What is scheduled for January 15, 2026?",
+    "answer_text": "Qualifications Evaluation Committee (09:00)\nConference Committee 1st call\nResearch Exchange Programme 1st call",
+    "answer_start": 244
+  },
+  {
+    "question": "January 15, 2026 - what event?",
+    "answer_text": "Qualifications Evaluation Committee (09:00)\nConference Committee 1st call\nResearch Exchange Programme 1st call",
+    "answer_start": 244
+  },
+  {
+    "question": "January 15, 2026: what's on?",
+    "answer_text": "Qualifications Evaluation Committee (09:00)\nConference Committee 1st call\nResearch Exchange Programme 1st call",
+    "answer_start": 244
+  },
+  {
+    "question": "What's on January 15, 2026?",
+    "answer_text": "Qualifications Evaluation Committee (09:00)\nConference Committee 1st call\nResearch Exchange Programme 1st call",
+    "answer_start": 244
+  },
+  {
     "question": "What meetings are scheduled for January 16, 2026?",
     "answer_start": 358,
     "answer_text": "Council Governance and Ethics Committee (10:00)\nCouncil Student Services Committee\n(14:00)"
+  },
+  {
+    "question": "What event is scheduled for January 16, 2026?",
+    "answer_text": "Council Governance and Ethics Committee (10:00)\nCouncil Student Services Committee\n(14:00)",
+    "answer_start": 358
+  },
+  {
+    "question": "What is scheduled for January 16, 2026?",
+    "answer_text": "Council Governance and Ethics Committee (10:00)\nCouncil Student Services Committee\n(14:00)",
+    "answer_start": 358
+  },
+  {
+    "question": "January 16, 2026 - what event?",
+    "answer_text": "Council Governance and Ethics Committee (10:00)\nCouncil Student Services Committee\n(14:00)",
+    "answer_start": 358
+  },
+  {
+    "question": "January 16, 2026: what's on?",
+    "answer_text": "Council Governance and Ethics Committee (10:00)\nCouncil Student Services Committee\n(14:00)",
+    "answer_start": 358
+  },
+  {
+    "question": "What's on January 16, 2026?",
+    "answer_text": "Council Governance and Ethics Committee (10:00)\nCouncil Student Services Committee\n(14:00)",
+    "answer_start": 358
   },
   {
     "question": "What meeting is scheduled for January 21, 2026?",
@@ -35,9 +185,59 @@
     "answer_text": "Executive Management Committee (09:00)"
   },
   {
+    "question": "What event is scheduled for January 21, 2026?",
+    "answer_text": "Executive Management Committee (09:00)",
+    "answer_start": 521
+  },
+  {
+    "question": "What is scheduled for January 21, 2026?",
+    "answer_text": "Executive Management Committee (09:00)",
+    "answer_start": 521
+  },
+  {
+    "question": "January 21, 2026 - what event?",
+    "answer_text": "Executive Management Committee (09:00)",
+    "answer_start": 521
+  },
+  {
+    "question": "January 21, 2026: what's on?",
+    "answer_text": "Executive Management Committee (09:00)",
+    "answer_start": 521
+  },
+  {
+    "question": "What's on January 21, 2026?",
+    "answer_text": "Executive Management Committee (09:00)",
+    "answer_start": 521
+  },
+  {
     "question": "What meetings are scheduled for January 22, 2026?",
     "answer_start": 563,
     "answer_text": "Supply Chain Management Committee (09:00)\nStaffing Committee (14:00)"
+  },
+  {
+    "question": "What event is scheduled for January 22, 2026?",
+    "answer_text": "Supply Chain Management Committee (09:00)\nStaffing Committee (14:00)",
+    "answer_start": 563
+  },
+  {
+    "question": "What is scheduled for January 22, 2026?",
+    "answer_text": "Supply Chain Management Committee (09:00)\nStaffing Committee (14:00)",
+    "answer_start": 563
+  },
+  {
+    "question": "January 22, 2026 - what event?",
+    "answer_text": "Supply Chain Management Committee (09:00)\nStaffing Committee (14:00)",
+    "answer_start": 563
+  },
+  {
+    "question": "January 22, 2026: what's on?",
+    "answer_text": "Supply Chain Management Committee (09:00)\nStaffing Committee (14:00)",
+    "answer_start": 563
+  },
+  {
+    "question": "What's on January 22, 2026?",
+    "answer_text": "Supply Chain Management Committee (09:00)\nStaffing Committee (14:00)",
+    "answer_start": 563
   },
   {
     "question": "What is happening on January 26, 2026?",
@@ -45,9 +245,59 @@
     "answer_text": "START OF TERM 1\nInstitutional Combined Assurance Forum (online session @09:00)"
   },
   {
+    "question": "What event is scheduled for January 26, 2026?",
+    "answer_text": "START OF TERM 1\nInstitutional Combined Assurance Forum (online session @09:00)",
+    "answer_start": 740
+  },
+  {
+    "question": "What is scheduled for January 26, 2026?",
+    "answer_text": "START OF TERM 1\nInstitutional Combined Assurance Forum (online session @09:00)",
+    "answer_start": 740
+  },
+  {
+    "question": "January 26, 2026 - what event?",
+    "answer_text": "START OF TERM 1\nInstitutional Combined Assurance Forum (online session @09:00)",
+    "answer_start": 740
+  },
+  {
+    "question": "January 26, 2026: what's on?",
+    "answer_text": "START OF TERM 1\nInstitutional Combined Assurance Forum (online session @09:00)",
+    "answer_start": 740
+  },
+  {
+    "question": "What's on January 26, 2026?",
+    "answer_text": "START OF TERM 1\nInstitutional Combined Assurance Forum (online session @09:00)",
+    "answer_start": 740
+  },
+  {
     "question": "What meetings are scheduled for January 27, 2026?",
     "answer_start": 822,
     "answer_text": "Senate Learning and Teaching Committee (09:00)\nSenate Library Committee (13:00)"
+  },
+  {
+    "question": "What event is scheduled for January 27, 2026?",
+    "answer_text": "Senate Learning and Teaching Committee (09:00)\nSenate Library Committee (13:00)",
+    "answer_start": 822
+  },
+  {
+    "question": "What is scheduled for January 27, 2026?",
+    "answer_text": "Senate Learning and Teaching Committee (09:00)\nSenate Library Committee (13:00)",
+    "answer_start": 822
+  },
+  {
+    "question": "January 27, 2026 - what event?",
+    "answer_text": "Senate Learning and Teaching Committee (09:00)\nSenate Library Committee (13:00)",
+    "answer_start": 822
+  },
+  {
+    "question": "January 27, 2026: what's on?",
+    "answer_text": "Senate Learning and Teaching Committee (09:00)\nSenate Library Committee (13:00)",
+    "answer_start": 822
+  },
+  {
+    "question": "What's on January 27, 2026?",
+    "answer_text": "Senate Learning and Teaching Committee (09:00)\nSenate Library Committee (13:00)",
+    "answer_start": 822
   },
   {
     "question": "What meeting is scheduled for January 28, 2026?",
@@ -55,9 +305,59 @@
     "answer_text": "Institutional Orientation Committee (09:00)"
   },
   {
+    "question": "What event is scheduled for January 28, 2026?",
+    "answer_text": "Institutional Orientation Committee (09:00)",
+    "answer_start": 905
+  },
+  {
+    "question": "What is scheduled for January 28, 2026?",
+    "answer_text": "Institutional Orientation Committee (09:00)",
+    "answer_start": 905
+  },
+  {
+    "question": "January 28, 2026 - what event?",
+    "answer_text": "Institutional Orientation Committee (09:00)",
+    "answer_start": 905
+  },
+  {
+    "question": "January 28, 2026: what's on?",
+    "answer_text": "Institutional Orientation Committee (09:00)",
+    "answer_start": 905
+  },
+  {
+    "question": "What's on January 28, 2026?",
+    "answer_text": "Institutional Orientation Committee (09:00)",
+    "answer_start": 905
+  },
+  {
     "question": "What forum is scheduled for January 29, 2026?",
     "answer_start": 952,
     "answer_text": "Deans and Directors Forum (09:00)"
+  },
+  {
+    "question": "What event is scheduled for January 29, 2026?",
+    "answer_text": "Deans and Directors Forum (09:00)",
+    "answer_start": 952
+  },
+  {
+    "question": "What is scheduled for January 29, 2026?",
+    "answer_text": "Deans and Directors Forum (09:00)",
+    "answer_start": 952
+  },
+  {
+    "question": "January 29, 2026 - what event?",
+    "answer_text": "Deans and Directors Forum (09:00)",
+    "answer_start": 952
+  },
+  {
+    "question": "January 29, 2026: what's on?",
+    "answer_text": "Deans and Directors Forum (09:00)",
+    "answer_start": 952
+  },
+  {
+    "question": "What's on January 29, 2026?",
+    "answer_text": "Deans and Directors Forum (09:00)",
+    "answer_start": 952
   },
   {
     "question": "What meetings are scheduled for January 30, 2026?",
@@ -65,9 +365,59 @@
     "answer_text": "Council IT Governance Committee\n(09:00)\nCouncil Audit and Risk Oversight Committee (13:00)"
   },
   {
+    "question": "What event is scheduled for January 30, 2026?",
+    "answer_text": "Council IT Governance Committee\n(09:00)\nCouncil Audit and Risk Oversight Committee (13:00)",
+    "answer_start": 989
+  },
+  {
+    "question": "What is scheduled for January 30, 2026?",
+    "answer_text": "Council IT Governance Committee\n(09:00)\nCouncil Audit and Risk Oversight Committee (13:00)",
+    "answer_start": 989
+  },
+  {
+    "question": "January 30, 2026 - what event?",
+    "answer_text": "Council IT Governance Committee\n(09:00)\nCouncil Audit and Risk Oversight Committee (13:00)",
+    "answer_start": 989
+  },
+  {
+    "question": "January 30, 2026: what's on?",
+    "answer_text": "Council IT Governance Committee\n(09:00)\nCouncil Audit and Risk Oversight Committee (13:00)",
+    "answer_start": 989
+  },
+  {
+    "question": "What's on January 30, 2026?",
+    "answer_text": "Council IT Governance Committee\n(09:00)\nCouncil Audit and Risk Oversight Committee (13:00)",
+    "answer_start": 989
+  },
+  {
     "question": "What meetings are scheduled for February 3, 2026?",
     "answer_start": 1158,
     "answer_text": "Senate Academic Planning Committee\n(09:00)\nGraduation Planning Committee (09:00)\nPhysical Planning and Space Utilisation Committee (13:00)"
+  },
+  {
+    "question": "What event is scheduled for February 3, 2026?",
+    "answer_text": "Senate Academic Planning Committee\n(09:00)\nGraduation Planning Committee (09:00)\nPhysical Planning and Space Utilisation Committee (13:00)",
+    "answer_start": 1158
+  },
+  {
+    "question": "What is scheduled for February 3, 2026?",
+    "answer_text": "Senate Academic Planning Committee\n(09:00)\nGraduation Planning Committee (09:00)\nPhysical Planning and Space Utilisation Committee (13:00)",
+    "answer_start": 1158
+  },
+  {
+    "question": "February 3, 2026 - what event?",
+    "answer_text": "Senate Academic Planning Committee\n(09:00)\nGraduation Planning Committee (09:00)\nPhysical Planning and Space Utilisation Committee (13:00)",
+    "answer_start": 1158
+  },
+  {
+    "question": "February 3, 2026: what's on?",
+    "answer_text": "Senate Academic Planning Committee\n(09:00)\nGraduation Planning Committee (09:00)\nPhysical Planning and Space Utilisation Committee (13:00)",
+    "answer_start": 1158
+  },
+  {
+    "question": "What's on February 3, 2026?",
+    "answer_text": "Senate Academic Planning Committee\n(09:00)\nGraduation Planning Committee (09:00)\nPhysical Planning and Space Utilisation Committee (13:00)",
+    "answer_start": 1158
   },
   {
     "question": "What meetings are scheduled for February 4, 2026?",
@@ -75,9 +425,59 @@
     "answer_text": "Senate Research Ethics Committee\n(09:00)\nFaculty Board: Informatics and Design (09:00)\nSenate Language Committee (13:00)"
   },
   {
+    "question": "What event is scheduled for February 4, 2026?",
+    "answer_text": "Senate Research Ethics Committee\n(09:00)\nFaculty Board: Informatics and Design (09:00)\nSenate Language Committee (13:00)",
+    "answer_start": 1299
+  },
+  {
+    "question": "What is scheduled for February 4, 2026?",
+    "answer_text": "Senate Research Ethics Committee\n(09:00)\nFaculty Board: Informatics and Design (09:00)\nSenate Language Committee (13:00)",
+    "answer_start": 1299
+  },
+  {
+    "question": "February 4, 2026 - what event?",
+    "answer_text": "Senate Research Ethics Committee\n(09:00)\nFaculty Board: Informatics and Design (09:00)\nSenate Language Committee (13:00)",
+    "answer_start": 1299
+  },
+  {
+    "question": "February 4, 2026: what's on?",
+    "answer_text": "Senate Research Ethics Committee\n(09:00)\nFaculty Board: Informatics and Design (09:00)\nSenate Language Committee (13:00)",
+    "answer_start": 1299
+  },
+  {
+    "question": "What's on February 4, 2026?",
+    "answer_text": "Senate Research Ethics Committee\n(09:00)\nFaculty Board: Informatics and Design (09:00)\nSenate Language Committee (13:00)",
+    "answer_start": 1299
+  },
+  {
     "question": "What meeting is scheduled for February 5, 2026?",
     "answer_start": 212,
     "answer_text": "Management Committee (09:00)"
+  },
+  {
+    "question": "What event is scheduled for February 5, 2026?",
+    "answer_text": "Management Committee (09:00)",
+    "answer_start": 212
+  },
+  {
+    "question": "What is scheduled for February 5, 2026?",
+    "answer_text": "Management Committee (09:00)",
+    "answer_start": 212
+  },
+  {
+    "question": "February 5, 2026 - what event?",
+    "answer_text": "Management Committee (09:00)",
+    "answer_start": 212
+  },
+  {
+    "question": "February 5, 2026: what's on?",
+    "answer_text": "Management Committee (09:00)",
+    "answer_start": 212
+  },
+  {
+    "question": "What's on February 5, 2026?",
+    "answer_text": "Management Committee (09:00)",
+    "answer_start": 212
   },
   {
     "question": "What events and meetings are scheduled for February 6, 2026?",
@@ -85,9 +485,59 @@
     "answer_text": "Faculty Board: Education (09:00)\nFaculty Board: Business and Management Sciences (09:00)\nFaculty Board: Engineering and the Built Environment (12:00)\nHotel School Management Board (14:00)\nCPUTRF Admin and Benefits Committee (12:30)\nCPUTRF Finance, Investment and Audit Committee (14:00"
   },
   {
+    "question": "What event is scheduled for February 6, 2026?",
+    "answer_text": "Faculty Board: Education (09:00)\nFaculty Board: Business and Management Sciences (09:00)\nFaculty Board: Engineering and the Built Environment (12:00)\nHotel School Management Board (14:00)\nCPUTRF Admin and Benefits Committee (12:30)\nCPUTRF Finance, Investment and Audit Committee (14:00",
+    "answer_start": 1453
+  },
+  {
+    "question": "What is scheduled for February 6, 2026?",
+    "answer_text": "Faculty Board: Education (09:00)\nFaculty Board: Business and Management Sciences (09:00)\nFaculty Board: Engineering and the Built Environment (12:00)\nHotel School Management Board (14:00)\nCPUTRF Admin and Benefits Committee (12:30)\nCPUTRF Finance, Investment and Audit Committee (14:00",
+    "answer_start": 1453
+  },
+  {
+    "question": "February 6, 2026 - what event?",
+    "answer_text": "Faculty Board: Education (09:00)\nFaculty Board: Business and Management Sciences (09:00)\nFaculty Board: Engineering and the Built Environment (12:00)\nHotel School Management Board (14:00)\nCPUTRF Admin and Benefits Committee (12:30)\nCPUTRF Finance, Investment and Audit Committee (14:00",
+    "answer_start": 1453
+  },
+  {
+    "question": "February 6, 2026: what's on?",
+    "answer_text": "Faculty Board: Education (09:00)\nFaculty Board: Business and Management Sciences (09:00)\nFaculty Board: Engineering and the Built Environment (12:00)\nHotel School Management Board (14:00)\nCPUTRF Admin and Benefits Committee (12:30)\nCPUTRF Finance, Investment and Audit Committee (14:00",
+    "answer_start": 1453
+  },
+  {
+    "question": "What's on February 6, 2026?",
+    "answer_text": "Faculty Board: Education (09:00)\nFaculty Board: Business and Management Sciences (09:00)\nFaculty Board: Engineering and the Built Environment (12:00)\nHotel School Management Board (14:00)\nCPUTRF Admin and Benefits Committee (12:30)\nCPUTRF Finance, Investment and Audit Committee (14:00",
+    "answer_start": 1453
+  },
+  {
     "question": "What meetings and deadlines are scheduled for February 7, 2026?",
     "answer_start": 1742,
     "answer_text": "Investment Sub-Committee (09:00)\nCouncil Finance Committee (13:00)\nCut-off date for application for exemptions and recognitions First Semester"
+  },
+  {
+    "question": "What event is scheduled for February 7, 2026?",
+    "answer_text": "Investment Sub-Committee (09:00)\nCouncil Finance Committee (13:00)\nCut-off date for application for exemptions and recognitions First Semester",
+    "answer_start": 1742
+  },
+  {
+    "question": "What is scheduled for February 7, 2026?",
+    "answer_text": "Investment Sub-Committee (09:00)\nCouncil Finance Committee (13:00)\nCut-off date for application for exemptions and recognitions First Semester",
+    "answer_start": 1742
+  },
+  {
+    "question": "February 7, 2026 - what event?",
+    "answer_text": "Investment Sub-Committee (09:00)\nCouncil Finance Committee (13:00)\nCut-off date for application for exemptions and recognitions First Semester",
+    "answer_start": 1742
+  },
+  {
+    "question": "February 7, 2026: what's on?",
+    "answer_text": "Investment Sub-Committee (09:00)\nCouncil Finance Committee (13:00)\nCut-off date for application for exemptions and recognitions First Semester",
+    "answer_start": 1742
+  },
+  {
+    "question": "What's on February 7, 2026?",
+    "answer_text": "Investment Sub-Committee (09:00)\nCouncil Finance Committee (13:00)\nCut-off date for application for exemptions and recognitions First Semester",
+    "answer_start": 1742
   },
   {
     "question": "What is scheduled for February 10, 2026?",
@@ -95,9 +545,59 @@
     "answer_text": "Welcoming of First Years\n(WC@10:00)\nWellington Campus Advisory Board (13:00)"
   },
   {
+    "question": "What event is scheduled for February 10, 2026?",
+    "answer_text": "Welcoming of First Years\n(WC@10:00)\nWellington Campus Advisory Board (13:00)",
+    "answer_start": 1935
+  },
+  {
+    "question": "February 10, 2026 - what event?",
+    "answer_text": "Welcoming of First Years\n(WC@10:00)\nWellington Campus Advisory Board (13:00)",
+    "answer_start": 1935
+  },
+  {
+    "question": "February 10, 2026: what's on?",
+    "answer_text": "Welcoming of First Years\n(WC@10:00)\nWellington Campus Advisory Board (13:00)",
+    "answer_start": 1935
+  },
+  {
+    "question": "What's on February 10, 2026?",
+    "answer_text": "Welcoming of First Years\n(WC@10:00)\nWellington Campus Advisory Board (13:00)",
+    "answer_start": 1935
+  },
+  {
+    "question": "Tell me what's scheduled for February 10, 2026",
+    "answer_text": "Welcoming of First Years\n(WC@10:00)\nWellington Campus Advisory Board (13:00)",
+    "answer_start": 1935
+  },
+  {
     "question": "What is scheduled for February 11, 2026?",
     "answer_start": 2015,
     "answer_text": "Welcoming of First Years\n(D6@10:00)\nManagement and SRC (14:00)"
+  },
+  {
+    "question": "What event is scheduled for February 11, 2026?",
+    "answer_text": "Welcoming of First Years\n(D6@10:00)\nManagement and SRC (14:00)",
+    "answer_start": 2015
+  },
+  {
+    "question": "February 11, 2026 - what event?",
+    "answer_text": "Welcoming of First Years\n(D6@10:00)\nManagement and SRC (14:00)",
+    "answer_start": 2015
+  },
+  {
+    "question": "February 11, 2026: what's on?",
+    "answer_text": "Welcoming of First Years\n(D6@10:00)\nManagement and SRC (14:00)",
+    "answer_start": 2015
+  },
+  {
+    "question": "What's on February 11, 2026?",
+    "answer_text": "Welcoming of First Years\n(D6@10:00)\nManagement and SRC (14:00)",
+    "answer_start": 2015
+  },
+  {
+    "question": "Tell me what's scheduled for February 11, 2026",
+    "answer_text": "Welcoming of First Years\n(D6@10:00)\nManagement and SRC (14:00)",
+    "answer_start": 2015
   },
   {
     "question": "What is scheduled for February 12, 2026?",
@@ -105,9 +605,59 @@
     "answer_text": "Welcoming of First Years\n(BVL@10:00)\nExecutive Management Committee (13:00)"
   },
   {
+    "question": "What event is scheduled for February 12, 2026?",
+    "answer_text": "Welcoming of First Years\n(BVL@10:00)\nExecutive Management Committee (13:00)",
+    "answer_start": 2081
+  },
+  {
+    "question": "February 12, 2026 - what event?",
+    "answer_text": "Welcoming of First Years\n(BVL@10:00)\nExecutive Management Committee (13:00)",
+    "answer_start": 2081
+  },
+  {
+    "question": "February 12, 2026: what's on?",
+    "answer_text": "Welcoming of First Years\n(BVL@10:00)\nExecutive Management Committee (13:00)",
+    "answer_start": 2081
+  },
+  {
+    "question": "What's on February 12, 2026?",
+    "answer_text": "Welcoming of First Years\n(BVL@10:00)\nExecutive Management Committee (13:00)",
+    "answer_start": 2081
+  },
+  {
+    "question": "Tell me what's scheduled for February 12, 2026",
+    "answer_text": "Welcoming of First Years\n(BVL@10:00)\nExecutive Management Committee (13:00)",
+    "answer_start": 2081
+  },
+  {
     "question": "What meetings are scheduled for February 13, 2026?",
     "answer_start": 2160,
     "answer_text": "Senate Research and Innovation Committee (09:00)\nExecutive Committee of Senate\n(12:00)"
+  },
+  {
+    "question": "What event is scheduled for February 13, 2026?",
+    "answer_text": "Senate Research and Innovation Committee (09:00)\nExecutive Committee of Senate\n(12:00)",
+    "answer_start": 2160
+  },
+  {
+    "question": "What is scheduled for February 13, 2026?",
+    "answer_text": "Senate Research and Innovation Committee (09:00)\nExecutive Committee of Senate\n(12:00)",
+    "answer_start": 2160
+  },
+  {
+    "question": "February 13, 2026 - what event?",
+    "answer_text": "Senate Research and Innovation Committee (09:00)\nExecutive Committee of Senate\n(12:00)",
+    "answer_start": 2160
+  },
+  {
+    "question": "February 13, 2026: what's on?",
+    "answer_text": "Senate Research and Innovation Committee (09:00)\nExecutive Committee of Senate\n(12:00)",
+    "answer_start": 2160
+  },
+  {
+    "question": "What's on February 13, 2026?",
+    "answer_text": "Senate Research and Innovation Committee (09:00)\nExecutive Committee of Senate\n(12:00)",
+    "answer_start": 2160
   },
   {
     "question": "What meetings are scheduled for February 14, 2026?",
@@ -115,9 +665,59 @@
     "answer_text": "Council Honorary Degree Award Committee (10:00)\nCouncil Remuneration Committee\n(13:00)"
   },
   {
+    "question": "What event is scheduled for February 14, 2026?",
+    "answer_text": "Council Honorary Degree Award Committee (10:00)\nCouncil Remuneration Committee\n(13:00)",
+    "answer_start": 2250
+  },
+  {
+    "question": "What is scheduled for February 14, 2026?",
+    "answer_text": "Council Honorary Degree Award Committee (10:00)\nCouncil Remuneration Committee\n(13:00)",
+    "answer_start": 2250
+  },
+  {
+    "question": "February 14, 2026 - what event?",
+    "answer_text": "Council Honorary Degree Award Committee (10:00)\nCouncil Remuneration Committee\n(13:00)",
+    "answer_start": 2250
+  },
+  {
+    "question": "February 14, 2026: what's on?",
+    "answer_text": "Council Honorary Degree Award Committee (10:00)\nCouncil Remuneration Committee\n(13:00)",
+    "answer_start": 2250
+  },
+  {
+    "question": "What's on February 14, 2026?",
+    "answer_text": "Council Honorary Degree Award Committee (10:00)\nCouncil Remuneration Committee\n(13:00)",
+    "answer_start": 2250
+  },
+  {
     "question": "What meeting is scheduled for February 17, 2026?",
     "answer_start": 3449,
     "answer_text": "Senate Higher Degrees Committee (09:00)"
+  },
+  {
+    "question": "What event is scheduled for February 17, 2026?",
+    "answer_text": "Senate Higher Degrees Committee (09:00)",
+    "answer_start": 3449
+  },
+  {
+    "question": "What is scheduled for February 17, 2026?",
+    "answer_text": "Senate Higher Degrees Committee (09:00)",
+    "answer_start": 3449
+  },
+  {
+    "question": "February 17, 2026 - what event?",
+    "answer_text": "Senate Higher Degrees Committee (09:00)",
+    "answer_start": 3449
+  },
+  {
+    "question": "February 17, 2026: what's on?",
+    "answer_text": "Senate Higher Degrees Committee (09:00)",
+    "answer_start": 3449
+  },
+  {
+    "question": "What's on February 17, 2026?",
+    "answer_text": "Senate Higher Degrees Committee (09:00)",
+    "answer_start": 3449
   },
   {
     "question": "What meeting is scheduled for March 2, 2026?",
@@ -125,9 +725,59 @@
     "answer_text": "Senate (12:00)"
   },
   {
+    "question": "What event is scheduled for March 2, 2026?",
+    "answer_text": "Senate (12:00)",
+    "answer_start": 3395
+  },
+  {
+    "question": "What is scheduled for March 2, 2026?",
+    "answer_text": "Senate (12:00)",
+    "answer_start": 3395
+  },
+  {
+    "question": "March 2, 2026 - what event?",
+    "answer_text": "Senate (12:00)",
+    "answer_start": 3395
+  },
+  {
+    "question": "March 2, 2026: what's on?",
+    "answer_text": "Senate (12:00)",
+    "answer_start": 3395
+  },
+  {
+    "question": "What's on March 2, 2026?",
+    "answer_text": "Senate (12:00)",
+    "answer_start": 3395
+  },
+  {
     "question": "What meeting is scheduled for March 7, 2026?",
     "answer_start": 3841,
     "answer_text": "Convocation Executive Meeting"
+  },
+  {
+    "question": "What event is scheduled for March 7, 2026?",
+    "answer_text": "Convocation Executive Meeting",
+    "answer_start": 3841
+  },
+  {
+    "question": "What is scheduled for March 7, 2026?",
+    "answer_text": "Convocation Executive Meeting",
+    "answer_start": 3841
+  },
+  {
+    "question": "March 7, 2026 - what event?",
+    "answer_text": "Convocation Executive Meeting",
+    "answer_start": 3841
+  },
+  {
+    "question": "March 7, 2026: what's on?",
+    "answer_text": "Convocation Executive Meeting",
+    "answer_start": 3841
+  },
+  {
+    "question": "What's on March 7, 2026?",
+    "answer_text": "Convocation Executive Meeting",
+    "answer_start": 3841
   },
   {
     "question": "What meeting is scheduled for March 10, 2026?",
@@ -135,9 +785,59 @@
     "answer_text": "Student Housing Oversight Committee (09:00)"
   },
   {
+    "question": "What event is scheduled for March 10, 2026?",
+    "answer_text": "Student Housing Oversight Committee (09:00)",
+    "answer_start": 3946
+  },
+  {
+    "question": "What is scheduled for March 10, 2026?",
+    "answer_text": "Student Housing Oversight Committee (09:00)",
+    "answer_start": 3946
+  },
+  {
+    "question": "March 10, 2026 - what event?",
+    "answer_text": "Student Housing Oversight Committee (09:00)",
+    "answer_start": 3946
+  },
+  {
+    "question": "March 10, 2026: what's on?",
+    "answer_text": "Student Housing Oversight Committee (09:00)",
+    "answer_start": 3946
+  },
+  {
+    "question": "What's on March 10, 2026?",
+    "answer_text": "Student Housing Oversight Committee (09:00)",
+    "answer_start": 3946
+  },
+  {
     "question": "What meeting is scheduled for March 11, 2026?",
     "answer_start": 563,
     "answer_text": "Supply Chain Management Committee (09:00)"
+  },
+  {
+    "question": "What event is scheduled for March 11, 2026?",
+    "answer_text": "Supply Chain Management Committee (09:00)",
+    "answer_start": 563
+  },
+  {
+    "question": "What is scheduled for March 11, 2026?",
+    "answer_text": "Supply Chain Management Committee (09:00)",
+    "answer_start": 563
+  },
+  {
+    "question": "March 11, 2026 - what event?",
+    "answer_text": "Supply Chain Management Committee (09:00)",
+    "answer_start": 563
+  },
+  {
+    "question": "March 11, 2026: what's on?",
+    "answer_text": "Supply Chain Management Committee (09:00)",
+    "answer_start": 563
+  },
+  {
+    "question": "What's on March 11, 2026?",
+    "answer_text": "Supply Chain Management Committee (09:00)",
+    "answer_start": 563
   },
   {
     "question": "What meeting is scheduled for March 14, 2026?",
@@ -145,9 +845,59 @@
     "answer_text": "Council\n(09:00)"
   },
   {
+    "question": "What event is scheduled for March 14, 2026?",
+    "answer_text": "Council\n(09:00)",
+    "answer_start": 4202
+  },
+  {
+    "question": "What is scheduled for March 14, 2026?",
+    "answer_text": "Council\n(09:00)",
+    "answer_start": 4202
+  },
+  {
+    "question": "March 14, 2026 - what event?",
+    "answer_text": "Council\n(09:00)",
+    "answer_start": 4202
+  },
+  {
+    "question": "March 14, 2026: what's on?",
+    "answer_text": "Council\n(09:00)",
+    "answer_start": 4202
+  },
+  {
+    "question": "What's on March 14, 2026?",
+    "answer_text": "Council\n(09:00)",
+    "answer_start": 4202
+  },
+  {
     "question": "What programme is scheduled for March 19, 2026?",
     "answer_start": 3718,
     "answer_text": "Sisonke Supervision Mentorship Programme"
+  },
+  {
+    "question": "What event is scheduled for March 19, 2026?",
+    "answer_text": "Sisonke Supervision Mentorship Programme",
+    "answer_start": 3718
+  },
+  {
+    "question": "What is scheduled for March 19, 2026?",
+    "answer_text": "Sisonke Supervision Mentorship Programme",
+    "answer_start": 3718
+  },
+  {
+    "question": "March 19, 2026 - what event?",
+    "answer_text": "Sisonke Supervision Mentorship Programme",
+    "answer_start": 3718
+  },
+  {
+    "question": "March 19, 2026: what's on?",
+    "answer_text": "Sisonke Supervision Mentorship Programme",
+    "answer_start": 3718
+  },
+  {
+    "question": "What's on March 19, 2026?",
+    "answer_text": "Sisonke Supervision Mentorship Programme",
+    "answer_start": 3718
   },
   {
     "question": "What status is listed for March 20, 2026?",
@@ -155,9 +905,59 @@
     "answer_text": "RECESS"
   },
   {
+    "question": "What event is scheduled for March 20, 2026?",
+    "answer_text": "RECESS",
+    "answer_start": 4364
+  },
+  {
+    "question": "What is scheduled for March 20, 2026?",
+    "answer_text": "RECESS",
+    "answer_start": 4364
+  },
+  {
+    "question": "March 20, 2026 - what event?",
+    "answer_text": "RECESS",
+    "answer_start": 4364
+  },
+  {
+    "question": "March 20, 2026: what's on?",
+    "answer_text": "RECESS",
+    "answer_start": 4364
+  },
+  {
+    "question": "What's on March 20, 2026?",
+    "answer_text": "RECESS",
+    "answer_start": 4364
+  },
+  {
     "question": "What forum is scheduled for March 31, 2026?",
     "answer_start": 4902,
     "answer_text": "Institutional Quality Forum (09:00)"
+  },
+  {
+    "question": "What event is scheduled for March 31, 2026?",
+    "answer_text": "Institutional Quality Forum (09:00)",
+    "answer_start": 4902
+  },
+  {
+    "question": "What is scheduled for March 31, 2026?",
+    "answer_text": "Institutional Quality Forum (09:00)",
+    "answer_start": 4902
+  },
+  {
+    "question": "March 31, 2026 - what event?",
+    "answer_text": "Institutional Quality Forum (09:00)",
+    "answer_start": 4902
+  },
+  {
+    "question": "March 31, 2026: what's on?",
+    "answer_text": "Institutional Quality Forum (09:00)",
+    "answer_start": 4902
+  },
+  {
+    "question": "What's on March 31, 2026?",
+    "answer_text": "Institutional Quality Forum (09:00)",
+    "answer_start": 4902
   },
   {
     "question": "What meetings are scheduled for April 24, 2026?",
@@ -165,9 +965,59 @@
     "answer_text": "Council Physical Planning Committee (10:00)\nCouncil Human Resources Committee (13:00)"
   },
   {
+    "question": "What event is scheduled for April 24, 2026?",
+    "answer_text": "Council Physical Planning Committee (10:00)\nCouncil Human Resources Committee (13:00)",
+    "answer_start": 10698
+  },
+  {
+    "question": "What is scheduled for April 24, 2026?",
+    "answer_text": "Council Physical Planning Committee (10:00)\nCouncil Human Resources Committee (13:00)",
+    "answer_start": 10698
+  },
+  {
+    "question": "April 24, 2026 - what event?",
+    "answer_text": "Council Physical Planning Committee (10:00)\nCouncil Human Resources Committee (13:00)",
+    "answer_start": 10698
+  },
+  {
+    "question": "April 24, 2026: what's on?",
+    "answer_text": "Council Physical Planning Committee (10:00)\nCouncil Human Resources Committee (13:00)",
+    "answer_start": 10698
+  },
+  {
+    "question": "What's on April 24, 2026?",
+    "answer_text": "Council Physical Planning Committee (10:00)\nCouncil Human Resources Committee (13:00)",
+    "answer_start": 10698
+  },
+  {
     "question": "What meeting is scheduled for May 4, 2026?",
     "answer_start": 1299,
     "answer_text": "Senate Research Ethics Committee"
+  },
+  {
+    "question": "What event is scheduled for May 4, 2026?",
+    "answer_text": "Senate Research Ethics Committee",
+    "answer_start": 1299
+  },
+  {
+    "question": "What is scheduled for May 4, 2026?",
+    "answer_text": "Senate Research Ethics Committee",
+    "answer_start": 1299
+  },
+  {
+    "question": "May 4, 2026 - what event?",
+    "answer_text": "Senate Research Ethics Committee",
+    "answer_start": 1299
+  },
+  {
+    "question": "May 4, 2026: what's on?",
+    "answer_text": "Senate Research Ethics Committee",
+    "answer_start": 1299
+  },
+  {
+    "question": "What's on May 4, 2026?",
+    "answer_text": "Senate Research Ethics Committee",
+    "answer_start": 1299
   },
   {
     "question": "What meeting is scheduled for May 6, 2026?",
@@ -175,9 +1025,59 @@
     "answer_text": "Management Committee"
   },
   {
+    "question": "What event is scheduled for May 6, 2026?",
+    "answer_text": "Management Committee",
+    "answer_start": 212
+  },
+  {
+    "question": "What is scheduled for May 6, 2026?",
+    "answer_text": "Management Committee",
+    "answer_start": 212
+  },
+  {
+    "question": "May 6, 2026 - what event?",
+    "answer_text": "Management Committee",
+    "answer_start": 212
+  },
+  {
+    "question": "May 6, 2026: what's on?",
+    "answer_text": "Management Committee",
+    "answer_start": 212
+  },
+  {
+    "question": "What's on May 6, 2026?",
+    "answer_text": "Management Committee",
+    "answer_start": 212
+  },
+  {
     "question": "What meetings and programme are scheduled for May 7, 2026?",
     "answer_start": 6766,
     "answer_text": "Senate Higher Degrees Committee\n(09:00)\nCPUTRF Admin and Benefits Committee (12:30)\nCPUTRF Finance, Investment and Audit Committee (14:00)\nSisonke Supervision Mentorship Programme"
+  },
+  {
+    "question": "What event is scheduled for May 7, 2026?",
+    "answer_text": "Senate Higher Degrees Committee\n(09:00)\nCPUTRF Admin and Benefits Committee (12:30)\nCPUTRF Finance, Investment and Audit Committee (14:00)\nSisonke Supervision Mentorship Programme",
+    "answer_start": 6766
+  },
+  {
+    "question": "What is scheduled for May 7, 2026?",
+    "answer_text": "Senate Higher Degrees Committee\n(09:00)\nCPUTRF Admin and Benefits Committee (12:30)\nCPUTRF Finance, Investment and Audit Committee (14:00)\nSisonke Supervision Mentorship Programme",
+    "answer_start": 6766
+  },
+  {
+    "question": "May 7, 2026 - what event?",
+    "answer_text": "Senate Higher Degrees Committee\n(09:00)\nCPUTRF Admin and Benefits Committee (12:30)\nCPUTRF Finance, Investment and Audit Committee (14:00)\nSisonke Supervision Mentorship Programme",
+    "answer_start": 6766
+  },
+  {
+    "question": "May 7, 2026: what's on?",
+    "answer_text": "Senate Higher Degrees Committee\n(09:00)\nCPUTRF Admin and Benefits Committee (12:30)\nCPUTRF Finance, Investment and Audit Committee (14:00)\nSisonke Supervision Mentorship Programme",
+    "answer_start": 6766
+  },
+  {
+    "question": "What's on May 7, 2026?",
+    "answer_text": "Senate Higher Degrees Committee\n(09:00)\nCPUTRF Admin and Benefits Committee (12:30)\nCPUTRF Finance, Investment and Audit Committee (14:00)\nSisonke Supervision Mentorship Programme",
+    "answer_start": 6766
   },
   {
     "question": "What meetings are scheduled for May 8, 2026?",
@@ -185,9 +1085,59 @@
     "answer_text": "Council IT Governance Committee\n(09:00)\nCouncil Audit and Risk Oversight Committee (13:00)"
   },
   {
+    "question": "What event is scheduled for May 8, 2026?",
+    "answer_text": "Council IT Governance Committee\n(09:00)\nCouncil Audit and Risk Oversight Committee (13:00)",
+    "answer_start": 989
+  },
+  {
+    "question": "What is scheduled for May 8, 2026?",
+    "answer_text": "Council IT Governance Committee\n(09:00)\nCouncil Audit and Risk Oversight Committee (13:00)",
+    "answer_start": 989
+  },
+  {
+    "question": "May 8, 2026 - what event?",
+    "answer_text": "Council IT Governance Committee\n(09:00)\nCouncil Audit and Risk Oversight Committee (13:00)",
+    "answer_start": 989
+  },
+  {
+    "question": "May 8, 2026: what's on?",
+    "answer_text": "Council IT Governance Committee\n(09:00)\nCouncil Audit and Risk Oversight Committee (13:00)",
+    "answer_start": 989
+  },
+  {
+    "question": "What's on May 8, 2026?",
+    "answer_text": "Council IT Governance Committee\n(09:00)\nCouncil Audit and Risk Oversight Committee (13:00)",
+    "answer_start": 989
+  },
+  {
     "question": "What event is scheduled for May 9, 2026?",
     "answer_start": 7041,
     "answer_text": "Annual Open Day\n(09:00)"
+  },
+  {
+    "question": "What is scheduled for May 9, 2026?",
+    "answer_text": "Annual Open Day\n(09:00)",
+    "answer_start": 7041
+  },
+  {
+    "question": "May 9, 2026 - what event?",
+    "answer_text": "Annual Open Day\n(09:00)",
+    "answer_start": 7041
+  },
+  {
+    "question": "May 9, 2026: what's on?",
+    "answer_text": "Annual Open Day\n(09:00)",
+    "answer_start": 7041
+  },
+  {
+    "question": "What's on May 9, 2026?",
+    "answer_text": "Annual Open Day\n(09:00)",
+    "answer_start": 7041
+  },
+  {
+    "question": "Tell me what's scheduled for May 9, 2026",
+    "answer_text": "Annual Open Day\n(09:00)",
+    "answer_start": 7041
   },
   {
     "question": "What forums and boards are scheduled for May 11, 2026?",
@@ -195,9 +1145,59 @@
     "answer_text": "Institutional Transformation Forum (14:00)\nFaculty Board: Engineering and the Built Environment\n(12:00)\nFaculty Board: Applied Sciences (12:00)"
   },
   {
+    "question": "What event is scheduled for May 11, 2026?",
+    "answer_text": "Institutional Transformation Forum (14:00)\nFaculty Board: Engineering and the Built Environment\n(12:00)\nFaculty Board: Applied Sciences (12:00)",
+    "answer_start": 7071
+  },
+  {
+    "question": "What is scheduled for May 11, 2026?",
+    "answer_text": "Institutional Transformation Forum (14:00)\nFaculty Board: Engineering and the Built Environment\n(12:00)\nFaculty Board: Applied Sciences (12:00)",
+    "answer_start": 7071
+  },
+  {
+    "question": "May 11, 2026 - what event?",
+    "answer_text": "Institutional Transformation Forum (14:00)\nFaculty Board: Engineering and the Built Environment\n(12:00)\nFaculty Board: Applied Sciences (12:00)",
+    "answer_start": 7071
+  },
+  {
+    "question": "May 11, 2026: what's on?",
+    "answer_text": "Institutional Transformation Forum (14:00)\nFaculty Board: Engineering and the Built Environment\n(12:00)\nFaculty Board: Applied Sciences (12:00)",
+    "answer_start": 7071
+  },
+  {
+    "question": "What's on May 11, 2026?",
+    "answer_text": "Institutional Transformation Forum (14:00)\nFaculty Board: Engineering and the Built Environment\n(12:00)\nFaculty Board: Applied Sciences (12:00)",
+    "answer_start": 7071
+  },
+  {
     "question": "What meeting is scheduled for May 12, 2026?",
     "answer_start": 7218,
     "answer_text": "Physical Planning and Space Utilisation Committee (09:00)"
+  },
+  {
+    "question": "What event is scheduled for May 12, 2026?",
+    "answer_text": "Physical Planning and Space Utilisation Committee (09:00)",
+    "answer_start": 7218
+  },
+  {
+    "question": "What is scheduled for May 12, 2026?",
+    "answer_text": "Physical Planning and Space Utilisation Committee (09:00)",
+    "answer_start": 7218
+  },
+  {
+    "question": "May 12, 2026 - what event?",
+    "answer_text": "Physical Planning and Space Utilisation Committee (09:00)",
+    "answer_start": 7218
+  },
+  {
+    "question": "May 12, 2026: what's on?",
+    "answer_text": "Physical Planning and Space Utilisation Committee (09:00)",
+    "answer_start": 7218
+  },
+  {
+    "question": "What's on May 12, 2026?",
+    "answer_text": "Physical Planning and Space Utilisation Committee (09:00)",
+    "answer_start": 7218
   },
   {
     "question": "What meetings are scheduled for May 13, 2026?",
@@ -205,9 +1205,59 @@
     "answer_text": "Business ICT Committee\n(09:00)\nManagement and SRC (14:00)"
   },
   {
+    "question": "What event is scheduled for May 13, 2026?",
+    "answer_text": "Business ICT Committee\n(09:00)\nManagement and SRC (14:00)",
+    "answer_start": 7279
+  },
+  {
+    "question": "What is scheduled for May 13, 2026?",
+    "answer_text": "Business ICT Committee\n(09:00)\nManagement and SRC (14:00)",
+    "answer_start": 7279
+  },
+  {
+    "question": "May 13, 2026 - what event?",
+    "answer_text": "Business ICT Committee\n(09:00)\nManagement and SRC (14:00)",
+    "answer_start": 7279
+  },
+  {
+    "question": "May 13, 2026: what's on?",
+    "answer_text": "Business ICT Committee\n(09:00)\nManagement and SRC (14:00)",
+    "answer_start": 7279
+  },
+  {
+    "question": "What's on May 13, 2026?",
+    "answer_text": "Business ICT Committee\n(09:00)\nManagement and SRC (14:00)",
+    "answer_start": 7279
+  },
+  {
     "question": "What forum and programme are scheduled for May 14, 2026?",
     "answer_start": 7340,
     "answer_text": "Deans and Directors Forum\n(09:00)\nSisonke Supervision Mentorship Programme"
+  },
+  {
+    "question": "What event is scheduled for May 14, 2026?",
+    "answer_text": "Deans and Directors Forum\n(09:00)\nSisonke Supervision Mentorship Programme",
+    "answer_start": 7340
+  },
+  {
+    "question": "What is scheduled for May 14, 2026?",
+    "answer_text": "Deans and Directors Forum\n(09:00)\nSisonke Supervision Mentorship Programme",
+    "answer_start": 7340
+  },
+  {
+    "question": "May 14, 2026 - what event?",
+    "answer_text": "Deans and Directors Forum\n(09:00)\nSisonke Supervision Mentorship Programme",
+    "answer_start": 7340
+  },
+  {
+    "question": "May 14, 2026: what's on?",
+    "answer_text": "Deans and Directors Forum\n(09:00)\nSisonke Supervision Mentorship Programme",
+    "answer_start": 7340
+  },
+  {
+    "question": "What's on May 14, 2026?",
+    "answer_text": "Deans and Directors Forum\n(09:00)\nSisonke Supervision Mentorship Programme",
+    "answer_start": 7340
   },
   {
     "question": "What events and meetings are scheduled for May 15, 2026?",
@@ -215,9 +1265,59 @@
     "answer_text": "Employee Wellness Day\nInvestment Sub-Committee (09:00)\nCouncil Finance Committee (13:00)"
   },
   {
+    "question": "What event is scheduled for May 15, 2026?",
+    "answer_text": "Employee Wellness Day\nInvestment Sub-Committee (09:00)\nCouncil Finance Committee (13:00)",
+    "answer_start": 7433
+  },
+  {
+    "question": "What is scheduled for May 15, 2026?",
+    "answer_text": "Employee Wellness Day\nInvestment Sub-Committee (09:00)\nCouncil Finance Committee (13:00)",
+    "answer_start": 7433
+  },
+  {
+    "question": "May 15, 2026 - what event?",
+    "answer_text": "Employee Wellness Day\nInvestment Sub-Committee (09:00)\nCouncil Finance Committee (13:00)",
+    "answer_start": 7433
+  },
+  {
+    "question": "May 15, 2026: what's on?",
+    "answer_text": "Employee Wellness Day\nInvestment Sub-Committee (09:00)\nCouncil Finance Committee (13:00)",
+    "answer_start": 7433
+  },
+  {
+    "question": "What's on May 15, 2026?",
+    "answer_text": "Employee Wellness Day\nInvestment Sub-Committee (09:00)\nCouncil Finance Committee (13:00)",
+    "answer_start": 7433
+  },
+  {
     "question": "What events and meetings are scheduled for May 18, 2026?",
     "answer_start": 7531,
     "answer_text": "Senate (12:00)\nStart of assessments"
+  },
+  {
+    "question": "What event is scheduled for May 18, 2026?",
+    "answer_text": "Senate (12:00)\nStart of assessments",
+    "answer_start": 7531
+  },
+  {
+    "question": "What is scheduled for May 18, 2026?",
+    "answer_text": "Senate (12:00)\nStart of assessments",
+    "answer_start": 7531
+  },
+  {
+    "question": "May 18, 2026 - what event?",
+    "answer_text": "Senate (12:00)\nStart of assessments",
+    "answer_start": 7531
+  },
+  {
+    "question": "May 18, 2026: what's on?",
+    "answer_text": "Senate (12:00)\nStart of assessments",
+    "answer_start": 7531
+  },
+  {
+    "question": "What's on May 18, 2026?",
+    "answer_text": "Senate (12:00)\nStart of assessments",
+    "answer_start": 7531
   },
   {
     "question": "What meetings are scheduled for May 19, 2026?",
@@ -225,9 +1325,59 @@
     "answer_text": "Supply Chain Management Committee (09:00)\nStaffing Committee (09:00)"
   },
   {
+    "question": "What event is scheduled for May 19, 2026?",
+    "answer_text": "Supply Chain Management Committee (09:00)\nStaffing Committee (09:00)",
+    "answer_start": 7570
+  },
+  {
+    "question": "What is scheduled for May 19, 2026?",
+    "answer_text": "Supply Chain Management Committee (09:00)\nStaffing Committee (09:00)",
+    "answer_start": 7570
+  },
+  {
+    "question": "May 19, 2026 - what event?",
+    "answer_text": "Supply Chain Management Committee (09:00)\nStaffing Committee (09:00)",
+    "answer_start": 7570
+  },
+  {
+    "question": "May 19, 2026: what's on?",
+    "answer_text": "Supply Chain Management Committee (09:00)\nStaffing Committee (09:00)",
+    "answer_start": 7570
+  },
+  {
+    "question": "What's on May 19, 2026?",
+    "answer_text": "Supply Chain Management Committee (09:00)\nStaffing Committee (09:00)",
+    "answer_start": 7570
+  },
+  {
     "question": "What meetings are scheduled for May 20, 2026?",
     "answer_start": 7642,
     "answer_text": "Executive Management Committee (09:00)\nNaming Committee (14:00)"
+  },
+  {
+    "question": "What event is scheduled for May 20, 2026?",
+    "answer_text": "Executive Management Committee (09:00)\nNaming Committee (14:00)",
+    "answer_start": 7642
+  },
+  {
+    "question": "What is scheduled for May 20, 2026?",
+    "answer_text": "Executive Management Committee (09:00)\nNaming Committee (14:00)",
+    "answer_start": 7642
+  },
+  {
+    "question": "May 20, 2026 - what event?",
+    "answer_text": "Executive Management Committee (09:00)\nNaming Committee (14:00)",
+    "answer_start": 7642
+  },
+  {
+    "question": "May 20, 2026: what's on?",
+    "answer_text": "Executive Management Committee (09:00)\nNaming Committee (14:00)",
+    "answer_start": 7642
+  },
+  {
+    "question": "What's on May 20, 2026?",
+    "answer_text": "Executive Management Committee (09:00)\nNaming Committee (14:00)",
+    "answer_start": 7642
   },
   {
     "question": "What committee and programme are scheduled for May 21, 2026?",
@@ -235,9 +1385,59 @@
     "answer_text": "Institutional Strategic Planning Committee (09:00)\nSisonke Supervision Mentorship Programme"
   },
   {
+    "question": "What event is scheduled for May 21, 2026?",
+    "answer_text": "Institutional Strategic Planning Committee (09:00)\nSisonke Supervision Mentorship Programme",
+    "answer_start": 7709
+  },
+  {
+    "question": "What is scheduled for May 21, 2026?",
+    "answer_text": "Institutional Strategic Planning Committee (09:00)\nSisonke Supervision Mentorship Programme",
+    "answer_start": 7709
+  },
+  {
+    "question": "May 21, 2026 - what event?",
+    "answer_text": "Institutional Strategic Planning Committee (09:00)\nSisonke Supervision Mentorship Programme",
+    "answer_start": 7709
+  },
+  {
+    "question": "May 21, 2026: what's on?",
+    "answer_text": "Institutional Strategic Planning Committee (09:00)\nSisonke Supervision Mentorship Programme",
+    "answer_start": 7709
+  },
+  {
+    "question": "What's on May 21, 2026?",
+    "answer_text": "Institutional Strategic Planning Committee (09:00)\nSisonke Supervision Mentorship Programme",
+    "answer_start": 7709
+  },
+  {
     "question": "What meetings are scheduled for May 22, 2026?",
     "answer_start": 2818,
     "answer_text": "SARETEC Management Committee (09:00)\nPeople’s Management Forum (09:00)"
+  },
+  {
+    "question": "What event is scheduled for May 22, 2026?",
+    "answer_text": "SARETEC Management Committee (09:00)\nPeople’s Management Forum (09:00)",
+    "answer_start": 2818
+  },
+  {
+    "question": "What is scheduled for May 22, 2026?",
+    "answer_text": "SARETEC Management Committee (09:00)\nPeople’s Management Forum (09:00)",
+    "answer_start": 2818
+  },
+  {
+    "question": "May 22, 2026 - what event?",
+    "answer_text": "SARETEC Management Committee (09:00)\nPeople’s Management Forum (09:00)",
+    "answer_start": 2818
+  },
+  {
+    "question": "May 22, 2026: what's on?",
+    "answer_text": "SARETEC Management Committee (09:00)\nPeople’s Management Forum (09:00)",
+    "answer_start": 2818
+  },
+  {
+    "question": "What's on May 22, 2026?",
+    "answer_text": "SARETEC Management Committee (09:00)\nPeople’s Management Forum (09:00)",
+    "answer_start": 2818
   },
   {
     "question": "What events and meetings are scheduled for May 25, 2026?",
@@ -245,9 +1445,59 @@
     "answer_text": "AFRICA DAY\nWellington Campus Advisory Board (13:00)\nUniversity Employment Equity Forum (14:00)"
   },
   {
+    "question": "What event is scheduled for May 25, 2026?",
+    "answer_text": "AFRICA DAY\nWellington Campus Advisory Board (13:00)\nUniversity Employment Equity Forum (14:00)",
+    "answer_start": 7897
+  },
+  {
+    "question": "What is scheduled for May 25, 2026?",
+    "answer_text": "AFRICA DAY\nWellington Campus Advisory Board (13:00)\nUniversity Employment Equity Forum (14:00)",
+    "answer_start": 7897
+  },
+  {
+    "question": "May 25, 2026 - what event?",
+    "answer_text": "AFRICA DAY\nWellington Campus Advisory Board (13:00)\nUniversity Employment Equity Forum (14:00)",
+    "answer_start": 7897
+  },
+  {
+    "question": "May 25, 2026: what's on?",
+    "answer_text": "AFRICA DAY\nWellington Campus Advisory Board (13:00)\nUniversity Employment Equity Forum (14:00)",
+    "answer_start": 7897
+  },
+  {
+    "question": "What's on May 25, 2026?",
+    "answer_text": "AFRICA DAY\nWellington Campus Advisory Board (13:00)\nUniversity Employment Equity Forum (14:00)",
+    "answer_start": 7897
+  },
+  {
     "question": "What forum is scheduled for May 26, 2026?",
     "answer_start": 7995,
     "answer_text": "Institutional Combined Assurance Forum (online session 09:00)"
+  },
+  {
+    "question": "What event is scheduled for May 26, 2026?",
+    "answer_text": "Institutional Combined Assurance Forum (online session 09:00)",
+    "answer_start": 7995
+  },
+  {
+    "question": "What is scheduled for May 26, 2026?",
+    "answer_text": "Institutional Combined Assurance Forum (online session 09:00)",
+    "answer_start": 7995
+  },
+  {
+    "question": "May 26, 2026 - what event?",
+    "answer_text": "Institutional Combined Assurance Forum (online session 09:00)",
+    "answer_start": 7995
+  },
+  {
+    "question": "May 26, 2026: what's on?",
+    "answer_text": "Institutional Combined Assurance Forum (online session 09:00)",
+    "answer_start": 7995
+  },
+  {
+    "question": "What's on May 26, 2026?",
+    "answer_text": "Institutional Combined Assurance Forum (online session 09:00)",
+    "answer_start": 7995
   },
   {
     "question": "What meeting is scheduled for May 27, 2026?",
@@ -255,9 +1505,59 @@
     "answer_text": "Third Stream Income Committee (10:00)"
   },
   {
+    "question": "What event is scheduled for May 27, 2026?",
+    "answer_text": "Third Stream Income Committee (10:00)",
+    "answer_start": 8060
+  },
+  {
+    "question": "What is scheduled for May 27, 2026?",
+    "answer_text": "Third Stream Income Committee (10:00)",
+    "answer_start": 8060
+  },
+  {
+    "question": "May 27, 2026 - what event?",
+    "answer_text": "Third Stream Income Committee (10:00)",
+    "answer_start": 8060
+  },
+  {
+    "question": "May 27, 2026: what's on?",
+    "answer_text": "Third Stream Income Committee (10:00)",
+    "answer_start": 8060
+  },
+  {
+    "question": "What's on May 27, 2026?",
+    "answer_text": "Third Stream Income Committee (10:00)",
+    "answer_start": 8060
+  },
+  {
     "question": "What workshops and meetings are scheduled for May 28, 2026?",
     "answer_start": 8101,
     "answer_text": "Mid-term Review Strategic Workshop (Deans and Directors) 09:00\nCPUTRF Board of Trustees (14:00)\nSisonke Supervision Mentorship Programme"
+  },
+  {
+    "question": "What event is scheduled for May 28, 2026?",
+    "answer_text": "Mid-term Review Strategic Workshop (Deans and Directors) 09:00\nCPUTRF Board of Trustees (14:00)\nSisonke Supervision Mentorship Programme",
+    "answer_start": 8101
+  },
+  {
+    "question": "What is scheduled for May 28, 2026?",
+    "answer_text": "Mid-term Review Strategic Workshop (Deans and Directors) 09:00\nCPUTRF Board of Trustees (14:00)\nSisonke Supervision Mentorship Programme",
+    "answer_start": 8101
+  },
+  {
+    "question": "May 28, 2026 - what event?",
+    "answer_text": "Mid-term Review Strategic Workshop (Deans and Directors) 09:00\nCPUTRF Board of Trustees (14:00)\nSisonke Supervision Mentorship Programme",
+    "answer_start": 8101
+  },
+  {
+    "question": "May 28, 2026: what's on?",
+    "answer_text": "Mid-term Review Strategic Workshop (Deans and Directors) 09:00\nCPUTRF Board of Trustees (14:00)\nSisonke Supervision Mentorship Programme",
+    "answer_start": 8101
+  },
+  {
+    "question": "What's on May 28, 2026?",
+    "answer_text": "Mid-term Review Strategic Workshop (Deans and Directors) 09:00\nCPUTRF Board of Trustees (14:00)\nSisonke Supervision Mentorship Programme",
+    "answer_start": 8101
   },
   {
     "question": "What meeting is scheduled for May 30, 2026?",
@@ -265,9 +1565,59 @@
     "answer_text": "Convocation Executive Meeting"
   },
   {
+    "question": "What event is scheduled for May 30, 2026?",
+    "answer_text": "Convocation Executive Meeting",
+    "answer_start": 3841
+  },
+  {
+    "question": "What is scheduled for May 30, 2026?",
+    "answer_text": "Convocation Executive Meeting",
+    "answer_start": 3841
+  },
+  {
+    "question": "May 30, 2026 - what event?",
+    "answer_text": "Convocation Executive Meeting",
+    "answer_start": 3841
+  },
+  {
+    "question": "May 30, 2026: what's on?",
+    "answer_text": "Convocation Executive Meeting",
+    "answer_start": 3841
+  },
+  {
+    "question": "What's on May 30, 2026?",
+    "answer_text": "Convocation Executive Meeting",
+    "answer_start": 3841
+  },
+  {
     "question": "What meeting is scheduled for June 1, 2026?",
     "answer_start": 244,
     "answer_text": "Qualifications Evaluation Committee (09:00)"
+  },
+  {
+    "question": "What event is scheduled for June 1, 2026?",
+    "answer_text": "Qualifications Evaluation Committee (09:00)",
+    "answer_start": 244
+  },
+  {
+    "question": "What is scheduled for June 1, 2026?",
+    "answer_text": "Qualifications Evaluation Committee (09:00)",
+    "answer_start": 244
+  },
+  {
+    "question": "June 1, 2026 - what event?",
+    "answer_text": "Qualifications Evaluation Committee (09:00)",
+    "answer_start": 244
+  },
+  {
+    "question": "June 1, 2026: what's on?",
+    "answer_text": "Qualifications Evaluation Committee (09:00)",
+    "answer_start": 244
+  },
+  {
+    "question": "What's on June 1, 2026?",
+    "answer_text": "Qualifications Evaluation Committee (09:00)",
+    "answer_start": 244
   },
   {
     "question": "What meetings are scheduled for June 2, 2026?",
@@ -275,9 +1625,59 @@
     "answer_text": "Executive Committee of Senate\n(12:00)\nStudent Housing Oversight Committee (09:00)"
   },
   {
+    "question": "What event is scheduled for June 2, 2026?",
+    "answer_text": "Executive Committee of Senate\n(12:00)\nStudent Housing Oversight Committee (09:00)",
+    "answer_start": 8455
+  },
+  {
+    "question": "What is scheduled for June 2, 2026?",
+    "answer_text": "Executive Committee of Senate\n(12:00)\nStudent Housing Oversight Committee (09:00)",
+    "answer_start": 8455
+  },
+  {
+    "question": "June 2, 2026 - what event?",
+    "answer_text": "Executive Committee of Senate\n(12:00)\nStudent Housing Oversight Committee (09:00)",
+    "answer_start": 8455
+  },
+  {
+    "question": "June 2, 2026: what's on?",
+    "answer_text": "Executive Committee of Senate\n(12:00)\nStudent Housing Oversight Committee (09:00)",
+    "answer_start": 8455
+  },
+  {
+    "question": "What's on June 2, 2026?",
+    "answer_text": "Executive Committee of Senate\n(12:00)\nStudent Housing Oversight Committee (09:00)",
+    "answer_start": 8455
+  },
+  {
     "question": "What meeting is scheduled for June 3, 2026?",
     "answer_start": 212,
     "answer_text": "Management Committee (09:00)"
+  },
+  {
+    "question": "What event is scheduled for June 3, 2026?",
+    "answer_text": "Management Committee (09:00)",
+    "answer_start": 212
+  },
+  {
+    "question": "What is scheduled for June 3, 2026?",
+    "answer_text": "Management Committee (09:00)",
+    "answer_start": 212
+  },
+  {
+    "question": "June 3, 2026 - what event?",
+    "answer_text": "Management Committee (09:00)",
+    "answer_start": 212
+  },
+  {
+    "question": "June 3, 2026: what's on?",
+    "answer_text": "Management Committee (09:00)",
+    "answer_start": 212
+  },
+  {
+    "question": "What's on June 3, 2026?",
+    "answer_text": "Management Committee (09:00)",
+    "answer_start": 212
   },
   {
     "question": "What programme is scheduled for June 4, 2026?",
@@ -285,9 +1685,59 @@
     "answer_text": "Sisonke Supervision Mentorship Programme"
   },
   {
+    "question": "What event is scheduled for June 4, 2026?",
+    "answer_text": "Sisonke Supervision Mentorship Programme",
+    "answer_start": 3718
+  },
+  {
+    "question": "What is scheduled for June 4, 2026?",
+    "answer_text": "Sisonke Supervision Mentorship Programme",
+    "answer_start": 3718
+  },
+  {
+    "question": "June 4, 2026 - what event?",
+    "answer_text": "Sisonke Supervision Mentorship Programme",
+    "answer_start": 3718
+  },
+  {
+    "question": "June 4, 2026: what's on?",
+    "answer_text": "Sisonke Supervision Mentorship Programme",
+    "answer_start": 3718
+  },
+  {
+    "question": "What's on June 4, 2026?",
+    "answer_text": "Sisonke Supervision Mentorship Programme",
+    "answer_start": 3718
+  },
+  {
     "question": "What meeting is scheduled for June 8, 2026?",
     "answer_start": 563,
     "answer_text": "Supply Chain Management Committee (09:00)"
+  },
+  {
+    "question": "What event is scheduled for June 8, 2026?",
+    "answer_text": "Supply Chain Management Committee (09:00)",
+    "answer_start": 563
+  },
+  {
+    "question": "What is scheduled for June 8, 2026?",
+    "answer_text": "Supply Chain Management Committee (09:00)",
+    "answer_start": 563
+  },
+  {
+    "question": "June 8, 2026 - what event?",
+    "answer_text": "Supply Chain Management Committee (09:00)",
+    "answer_start": 563
+  },
+  {
+    "question": "June 8, 2026: what's on?",
+    "answer_text": "Supply Chain Management Committee (09:00)",
+    "answer_start": 563
+  },
+  {
+    "question": "What's on June 8, 2026?",
+    "answer_text": "Supply Chain Management Committee (09:00)",
+    "answer_start": 563
   },
   {
     "question": "What meeting is scheduled for June 20, 2026?",
@@ -295,9 +1745,59 @@
     "answer_text": "Council\n(09:00)"
   },
   {
+    "question": "What event is scheduled for June 20, 2026?",
+    "answer_text": "Council\n(09:00)",
+    "answer_start": 4202
+  },
+  {
+    "question": "What is scheduled for June 20, 2026?",
+    "answer_text": "Council\n(09:00)",
+    "answer_start": 4202
+  },
+  {
+    "question": "June 20, 2026 - what event?",
+    "answer_text": "Council\n(09:00)",
+    "answer_start": 4202
+  },
+  {
+    "question": "June 20, 2026: what's on?",
+    "answer_text": "Council\n(09:00)",
+    "answer_start": 4202
+  },
+  {
+    "question": "What's on June 20, 2026?",
+    "answer_text": "Council\n(09:00)",
+    "answer_start": 4202
+  },
+  {
     "question": "What status is listed for June 22 to June 25, 2026?",
     "answer_start": 4364,
     "answer_text": "RECESS"
+  },
+  {
+    "question": "What event is scheduled for June 22?",
+    "answer_text": "RECESS",
+    "answer_start": 4364
+  },
+  {
+    "question": "What is scheduled for June 22?",
+    "answer_text": "RECESS",
+    "answer_start": 4364
+  },
+  {
+    "question": "June 22 - what event?",
+    "answer_text": "RECESS",
+    "answer_start": 4364
+  },
+  {
+    "question": "June 22: what's on?",
+    "answer_text": "RECESS",
+    "answer_start": 4364
+  },
+  {
+    "question": "What's on June 22?",
+    "answer_text": "RECESS",
+    "answer_start": 4364
   },
   {
     "question": "What status is listed for June 29 to June 30, 2026?",
@@ -305,9 +1805,59 @@
     "answer_text": "RECESS"
   },
   {
+    "question": "What event is scheduled for June 29?",
+    "answer_text": "RECESS",
+    "answer_start": 4364
+  },
+  {
+    "question": "What is scheduled for June 29?",
+    "answer_text": "RECESS",
+    "answer_start": 4364
+  },
+  {
+    "question": "June 29 - what event?",
+    "answer_text": "RECESS",
+    "answer_start": 4364
+  },
+  {
+    "question": "June 29: what's on?",
+    "answer_text": "RECESS",
+    "answer_start": 4364
+  },
+  {
+    "question": "What's on June 29?",
+    "answer_text": "RECESS",
+    "answer_start": 4364
+  },
+  {
     "question": "What meeting is scheduled for July 14, 2026?",
     "answer_start": 563,
     "answer_text": "Supply Chain Management Committee (09:00)"
+  },
+  {
+    "question": "What event is scheduled for July 14, 2026?",
+    "answer_text": "Supply Chain Management Committee (09:00)",
+    "answer_start": 563
+  },
+  {
+    "question": "What is scheduled for July 14, 2026?",
+    "answer_text": "Supply Chain Management Committee (09:00)",
+    "answer_start": 563
+  },
+  {
+    "question": "July 14, 2026 - what event?",
+    "answer_text": "Supply Chain Management Committee (09:00)",
+    "answer_start": 563
+  },
+  {
+    "question": "July 14, 2026: what's on?",
+    "answer_text": "Supply Chain Management Committee (09:00)",
+    "answer_start": 563
+  },
+  {
+    "question": "What's on July 14, 2026?",
+    "answer_text": "Supply Chain Management Committee (09:00)",
+    "answer_start": 563
   },
   {
     "question": "What meeting is scheduled for August 1, 2026?",
@@ -315,9 +1865,59 @@
     "answer_text": "Convocation Executive Meeting"
   },
   {
+    "question": "What event is scheduled for August 1, 2026?",
+    "answer_text": "Convocation Executive Meeting",
+    "answer_start": 3841
+  },
+  {
+    "question": "What is scheduled for August 1, 2026?",
+    "answer_text": "Convocation Executive Meeting",
+    "answer_start": 3841
+  },
+  {
+    "question": "August 1, 2026 - what event?",
+    "answer_text": "Convocation Executive Meeting",
+    "answer_start": 3841
+  },
+  {
+    "question": "August 1, 2026: what's on?",
+    "answer_text": "Convocation Executive Meeting",
+    "answer_start": 3841
+  },
+  {
+    "question": "What's on August 1, 2026?",
+    "answer_text": "Convocation Executive Meeting",
+    "answer_start": 3841
+  },
+  {
     "question": "What events and meetings are scheduled for August 6, 2026?",
     "answer_start": 11700,
     "answer_text": "Annual Language Indaba\nCPUTRF Admin and Benefits Committee (12:30)\nCPUTRF Finance, Investment and Audit Committee (14:00"
+  },
+  {
+    "question": "What event is scheduled for August 6, 2026?",
+    "answer_text": "Annual Language Indaba\nCPUTRF Admin and Benefits Committee (12:30)\nCPUTRF Finance, Investment and Audit Committee (14:00",
+    "answer_start": 11700
+  },
+  {
+    "question": "What is scheduled for August 6, 2026?",
+    "answer_text": "Annual Language Indaba\nCPUTRF Admin and Benefits Committee (12:30)\nCPUTRF Finance, Investment and Audit Committee (14:00",
+    "answer_start": 11700
+  },
+  {
+    "question": "August 6, 2026 - what event?",
+    "answer_text": "Annual Language Indaba\nCPUTRF Admin and Benefits Committee (12:30)\nCPUTRF Finance, Investment and Audit Committee (14:00",
+    "answer_start": 11700
+  },
+  {
+    "question": "August 6, 2026: what's on?",
+    "answer_text": "Annual Language Indaba\nCPUTRF Admin and Benefits Committee (12:30)\nCPUTRF Finance, Investment and Audit Committee (14:00",
+    "answer_start": 11700
+  },
+  {
+    "question": "What's on August 6, 2026?",
+    "answer_text": "Annual Language Indaba\nCPUTRF Admin and Benefits Committee (12:30)\nCPUTRF Finance, Investment and Audit Committee (14:00",
+    "answer_start": 11700
   },
   {
     "question": "What meetings are scheduled for August 7, 2026?",
@@ -325,9 +1925,59 @@
     "answer_text": "Investment Sub-Committee (09:00)\nCouncil Finance Committee (13:00)"
   },
   {
+    "question": "What event is scheduled for August 7, 2026?",
+    "answer_text": "Investment Sub-Committee (09:00)\nCouncil Finance Committee (13:00)",
+    "answer_start": 1742
+  },
+  {
+    "question": "What is scheduled for August 7, 2026?",
+    "answer_text": "Investment Sub-Committee (09:00)\nCouncil Finance Committee (13:00)",
+    "answer_start": 1742
+  },
+  {
+    "question": "August 7, 2026 - what event?",
+    "answer_text": "Investment Sub-Committee (09:00)\nCouncil Finance Committee (13:00)",
+    "answer_start": 1742
+  },
+  {
+    "question": "August 7, 2026: what's on?",
+    "answer_text": "Investment Sub-Committee (09:00)\nCouncil Finance Committee (13:00)",
+    "answer_start": 1742
+  },
+  {
+    "question": "What's on August 7, 2026?",
+    "answer_text": "Investment Sub-Committee (09:00)\nCouncil Finance Committee (13:00)",
+    "answer_start": 1742
+  },
+  {
     "question": "What meeting is scheduled for August 13, 2026?",
     "answer_start": 2209,
     "answer_text": "Executive Committee of Senate\n(12:00)"
+  },
+  {
+    "question": "What event is scheduled for August 13, 2026?",
+    "answer_text": "Executive Committee of Senate\n(12:00)",
+    "answer_start": 2209
+  },
+  {
+    "question": "What is scheduled for August 13, 2026?",
+    "answer_text": "Executive Committee of Senate\n(12:00)",
+    "answer_start": 2209
+  },
+  {
+    "question": "August 13, 2026 - what event?",
+    "answer_text": "Executive Committee of Senate\n(12:00)",
+    "answer_start": 2209
+  },
+  {
+    "question": "August 13, 2026: what's on?",
+    "answer_text": "Executive Committee of Senate\n(12:00)",
+    "answer_start": 2209
+  },
+  {
+    "question": "What's on August 13, 2026?",
+    "answer_text": "Executive Committee of Senate\n(12:00)",
+    "answer_start": 2209
   },
   {
     "question": "What forum is scheduled for August 14, 2026?",
@@ -335,9 +1985,59 @@
     "answer_text": "Deans and Directors Forum (09:00)"
   },
   {
+    "question": "What event is scheduled for August 14, 2026?",
+    "answer_text": "Deans and Directors Forum (09:00)",
+    "answer_start": 952
+  },
+  {
+    "question": "What is scheduled for August 14, 2026?",
+    "answer_text": "Deans and Directors Forum (09:00)",
+    "answer_start": 952
+  },
+  {
+    "question": "August 14, 2026 - what event?",
+    "answer_text": "Deans and Directors Forum (09:00)",
+    "answer_start": 952
+  },
+  {
+    "question": "August 14, 2026: what's on?",
+    "answer_text": "Deans and Directors Forum (09:00)",
+    "answer_start": 952
+  },
+  {
+    "question": "What's on August 14, 2026?",
+    "answer_text": "Deans and Directors Forum (09:00)",
+    "answer_start": 952
+  },
+  {
     "question": "What meeting is scheduled for August 26, 2026?",
     "answer_start": 212,
     "answer_text": "Management Committee (09:00)"
+  },
+  {
+    "question": "What event is scheduled for August 26, 2026?",
+    "answer_text": "Management Committee (09:00)",
+    "answer_start": 212
+  },
+  {
+    "question": "What is scheduled for August 26, 2026?",
+    "answer_text": "Management Committee (09:00)",
+    "answer_start": 212
+  },
+  {
+    "question": "August 26, 2026 - what event?",
+    "answer_text": "Management Committee (09:00)",
+    "answer_start": 212
+  },
+  {
+    "question": "August 26, 2026: what's on?",
+    "answer_text": "Management Committee (09:00)",
+    "answer_start": 212
+  },
+  {
+    "question": "What's on August 26, 2026?",
+    "answer_text": "Management Committee (09:00)",
+    "answer_start": 212
   },
   {
     "question": "What forum is scheduled for September 1, 2026?",
@@ -345,9 +2045,59 @@
     "answer_text": "Deans and Directors Forum (09:00)"
   },
   {
+    "question": "What event is scheduled for September 1, 2026?",
+    "answer_text": "Deans and Directors Forum (09:00)",
+    "answer_start": 952
+  },
+  {
+    "question": "What is scheduled for September 1, 2026?",
+    "answer_text": "Deans and Directors Forum (09:00)",
+    "answer_start": 952
+  },
+  {
+    "question": "September 1, 2026 - what event?",
+    "answer_text": "Deans and Directors Forum (09:00)",
+    "answer_start": 952
+  },
+  {
+    "question": "September 1, 2026: what's on?",
+    "answer_text": "Deans and Directors Forum (09:00)",
+    "answer_start": 952
+  },
+  {
+    "question": "What's on September 1, 2026?",
+    "answer_text": "Deans and Directors Forum (09:00)",
+    "answer_start": 952
+  },
+  {
     "question": "What forum and meeting are scheduled for September 3, 2026?",
     "answer_start": 12923,
     "answer_text": "Institutional Quality Forum (09:00)\nCPUTRF Special Finance, Investment and Audit Committee: Risk Policy Review (14:00"
+  },
+  {
+    "question": "What event is scheduled for September 3, 2026?",
+    "answer_text": "Institutional Quality Forum (09:00)\nCPUTRF Special Finance, Investment and Audit Committee: Risk Policy Review (14:00",
+    "answer_start": 12923
+  },
+  {
+    "question": "What is scheduled for September 3, 2026?",
+    "answer_text": "Institutional Quality Forum (09:00)\nCPUTRF Special Finance, Investment and Audit Committee: Risk Policy Review (14:00",
+    "answer_start": 12923
+  },
+  {
+    "question": "September 3, 2026 - what event?",
+    "answer_text": "Institutional Quality Forum (09:00)\nCPUTRF Special Finance, Investment and Audit Committee: Risk Policy Review (14:00",
+    "answer_start": 12923
+  },
+  {
+    "question": "September 3, 2026: what's on?",
+    "answer_text": "Institutional Quality Forum (09:00)\nCPUTRF Special Finance, Investment and Audit Committee: Risk Policy Review (14:00",
+    "answer_start": 12923
+  },
+  {
+    "question": "What's on September 3, 2026?",
+    "answer_text": "Institutional Quality Forum (09:00)\nCPUTRF Special Finance, Investment and Audit Committee: Risk Policy Review (14:00",
+    "answer_start": 12923
   },
   {
     "question": "What events and meetings are scheduled for September 4, 2026?",
@@ -355,9 +2105,59 @@
     "answer_text": "END OF TERM 3 SARETEC Management Committee (09:00)\nInstitutional Business Continuity Forum (14:00)"
   },
   {
+    "question": "What event is scheduled for September 4, 2026?",
+    "answer_text": "END OF TERM 3 SARETEC Management Committee (09:00)\nInstitutional Business Continuity Forum (14:00)",
+    "answer_start": 13072
+  },
+  {
+    "question": "What is scheduled for September 4, 2026?",
+    "answer_text": "END OF TERM 3 SARETEC Management Committee (09:00)\nInstitutional Business Continuity Forum (14:00)",
+    "answer_start": 13072
+  },
+  {
+    "question": "September 4, 2026 - what event?",
+    "answer_text": "END OF TERM 3 SARETEC Management Committee (09:00)\nInstitutional Business Continuity Forum (14:00)",
+    "answer_start": 13072
+  },
+  {
+    "question": "September 4, 2026: what's on?",
+    "answer_text": "END OF TERM 3 SARETEC Management Committee (09:00)\nInstitutional Business Continuity Forum (14:00)",
+    "answer_start": 13072
+  },
+  {
+    "question": "What's on September 4, 2026?",
+    "answer_text": "END OF TERM 3 SARETEC Management Committee (09:00)\nInstitutional Business Continuity Forum (14:00)",
+    "answer_start": 13072
+  },
+  {
     "question": "What meeting is scheduled for September 5, 2026?",
     "answer_start": 4202,
     "answer_text": "Council\n(09:00)"
+  },
+  {
+    "question": "What event is scheduled for September 5, 2026?",
+    "answer_text": "Council\n(09:00)",
+    "answer_start": 4202
+  },
+  {
+    "question": "What is scheduled for September 5, 2026?",
+    "answer_text": "Council\n(09:00)",
+    "answer_start": 4202
+  },
+  {
+    "question": "September 5, 2026 - what event?",
+    "answer_text": "Council\n(09:00)",
+    "answer_start": 4202
+  },
+  {
+    "question": "September 5, 2026: what's on?",
+    "answer_text": "Council\n(09:00)",
+    "answer_start": 4202
+  },
+  {
+    "question": "What's on September 5, 2026?",
+    "answer_text": "Council\n(09:00)",
+    "answer_start": 4202
   },
   {
     "question": "What status is listed for September 8 to September 11, 2026?",
@@ -365,9 +2165,59 @@
     "answer_text": "RECESS"
   },
   {
+    "question": "What event is scheduled for September 8?",
+    "answer_text": "RECESS",
+    "answer_start": 4364
+  },
+  {
+    "question": "What is scheduled for September 8?",
+    "answer_text": "RECESS",
+    "answer_start": 4364
+  },
+  {
+    "question": "September 8 - what event?",
+    "answer_text": "RECESS",
+    "answer_start": 4364
+  },
+  {
+    "question": "September 8: what's on?",
+    "answer_text": "RECESS",
+    "answer_start": 4364
+  },
+  {
+    "question": "What's on September 8?",
+    "answer_text": "RECESS",
+    "answer_start": 4364
+  },
+  {
     "question": "What events and meetings are scheduled for September 14, 2026?",
     "answer_start": 13281,
     "answer_text": "START OF TERM 4\nSenate Library Committee\n(13:00)\nMedia Mingle (MCD) (10:00)"
+  },
+  {
+    "question": "What event is scheduled for September 14, 2026?",
+    "answer_text": "START OF TERM 4\nSenate Library Committee\n(13:00)\nMedia Mingle (MCD) (10:00)",
+    "answer_start": 13281
+  },
+  {
+    "question": "What is scheduled for September 14, 2026?",
+    "answer_text": "START OF TERM 4\nSenate Library Committee\n(13:00)\nMedia Mingle (MCD) (10:00)",
+    "answer_start": 13281
+  },
+  {
+    "question": "September 14, 2026 - what event?",
+    "answer_text": "START OF TERM 4\nSenate Library Committee\n(13:00)\nMedia Mingle (MCD) (10:00)",
+    "answer_start": 13281
+  },
+  {
+    "question": "September 14, 2026: what's on?",
+    "answer_text": "START OF TERM 4\nSenate Library Committee\n(13:00)\nMedia Mingle (MCD) (10:00)",
+    "answer_start": 13281
+  },
+  {
+    "question": "What's on September 14, 2026?",
+    "answer_text": "START OF TERM 4\nSenate Library Committee\n(13:00)\nMedia Mingle (MCD) (10:00)",
+    "answer_start": 13281
   },
   {
     "question": "What meetings and calls are scheduled for September 15, 2026?",
@@ -375,9 +2225,59 @@
     "answer_text": "Institutional Strategic Planning Committee (09:00)\nConference Committee 4th call\nResearch Exchange Programme 4th call"
   },
   {
+    "question": "What event is scheduled for September 15, 2026?",
+    "answer_text": "Institutional Strategic Planning Committee (09:00)\nConference Committee 4th call\nResearch Exchange Programme 4th call",
+    "answer_start": 13360
+  },
+  {
+    "question": "What is scheduled for September 15, 2026?",
+    "answer_text": "Institutional Strategic Planning Committee (09:00)\nConference Committee 4th call\nResearch Exchange Programme 4th call",
+    "answer_start": 13360
+  },
+  {
+    "question": "September 15, 2026 - what event?",
+    "answer_text": "Institutional Strategic Planning Committee (09:00)\nConference Committee 4th call\nResearch Exchange Programme 4th call",
+    "answer_start": 13360
+  },
+  {
+    "question": "September 15, 2026: what's on?",
+    "answer_text": "Institutional Strategic Planning Committee (09:00)\nConference Committee 4th call\nResearch Exchange Programme 4th call",
+    "answer_start": 13360
+  },
+  {
+    "question": "What's on September 15, 2026?",
+    "answer_text": "Institutional Strategic Planning Committee (09:00)\nConference Committee 4th call\nResearch Exchange Programme 4th call",
+    "answer_start": 13360
+  },
+  {
     "question": "What meeting is scheduled for September 16, 2026?",
     "answer_start": 521,
     "answer_text": "Executive Management Committee (09:00)"
+  },
+  {
+    "question": "What event is scheduled for September 16, 2026?",
+    "answer_text": "Executive Management Committee (09:00)",
+    "answer_start": 521
+  },
+  {
+    "question": "What is scheduled for September 16, 2026?",
+    "answer_text": "Executive Management Committee (09:00)",
+    "answer_start": 521
+  },
+  {
+    "question": "September 16, 2026 - what event?",
+    "answer_text": "Executive Management Committee (09:00)",
+    "answer_start": 521
+  },
+  {
+    "question": "September 16, 2026: what's on?",
+    "answer_text": "Executive Management Committee (09:00)",
+    "answer_start": 521
+  },
+  {
+    "question": "What's on September 16, 2026?",
+    "answer_text": "Executive Management Committee (09:00)",
+    "answer_start": 521
   },
   {
     "question": "What meetings and forums are scheduled for September 17, 2026?",
@@ -385,9 +2285,59 @@
     "answer_text": "Senate Learning and Teaching Committee (09:00)\nUniversity Employment Equity Forum (14:00)"
   },
   {
+    "question": "What event is scheduled for September 17, 2026?",
+    "answer_text": "Senate Learning and Teaching Committee (09:00)\nUniversity Employment Equity Forum (14:00)",
+    "answer_start": 13523
+  },
+  {
+    "question": "What is scheduled for September 17, 2026?",
+    "answer_text": "Senate Learning and Teaching Committee (09:00)\nUniversity Employment Equity Forum (14:00)",
+    "answer_start": 13523
+  },
+  {
+    "question": "September 17, 2026 - what event?",
+    "answer_text": "Senate Learning and Teaching Committee (09:00)\nUniversity Employment Equity Forum (14:00)",
+    "answer_start": 13523
+  },
+  {
+    "question": "September 17, 2026: what's on?",
+    "answer_text": "Senate Learning and Teaching Committee (09:00)\nUniversity Employment Equity Forum (14:00)",
+    "answer_start": 13523
+  },
+  {
+    "question": "What's on September 17, 2026?",
+    "answer_text": "Senate Learning and Teaching Committee (09:00)\nUniversity Employment Equity Forum (14:00)",
+    "answer_start": 13523
+  },
+  {
     "question": "What meetings and deadlines are scheduled for September 18, 2026?",
     "answer_start": 13616,
     "answer_text": "Council Physical Planning Committee (10:00)\nCouncil Human Resources Committee (13:00)\nFaculty Board: Engineering and the Built Environment\n(12:00)\nSubmission of all Second Semester Examination Question Papers to Assessment and Graduation Centre"
+  },
+  {
+    "question": "What event is scheduled for September 18, 2026?",
+    "answer_text": "Council Physical Planning Committee (10:00)\nCouncil Human Resources Committee (13:00)\nFaculty Board: Engineering and the Built Environment\n(12:00)\nSubmission of all Second Semester Examination Question Papers to Assessment and Graduation Centre",
+    "answer_start": 13616
+  },
+  {
+    "question": "What is scheduled for September 18, 2026?",
+    "answer_text": "Council Physical Planning Committee (10:00)\nCouncil Human Resources Committee (13:00)\nFaculty Board: Engineering and the Built Environment\n(12:00)\nSubmission of all Second Semester Examination Question Papers to Assessment and Graduation Centre",
+    "answer_start": 13616
+  },
+  {
+    "question": "September 18, 2026 - what event?",
+    "answer_text": "Council Physical Planning Committee (10:00)\nCouncil Human Resources Committee (13:00)\nFaculty Board: Engineering and the Built Environment\n(12:00)\nSubmission of all Second Semester Examination Question Papers to Assessment and Graduation Centre",
+    "answer_start": 13616
+  },
+  {
+    "question": "September 18, 2026: what's on?",
+    "answer_text": "Council Physical Planning Committee (10:00)\nCouncil Human Resources Committee (13:00)\nFaculty Board: Engineering and the Built Environment\n(12:00)\nSubmission of all Second Semester Examination Question Papers to Assessment and Graduation Centre",
+    "answer_start": 13616
+  },
+  {
+    "question": "What's on September 18, 2026?",
+    "answer_text": "Council Physical Planning Committee (10:00)\nCouncil Human Resources Committee (13:00)\nFaculty Board: Engineering and the Built Environment\n(12:00)\nSubmission of all Second Semester Examination Question Papers to Assessment and Graduation Centre",
+    "answer_start": 13616
   },
   {
     "question": "What meeting is scheduled for September 19, 2026?",
@@ -395,9 +2345,59 @@
     "answer_text": "Convocation AGM"
   },
   {
+    "question": "What event is scheduled for September 19, 2026?",
+    "answer_text": "Convocation AGM",
+    "answer_start": 13864
+  },
+  {
+    "question": "What is scheduled for September 19, 2026?",
+    "answer_text": "Convocation AGM",
+    "answer_start": 13864
+  },
+  {
+    "question": "September 19, 2026 - what event?",
+    "answer_text": "Convocation AGM",
+    "answer_start": 13864
+  },
+  {
+    "question": "September 19, 2026: what's on?",
+    "answer_text": "Convocation AGM",
+    "answer_start": 13864
+  },
+  {
+    "question": "What's on September 19, 2026?",
+    "answer_text": "Convocation AGM",
+    "answer_start": 13864
+  },
+  {
     "question": "What meetings and boards are scheduled for September 21, 2026?",
     "answer_start": 13886,
     "answer_text": "Student Administration Committee (09:00)\nSupply Chain Management Committee (12:00)\nWellington Campus Advisory Board (13:00)"
+  },
+  {
+    "question": "What event is scheduled for September 21, 2026?",
+    "answer_text": "Student Administration Committee (09:00)\nSupply Chain Management Committee (12:00)\nWellington Campus Advisory Board (13:00)",
+    "answer_start": 13886
+  },
+  {
+    "question": "What is scheduled for September 21, 2026?",
+    "answer_text": "Student Administration Committee (09:00)\nSupply Chain Management Committee (12:00)\nWellington Campus Advisory Board (13:00)",
+    "answer_start": 13886
+  },
+  {
+    "question": "September 21, 2026 - what event?",
+    "answer_text": "Student Administration Committee (09:00)\nSupply Chain Management Committee (12:00)\nWellington Campus Advisory Board (13:00)",
+    "answer_start": 13886
+  },
+  {
+    "question": "September 21, 2026: what's on?",
+    "answer_text": "Student Administration Committee (09:00)\nSupply Chain Management Committee (12:00)\nWellington Campus Advisory Board (13:00)",
+    "answer_start": 13886
+  },
+  {
+    "question": "What's on September 21, 2026?",
+    "answer_text": "Student Administration Committee (09:00)\nSupply Chain Management Committee (12:00)\nWellington Campus Advisory Board (13:00)",
+    "answer_start": 13886
   },
   {
     "question": "What meetings are scheduled for September 22, 2026?",
@@ -405,9 +2405,59 @@
     "answer_text": "Management Committee (09:00)\nManagement and Unions (14:00)"
   },
   {
+    "question": "What event is scheduled for September 22, 2026?",
+    "answer_text": "Management Committee (09:00)\nManagement and Unions (14:00)",
+    "answer_start": 8844
+  },
+  {
+    "question": "What is scheduled for September 22, 2026?",
+    "answer_text": "Management Committee (09:00)\nManagement and Unions (14:00)",
+    "answer_start": 8844
+  },
+  {
+    "question": "September 22, 2026 - what event?",
+    "answer_text": "Management Committee (09:00)\nManagement and Unions (14:00)",
+    "answer_start": 8844
+  },
+  {
+    "question": "September 22, 2026: what's on?",
+    "answer_text": "Management Committee (09:00)\nManagement and Unions (14:00)",
+    "answer_start": 8844
+  },
+  {
+    "question": "What's on September 22, 2026?",
+    "answer_text": "Management Committee (09:00)\nManagement and Unions (14:00)",
+    "answer_start": 8844
+  },
+  {
     "question": "What events and meetings are scheduled for September 23, 2026?",
     "answer_start": 14079,
     "answer_text": "WCED SCHOOLS CLOSE\nQuality Assurance and Risk Management Committee (09:00)\nStaffing Committee (13:00)"
+  },
+  {
+    "question": "What event is scheduled for September 23, 2026?",
+    "answer_text": "WCED SCHOOLS CLOSE\nQuality Assurance and Risk Management Committee (09:00)\nStaffing Committee (13:00)",
+    "answer_start": 14079
+  },
+  {
+    "question": "What is scheduled for September 23, 2026?",
+    "answer_text": "WCED SCHOOLS CLOSE\nQuality Assurance and Risk Management Committee (09:00)\nStaffing Committee (13:00)",
+    "answer_start": 14079
+  },
+  {
+    "question": "September 23, 2026 - what event?",
+    "answer_text": "WCED SCHOOLS CLOSE\nQuality Assurance and Risk Management Committee (09:00)\nStaffing Committee (13:00)",
+    "answer_start": 14079
+  },
+  {
+    "question": "September 23, 2026: what's on?",
+    "answer_text": "WCED SCHOOLS CLOSE\nQuality Assurance and Risk Management Committee (09:00)\nStaffing Committee (13:00)",
+    "answer_start": 14079
+  },
+  {
+    "question": "What's on September 23, 2026?",
+    "answer_text": "WCED SCHOOLS CLOSE\nQuality Assurance and Risk Management Committee (09:00)\nStaffing Committee (13:00)",
+    "answer_start": 14079
   },
   {
     "question": "What holiday is on September 24, 2026?",
@@ -415,9 +2465,59 @@
     "answer_text": "HERITAGE DAY"
   },
   {
+    "question": "What event is scheduled for September 24, 2026?",
+    "answer_text": "HERITAGE DAY",
+    "answer_start": 14184
+  },
+  {
+    "question": "What is scheduled for September 24, 2026?",
+    "answer_text": "HERITAGE DAY",
+    "answer_start": 14184
+  },
+  {
+    "question": "September 24, 2026 - what event?",
+    "answer_text": "HERITAGE DAY",
+    "answer_start": 14184
+  },
+  {
+    "question": "September 24, 2026: what's on?",
+    "answer_text": "HERITAGE DAY",
+    "answer_start": 14184
+  },
+  {
+    "question": "What's on September 24, 2026?",
+    "answer_text": "HERITAGE DAY",
+    "answer_start": 14184
+  },
+  {
     "question": "What meeting is scheduled for September 28, 2026?",
     "answer_start": 14300,
     "answer_text": "Senate Language Committee\n(13:00)"
+  },
+  {
+    "question": "What event is scheduled for September 28, 2026?",
+    "answer_text": "Senate Language Committee\n(13:00)",
+    "answer_start": 14300
+  },
+  {
+    "question": "What is scheduled for September 28, 2026?",
+    "answer_text": "Senate Language Committee\n(13:00)",
+    "answer_start": 14300
+  },
+  {
+    "question": "September 28, 2026 - what event?",
+    "answer_text": "Senate Language Committee\n(13:00)",
+    "answer_start": 14300
+  },
+  {
+    "question": "September 28, 2026: what's on?",
+    "answer_text": "Senate Language Committee\n(13:00)",
+    "answer_start": 14300
+  },
+  {
+    "question": "What's on September 28, 2026?",
+    "answer_text": "Senate Language Committee\n(13:00)",
+    "answer_start": 14300
   },
   {
     "question": "What workshop and meeting are scheduled for September 29, 2026?",
@@ -425,9 +2525,59 @@
     "answer_text": "Executive Management Strategic Planning Workshop (09:00)\nInstitutional Gender Based Violence Committee (13:00)"
   },
   {
+    "question": "What event is scheduled for September 29, 2026?",
+    "answer_text": "Executive Management Strategic Planning Workshop (09:00)\nInstitutional Gender Based Violence Committee (13:00)",
+    "answer_start": 14337
+  },
+  {
+    "question": "What is scheduled for September 29, 2026?",
+    "answer_text": "Executive Management Strategic Planning Workshop (09:00)\nInstitutional Gender Based Violence Committee (13:00)",
+    "answer_start": 14337
+  },
+  {
+    "question": "September 29, 2026 - what event?",
+    "answer_text": "Executive Management Strategic Planning Workshop (09:00)\nInstitutional Gender Based Violence Committee (13:00)",
+    "answer_start": 14337
+  },
+  {
+    "question": "September 29, 2026: what's on?",
+    "answer_text": "Executive Management Strategic Planning Workshop (09:00)\nInstitutional Gender Based Violence Committee (13:00)",
+    "answer_start": 14337
+  },
+  {
+    "question": "What's on September 29, 2026?",
+    "answer_text": "Executive Management Strategic Planning Workshop (09:00)\nInstitutional Gender Based Violence Committee (13:00)",
+    "answer_start": 14337
+  },
+  {
     "question": "What meetings are scheduled for September 30, 2026?",
     "answer_start": 14451,
     "answer_text": "Business ICT Committee\n(09:00)\nFaculty Board: Education\n(WC@12:00)\nFaculty Board: Informatics and Design (12:00)\nHotel School Management Board (14:00)"
+  },
+  {
+    "question": "What event is scheduled for September 30, 2026?",
+    "answer_text": "Business ICT Committee\n(09:00)\nFaculty Board: Education\n(WC@12:00)\nFaculty Board: Informatics and Design (12:00)\nHotel School Management Board (14:00)",
+    "answer_start": 14451
+  },
+  {
+    "question": "What is scheduled for September 30, 2026?",
+    "answer_text": "Business ICT Committee\n(09:00)\nFaculty Board: Education\n(WC@12:00)\nFaculty Board: Informatics and Design (12:00)\nHotel School Management Board (14:00)",
+    "answer_start": 14451
+  },
+  {
+    "question": "September 30, 2026 - what event?",
+    "answer_text": "Business ICT Committee\n(09:00)\nFaculty Board: Education\n(WC@12:00)\nFaculty Board: Informatics and Design (12:00)\nHotel School Management Board (14:00)",
+    "answer_start": 14451
+  },
+  {
+    "question": "September 30, 2026: what's on?",
+    "answer_text": "Business ICT Committee\n(09:00)\nFaculty Board: Education\n(WC@12:00)\nFaculty Board: Informatics and Design (12:00)\nHotel School Management Board (14:00)",
+    "answer_start": 14451
+  },
+  {
+    "question": "What's on September 30, 2026?",
+    "answer_text": "Business ICT Committee\n(09:00)\nFaculty Board: Education\n(WC@12:00)\nFaculty Board: Informatics and Design (12:00)\nHotel School Management Board (14:00)",
+    "answer_start": 14451
   },
   {
     "question": "What events and meetings are scheduled for October 2, 2026?",
@@ -435,9 +2585,59 @@
     "answer_text": "Start of assessments\nCouncil IT Governance Committee\n(09:00)\nCouncil Audit and Risk Oversight Committee (13:00)\nInstitutional Orientation Committee\n(09:00)"
   },
   {
+    "question": "What event is scheduled for October 2, 2026?",
+    "answer_text": "Start of assessments\nCouncil IT Governance Committee\n(09:00)\nCouncil Audit and Risk Oversight Committee (13:00)\nInstitutional Orientation Committee\n(09:00)",
+    "answer_start": 14734
+  },
+  {
+    "question": "What is scheduled for October 2, 2026?",
+    "answer_text": "Start of assessments\nCouncil IT Governance Committee\n(09:00)\nCouncil Audit and Risk Oversight Committee (13:00)\nInstitutional Orientation Committee\n(09:00)",
+    "answer_start": 14734
+  },
+  {
+    "question": "October 2, 2026 - what event?",
+    "answer_text": "Start of assessments\nCouncil IT Governance Committee\n(09:00)\nCouncil Audit and Risk Oversight Committee (13:00)\nInstitutional Orientation Committee\n(09:00)",
+    "answer_start": 14734
+  },
+  {
+    "question": "October 2, 2026: what's on?",
+    "answer_text": "Start of assessments\nCouncil IT Governance Committee\n(09:00)\nCouncil Audit and Risk Oversight Committee (13:00)\nInstitutional Orientation Committee\n(09:00)",
+    "answer_start": 14734
+  },
+  {
+    "question": "What's on October 2, 2026?",
+    "answer_text": "Start of assessments\nCouncil IT Governance Committee\n(09:00)\nCouncil Audit and Risk Oversight Committee (13:00)\nInstitutional Orientation Committee\n(09:00)",
+    "answer_start": 14734
+  },
+  {
     "question": "What events and meetings are scheduled for October 6, 2026?",
     "answer_start": 14989,
     "answer_text": "WCED SCHOOLS OPEN\nSenate Research and Innovation Committee (09:00)\nFaculty Board: Applied Sciences\n(@12:00)"
+  },
+  {
+    "question": "What event is scheduled for October 6, 2026?",
+    "answer_text": "WCED SCHOOLS OPEN\nSenate Research and Innovation Committee (09:00)\nFaculty Board: Applied Sciences\n(@12:00)",
+    "answer_start": 14989
+  },
+  {
+    "question": "What is scheduled for October 6, 2026?",
+    "answer_text": "WCED SCHOOLS OPEN\nSenate Research and Innovation Committee (09:00)\nFaculty Board: Applied Sciences\n(@12:00)",
+    "answer_start": 14989
+  },
+  {
+    "question": "October 6, 2026 - what event?",
+    "answer_text": "WCED SCHOOLS OPEN\nSenate Research and Innovation Committee (09:00)\nFaculty Board: Applied Sciences\n(@12:00)",
+    "answer_start": 14989
+  },
+  {
+    "question": "October 6, 2026: what's on?",
+    "answer_text": "WCED SCHOOLS OPEN\nSenate Research and Innovation Committee (09:00)\nFaculty Board: Applied Sciences\n(@12:00)",
+    "answer_start": 14989
+  },
+  {
+    "question": "What's on October 6, 2026?",
+    "answer_text": "WCED SCHOOLS OPEN\nSenate Research and Innovation Committee (09:00)\nFaculty Board: Applied Sciences\n(@12:00)",
+    "answer_start": 14989
   },
   {
     "question": "What meeting is scheduled for October 7, 2026?",
@@ -445,9 +2645,59 @@
     "answer_text": "Management Committee (09:00)"
   },
   {
+    "question": "What event is scheduled for October 7, 2026?",
+    "answer_text": "Management Committee (09:00)",
+    "answer_start": 212
+  },
+  {
+    "question": "What is scheduled for October 7, 2026?",
+    "answer_text": "Management Committee (09:00)",
+    "answer_start": 212
+  },
+  {
+    "question": "October 7, 2026 - what event?",
+    "answer_text": "Management Committee (09:00)",
+    "answer_start": 212
+  },
+  {
+    "question": "October 7, 2026: what's on?",
+    "answer_text": "Management Committee (09:00)",
+    "answer_start": 212
+  },
+  {
+    "question": "What's on October 7, 2026?",
+    "answer_text": "Management Committee (09:00)",
+    "answer_start": 212
+  },
+  {
     "question": "What forums and meetings are scheduled for October 8, 2026?",
     "answer_start": 15130,
     "answer_text": "Institutional Transformation Forum\n(09:00)\nInstitutional Forum (14:00)\nFaculty Board: Business and Management Sciences (09:00)\nCPUTRF Special Finance, Investment and Audit Committee: Investment Strategy Review (@14:00"
+  },
+  {
+    "question": "What event is scheduled for October 8, 2026?",
+    "answer_text": "Institutional Transformation Forum\n(09:00)\nInstitutional Forum (14:00)\nFaculty Board: Business and Management Sciences (09:00)\nCPUTRF Special Finance, Investment and Audit Committee: Investment Strategy Review (@14:00",
+    "answer_start": 15130
+  },
+  {
+    "question": "What is scheduled for October 8, 2026?",
+    "answer_text": "Institutional Transformation Forum\n(09:00)\nInstitutional Forum (14:00)\nFaculty Board: Business and Management Sciences (09:00)\nCPUTRF Special Finance, Investment and Audit Committee: Investment Strategy Review (@14:00",
+    "answer_start": 15130
+  },
+  {
+    "question": "October 8, 2026 - what event?",
+    "answer_text": "Institutional Transformation Forum\n(09:00)\nInstitutional Forum (14:00)\nFaculty Board: Business and Management Sciences (09:00)\nCPUTRF Special Finance, Investment and Audit Committee: Investment Strategy Review (@14:00",
+    "answer_start": 15130
+  },
+  {
+    "question": "October 8, 2026: what's on?",
+    "answer_text": "Institutional Transformation Forum\n(09:00)\nInstitutional Forum (14:00)\nFaculty Board: Business and Management Sciences (09:00)\nCPUTRF Special Finance, Investment and Audit Committee: Investment Strategy Review (@14:00",
+    "answer_start": 15130
+  },
+  {
+    "question": "What's on October 8, 2026?",
+    "answer_text": "Institutional Transformation Forum\n(09:00)\nInstitutional Forum (14:00)\nFaculty Board: Business and Management Sciences (09:00)\nCPUTRF Special Finance, Investment and Audit Committee: Investment Strategy Review (@14:00",
+    "answer_start": 15130
   },
   {
     "question": "What meetings are scheduled for October 9, 2026?",
@@ -455,9 +2705,59 @@
     "answer_text": "Investment Sub-Committee (09:00)\nCouncil Finance Committee (13:00)\nFaculty Board: Health and Wellness Sciences (12:00)"
   },
   {
+    "question": "What event is scheduled for October 9, 2026?",
+    "answer_text": "Investment Sub-Committee (09:00)\nCouncil Finance Committee (13:00)\nFaculty Board: Health and Wellness Sciences (12:00)",
+    "answer_start": 15351
+  },
+  {
+    "question": "What is scheduled for October 9, 2026?",
+    "answer_text": "Investment Sub-Committee (09:00)\nCouncil Finance Committee (13:00)\nFaculty Board: Health and Wellness Sciences (12:00)",
+    "answer_start": 15351
+  },
+  {
+    "question": "October 9, 2026 - what event?",
+    "answer_text": "Investment Sub-Committee (09:00)\nCouncil Finance Committee (13:00)\nFaculty Board: Health and Wellness Sciences (12:00)",
+    "answer_start": 15351
+  },
+  {
+    "question": "October 9, 2026: what's on?",
+    "answer_text": "Investment Sub-Committee (09:00)\nCouncil Finance Committee (13:00)\nFaculty Board: Health and Wellness Sciences (12:00)",
+    "answer_start": 15351
+  },
+  {
+    "question": "What's on October 9, 2026?",
+    "answer_text": "Investment Sub-Committee (09:00)\nCouncil Finance Committee (13:00)\nFaculty Board: Health and Wellness Sciences (12:00)",
+    "answer_start": 15351
+  },
+  {
     "question": "What meeting is scheduled for October 12, 2026?",
     "answer_start": 7681,
     "answer_text": "Naming Committee (14:00)"
+  },
+  {
+    "question": "What event is scheduled for October 12, 2026?",
+    "answer_text": "Naming Committee (14:00)",
+    "answer_start": 7681
+  },
+  {
+    "question": "What is scheduled for October 12, 2026?",
+    "answer_text": "Naming Committee (14:00)",
+    "answer_start": 7681
+  },
+  {
+    "question": "October 12, 2026 - what event?",
+    "answer_text": "Naming Committee (14:00)",
+    "answer_start": 7681
+  },
+  {
+    "question": "October 12, 2026: what's on?",
+    "answer_text": "Naming Committee (14:00)",
+    "answer_start": 7681
+  },
+  {
+    "question": "What's on October 12, 2026?",
+    "answer_text": "Naming Committee (14:00)",
+    "answer_start": 7681
   },
   {
     "question": "What forum and meeting are scheduled for October 13, 2026?",
@@ -465,9 +2765,59 @@
     "answer_text": "Institutional Combined Assurance Forum (online session @09:00)\nExecutive Committee of Senate\n(12:00)"
   },
   {
+    "question": "What event is scheduled for October 13, 2026?",
+    "answer_text": "Institutional Combined Assurance Forum (online session @09:00)\nExecutive Committee of Senate\n(12:00)",
+    "answer_start": 15507
+  },
+  {
+    "question": "What is scheduled for October 13, 2026?",
+    "answer_text": "Institutional Combined Assurance Forum (online session @09:00)\nExecutive Committee of Senate\n(12:00)",
+    "answer_start": 15507
+  },
+  {
+    "question": "October 13, 2026 - what event?",
+    "answer_text": "Institutional Combined Assurance Forum (online session @09:00)\nExecutive Committee of Senate\n(12:00)",
+    "answer_start": 15507
+  },
+  {
+    "question": "October 13, 2026: what's on?",
+    "answer_text": "Institutional Combined Assurance Forum (online session @09:00)\nExecutive Committee of Senate\n(12:00)",
+    "answer_start": 15507
+  },
+  {
+    "question": "What's on October 13, 2026?",
+    "answer_text": "Institutional Combined Assurance Forum (online session @09:00)\nExecutive Committee of Senate\n(12:00)",
+    "answer_start": 15507
+  },
+  {
     "question": "What meetings are scheduled for October 14, 2026?",
     "answer_start": 15611,
     "answer_text": "SARETEC Governance Board Meeting (@9:00)\nManagement and SRC (14:00)"
+  },
+  {
+    "question": "What event is scheduled for October 14, 2026?",
+    "answer_text": "SARETEC Governance Board Meeting (@9:00)\nManagement and SRC (14:00)",
+    "answer_start": 15611
+  },
+  {
+    "question": "What is scheduled for October 14, 2026?",
+    "answer_text": "SARETEC Governance Board Meeting (@9:00)\nManagement and SRC (14:00)",
+    "answer_start": 15611
+  },
+  {
+    "question": "October 14, 2026 - what event?",
+    "answer_text": "SARETEC Governance Board Meeting (@9:00)\nManagement and SRC (14:00)",
+    "answer_start": 15611
+  },
+  {
+    "question": "October 14, 2026: what's on?",
+    "answer_text": "SARETEC Governance Board Meeting (@9:00)\nManagement and SRC (14:00)",
+    "answer_start": 15611
+  },
+  {
+    "question": "What's on October 14, 2026?",
+    "answer_text": "SARETEC Governance Board Meeting (@9:00)\nManagement and SRC (14:00)",
+    "answer_start": 15611
   },
   {
     "question": "What meetings are scheduled for October 16, 2026?",
@@ -475,9 +2825,59 @@
     "answer_text": "Council Honorary Degree Awards Committee (10:00)\nCouncil Remuneration Committee\n(14:00)"
   },
   {
+    "question": "What event is scheduled for October 16, 2026?",
+    "answer_text": "Council Honorary Degree Awards Committee (10:00)\nCouncil Remuneration Committee\n(14:00)",
+    "answer_start": 15725
+  },
+  {
+    "question": "What is scheduled for October 16, 2026?",
+    "answer_text": "Council Honorary Degree Awards Committee (10:00)\nCouncil Remuneration Committee\n(14:00)",
+    "answer_start": 15725
+  },
+  {
+    "question": "October 16, 2026 - what event?",
+    "answer_text": "Council Honorary Degree Awards Committee (10:00)\nCouncil Remuneration Committee\n(14:00)",
+    "answer_start": 15725
+  },
+  {
+    "question": "October 16, 2026: what's on?",
+    "answer_text": "Council Honorary Degree Awards Committee (10:00)\nCouncil Remuneration Committee\n(14:00)",
+    "answer_start": 15725
+  },
+  {
+    "question": "What's on October 16, 2026?",
+    "answer_text": "Council Honorary Degree Awards Committee (10:00)\nCouncil Remuneration Committee\n(14:00)",
+    "answer_start": 15725
+  },
+  {
     "question": "What meeting is scheduled for October 19, 2026?",
     "answer_start": 563,
     "answer_text": "Supply Chain Management Committee (09:00)"
+  },
+  {
+    "question": "What event is scheduled for October 19, 2026?",
+    "answer_text": "Supply Chain Management Committee (09:00)",
+    "answer_start": 563
+  },
+  {
+    "question": "What is scheduled for October 19, 2026?",
+    "answer_text": "Supply Chain Management Committee (09:00)",
+    "answer_start": 563
+  },
+  {
+    "question": "October 19, 2026 - what event?",
+    "answer_text": "Supply Chain Management Committee (09:00)",
+    "answer_start": 563
+  },
+  {
+    "question": "October 19, 2026: what's on?",
+    "answer_text": "Supply Chain Management Committee (09:00)",
+    "answer_start": 563
+  },
+  {
+    "question": "What's on October 19, 2026?",
+    "answer_text": "Supply Chain Management Committee (09:00)",
+    "answer_start": 563
   },
   {
     "question": "What forum is scheduled for October 20, 2026?",
@@ -485,9 +2885,59 @@
     "answer_text": "University Employment Equity Forum (14:00)"
   },
   {
+    "question": "What event is scheduled for October 20, 2026?",
+    "answer_text": "University Employment Equity Forum (14:00)",
+    "answer_start": 2978
+  },
+  {
+    "question": "What is scheduled for October 20, 2026?",
+    "answer_text": "University Employment Equity Forum (14:00)",
+    "answer_start": 2978
+  },
+  {
+    "question": "October 20, 2026 - what event?",
+    "answer_text": "University Employment Equity Forum (14:00)",
+    "answer_start": 2978
+  },
+  {
+    "question": "October 20, 2026: what's on?",
+    "answer_text": "University Employment Equity Forum (14:00)",
+    "answer_start": 2978
+  },
+  {
+    "question": "What's on October 20, 2026?",
+    "answer_text": "University Employment Equity Forum (14:00)",
+    "answer_start": 2978
+  },
+  {
     "question": "What meeting is scheduled for October 21, 2026?",
     "answer_start": 521,
     "answer_text": "Executive Management Committee (09:00)"
+  },
+  {
+    "question": "What event is scheduled for October 21, 2026?",
+    "answer_text": "Executive Management Committee (09:00)",
+    "answer_start": 521
+  },
+  {
+    "question": "What is scheduled for October 21, 2026?",
+    "answer_text": "Executive Management Committee (09:00)",
+    "answer_start": 521
+  },
+  {
+    "question": "October 21, 2026 - what event?",
+    "answer_text": "Executive Management Committee (09:00)",
+    "answer_start": 521
+  },
+  {
+    "question": "October 21, 2026: what's on?",
+    "answer_text": "Executive Management Committee (09:00)",
+    "answer_start": 521
+  },
+  {
+    "question": "What's on October 21, 2026?",
+    "answer_text": "Executive Management Committee (09:00)",
+    "answer_start": 521
   },
   {
     "question": "What forum and training are scheduled for October 22, 2026?",
@@ -495,9 +2945,59 @@
     "answer_text": "Deans and Directors Forum\n(09:00)\nCPUTRF Trustee Training Session (12:00)"
   },
   {
+    "question": "What event is scheduled for October 22, 2026?",
+    "answer_text": "Deans and Directors Forum\n(09:00)\nCPUTRF Trustee Training Session (12:00)",
+    "answer_start": 15955
+  },
+  {
+    "question": "What is scheduled for October 22, 2026?",
+    "answer_text": "Deans and Directors Forum\n(09:00)\nCPUTRF Trustee Training Session (12:00)",
+    "answer_start": 15955
+  },
+  {
+    "question": "October 22, 2026 - what event?",
+    "answer_text": "Deans and Directors Forum\n(09:00)\nCPUTRF Trustee Training Session (12:00)",
+    "answer_start": 15955
+  },
+  {
+    "question": "October 22, 2026: what's on?",
+    "answer_text": "Deans and Directors Forum\n(09:00)\nCPUTRF Trustee Training Session (12:00)",
+    "answer_start": 15955
+  },
+  {
+    "question": "What's on October 22, 2026?",
+    "answer_text": "Deans and Directors Forum\n(09:00)\nCPUTRF Trustee Training Session (12:00)",
+    "answer_start": 15955
+  },
+  {
     "question": "What forum is scheduled for October 23, 2026?",
     "answer_start": 8,
     "answer_text": " 2026\nSUNDAY\nMONDAY\nTUESDAY\nWEDNE"
+  },
+  {
+    "question": "What event is scheduled for October 23, 2026?",
+    "answer_text": " 2026\nSUNDAY\nMONDAY\nTUESDAY\nWEDNE",
+    "answer_start": 8
+  },
+  {
+    "question": "What is scheduled for October 23, 2026?",
+    "answer_text": " 2026\nSUNDAY\nMONDAY\nTUESDAY\nWEDNE",
+    "answer_start": 8
+  },
+  {
+    "question": "October 23, 2026 - what event?",
+    "answer_text": " 2026\nSUNDAY\nMONDAY\nTUESDAY\nWEDNE",
+    "answer_start": 8
+  },
+  {
+    "question": "October 23, 2026: what's on?",
+    "answer_text": " 2026\nSUNDAY\nMONDAY\nTUESDAY\nWEDNE",
+    "answer_start": 8
+  },
+  {
+    "question": "What's on October 23, 2026?",
+    "answer_text": " 2026\nSUNDAY\nMONDAY\nTUESDAY\nWEDNE",
+    "answer_start": 8
   },
   {
     "question": "What meeting is scheduled for October 26, 2026?",
@@ -505,9 +3005,59 @@
     "answer_text": "Staffing Committee\n(09:00)"
   },
   {
+    "question": "What event is scheduled for October 26, 2026?",
+    "answer_text": "Staffing Committee\n(09:00)",
+    "answer_start": 17639
+  },
+  {
+    "question": "What is scheduled for October 26, 2026?",
+    "answer_text": "Staffing Committee\n(09:00)",
+    "answer_start": 17639
+  },
+  {
+    "question": "October 26, 2026 - what event?",
+    "answer_text": "Staffing Committee\n(09:00)",
+    "answer_start": 17639
+  },
+  {
+    "question": "October 26, 2026: what's on?",
+    "answer_text": "Staffing Committee\n(09:00)",
+    "answer_start": 17639
+  },
+  {
+    "question": "What's on October 26, 2026?",
+    "answer_text": "Staffing Committee\n(09:00)",
+    "answer_start": 17639
+  },
+  {
     "question": "What meeting is scheduled for November 4, 2026?",
     "answer_start": 212,
     "answer_text": "Management Committee (09:00)"
+  },
+  {
+    "question": "What event is scheduled for November 4, 2026?",
+    "answer_text": "Management Committee (09:00)",
+    "answer_start": 212
+  },
+  {
+    "question": "What is scheduled for November 4, 2026?",
+    "answer_text": "Management Committee (09:00)",
+    "answer_start": 212
+  },
+  {
+    "question": "November 4, 2026 - what event?",
+    "answer_text": "Management Committee (09:00)",
+    "answer_start": 212
+  },
+  {
+    "question": "November 4, 2026: what's on?",
+    "answer_text": "Management Committee (09:00)",
+    "answer_start": 212
+  },
+  {
+    "question": "What's on November 4, 2026?",
+    "answer_text": "Management Committee (09:00)",
+    "answer_start": 212
   },
   {
     "question": "What meetings are scheduled for November 5, 2026?",
@@ -515,9 +3065,59 @@
     "answer_text": "Qualifications Evaluation Committee (@09:00)\nSpecial Executive Committee of Senate (Grad Lists Only)\n(14:00)\nCPUTRF Admin and Benefits Committee (12:30)\nCPUTRF Finance, Investment and Audit Committee (14:00"
   },
   {
+    "question": "What event is scheduled for November 5, 2026?",
+    "answer_text": "Qualifications Evaluation Committee (@09:00)\nSpecial Executive Committee of Senate (Grad Lists Only)\n(14:00)\nCPUTRF Admin and Benefits Committee (12:30)\nCPUTRF Finance, Investment and Audit Committee (14:00",
+    "answer_start": 16553
+  },
+  {
+    "question": "What is scheduled for November 5, 2026?",
+    "answer_text": "Qualifications Evaluation Committee (@09:00)\nSpecial Executive Committee of Senate (Grad Lists Only)\n(14:00)\nCPUTRF Admin and Benefits Committee (12:30)\nCPUTRF Finance, Investment and Audit Committee (14:00",
+    "answer_start": 16553
+  },
+  {
+    "question": "November 5, 2026 - what event?",
+    "answer_text": "Qualifications Evaluation Committee (@09:00)\nSpecial Executive Committee of Senate (Grad Lists Only)\n(14:00)\nCPUTRF Admin and Benefits Committee (12:30)\nCPUTRF Finance, Investment and Audit Committee (14:00",
+    "answer_start": 16553
+  },
+  {
+    "question": "November 5, 2026: what's on?",
+    "answer_text": "Qualifications Evaluation Committee (@09:00)\nSpecial Executive Committee of Senate (Grad Lists Only)\n(14:00)\nCPUTRF Admin and Benefits Committee (12:30)\nCPUTRF Finance, Investment and Audit Committee (14:00",
+    "answer_start": 16553
+  },
+  {
+    "question": "What's on November 5, 2026?",
+    "answer_text": "Qualifications Evaluation Committee (@09:00)\nSpecial Executive Committee of Senate (Grad Lists Only)\n(14:00)\nCPUTRF Admin and Benefits Committee (12:30)\nCPUTRF Finance, Investment and Audit Committee (14:00",
+    "answer_start": 16553
+  },
+  {
     "question": "What forum and meeting are scheduled for November 6, 2026?",
     "answer_start": 16763,
     "answer_text": "Institutional Quality Forum (09:00)\nExecutive Committee of Council\n(10:00)"
+  },
+  {
+    "question": "What event is scheduled for November 6, 2026?",
+    "answer_text": "Institutional Quality Forum (09:00)\nExecutive Committee of Council\n(10:00)",
+    "answer_start": 16763
+  },
+  {
+    "question": "What is scheduled for November 6, 2026?",
+    "answer_text": "Institutional Quality Forum (09:00)\nExecutive Committee of Council\n(10:00)",
+    "answer_start": 16763
+  },
+  {
+    "question": "November 6, 2026 - what event?",
+    "answer_text": "Institutional Quality Forum (09:00)\nExecutive Committee of Council\n(10:00)",
+    "answer_start": 16763
+  },
+  {
+    "question": "November 6, 2026: what's on?",
+    "answer_text": "Institutional Quality Forum (09:00)\nExecutive Committee of Council\n(10:00)",
+    "answer_start": 16763
+  },
+  {
+    "question": "What's on November 6, 2026?",
+    "answer_text": "Institutional Quality Forum (09:00)\nExecutive Committee of Council\n(10:00)",
+    "answer_start": 16763
   },
   {
     "question": "What meeting is scheduled for November 7, 2026?",
@@ -525,9 +3125,59 @@
     "answer_text": "Convocation Executive Meeting"
   },
   {
+    "question": "What event is scheduled for November 7, 2026?",
+    "answer_text": "Convocation Executive Meeting",
+    "answer_start": 3841
+  },
+  {
+    "question": "What is scheduled for November 7, 2026?",
+    "answer_text": "Convocation Executive Meeting",
+    "answer_start": 3841
+  },
+  {
+    "question": "November 7, 2026 - what event?",
+    "answer_text": "Convocation Executive Meeting",
+    "answer_start": 3841
+  },
+  {
+    "question": "November 7, 2026: what's on?",
+    "answer_text": "Convocation Executive Meeting",
+    "answer_start": 3841
+  },
+  {
+    "question": "What's on November 7, 2026?",
+    "answer_text": "Convocation Executive Meeting",
+    "answer_start": 3841
+  },
+  {
     "question": "What workshop is scheduled for November 10, 2026?",
     "answer_start": 2898,
     "answer_text": "Institutional Strategic Planning Committee: Strategic Planning Workshop (09:00)"
+  },
+  {
+    "question": "What event is scheduled for November 10, 2026?",
+    "answer_text": "Institutional Strategic Planning Committee: Strategic Planning Workshop (09:00)",
+    "answer_start": 2898
+  },
+  {
+    "question": "What is scheduled for November 10, 2026?",
+    "answer_text": "Institutional Strategic Planning Committee: Strategic Planning Workshop (09:00)",
+    "answer_start": 2898
+  },
+  {
+    "question": "November 10, 2026 - what event?",
+    "answer_text": "Institutional Strategic Planning Committee: Strategic Planning Workshop (09:00)",
+    "answer_start": 2898
+  },
+  {
+    "question": "November 10, 2026: what's on?",
+    "answer_text": "Institutional Strategic Planning Committee: Strategic Planning Workshop (09:00)",
+    "answer_start": 2898
+  },
+  {
+    "question": "What's on November 10, 2026?",
+    "answer_text": "Institutional Strategic Planning Committee: Strategic Planning Workshop (09:00)",
+    "answer_start": 2898
   },
   {
     "question": "What workshop is scheduled for November 11, 2026?",
@@ -535,9 +3185,59 @@
     "answer_text": "Institutional Strategic Planning Committee: Strategic Planning Workshop (09:00)"
   },
   {
+    "question": "What event is scheduled for November 11, 2026?",
+    "answer_text": "Institutional Strategic Planning Committee: Strategic Planning Workshop (09:00)",
+    "answer_start": 2898
+  },
+  {
+    "question": "What is scheduled for November 11, 2026?",
+    "answer_text": "Institutional Strategic Planning Committee: Strategic Planning Workshop (09:00)",
+    "answer_start": 2898
+  },
+  {
+    "question": "November 11, 2026 - what event?",
+    "answer_text": "Institutional Strategic Planning Committee: Strategic Planning Workshop (09:00)",
+    "answer_start": 2898
+  },
+  {
+    "question": "November 11, 2026: what's on?",
+    "answer_text": "Institutional Strategic Planning Committee: Strategic Planning Workshop (09:00)",
+    "answer_start": 2898
+  },
+  {
+    "question": "What's on November 11, 2026?",
+    "answer_text": "Institutional Strategic Planning Committee: Strategic Planning Workshop (09:00)",
+    "answer_start": 2898
+  },
+  {
     "question": "What workshop is scheduled for November 12, 2026?",
     "answer_start": 2898,
     "answer_text": "Institutional Strategic Planning Committee: Strategic Planning Workshop (09:00)"
+  },
+  {
+    "question": "What event is scheduled for November 12, 2026?",
+    "answer_text": "Institutional Strategic Planning Committee: Strategic Planning Workshop (09:00)",
+    "answer_start": 2898
+  },
+  {
+    "question": "What is scheduled for November 12, 2026?",
+    "answer_text": "Institutional Strategic Planning Committee: Strategic Planning Workshop (09:00)",
+    "answer_start": 2898
+  },
+  {
+    "question": "November 12, 2026 - what event?",
+    "answer_text": "Institutional Strategic Planning Committee: Strategic Planning Workshop (09:00)",
+    "answer_start": 2898
+  },
+  {
+    "question": "November 12, 2026: what's on?",
+    "answer_text": "Institutional Strategic Planning Committee: Strategic Planning Workshop (09:00)",
+    "answer_start": 2898
+  },
+  {
+    "question": "What's on November 12, 2026?",
+    "answer_text": "Institutional Strategic Planning Committee: Strategic Planning Workshop (09:00)",
+    "answer_start": 2898
   },
   {
     "question": "What workshop is scheduled for November 13, 2026?",
@@ -545,9 +3245,59 @@
     "answer_text": "Institutional Strategic Planning Committee: Strategic Planning Workshop (09:00)"
   },
   {
+    "question": "What event is scheduled for November 13, 2026?",
+    "answer_text": "Institutional Strategic Planning Committee: Strategic Planning Workshop (09:00)",
+    "answer_start": 2898
+  },
+  {
+    "question": "What is scheduled for November 13, 2026?",
+    "answer_text": "Institutional Strategic Planning Committee: Strategic Planning Workshop (09:00)",
+    "answer_start": 2898
+  },
+  {
+    "question": "November 13, 2026 - what event?",
+    "answer_text": "Institutional Strategic Planning Committee: Strategic Planning Workshop (09:00)",
+    "answer_start": 2898
+  },
+  {
+    "question": "November 13, 2026: what's on?",
+    "answer_text": "Institutional Strategic Planning Committee: Strategic Planning Workshop (09:00)",
+    "answer_start": 2898
+  },
+  {
+    "question": "What's on November 13, 2026?",
+    "answer_text": "Institutional Strategic Planning Committee: Strategic Planning Workshop (09:00)",
+    "answer_start": 2898
+  },
+  {
     "question": "What meeting is scheduled for November 17, 2026?",
     "answer_start": 2209,
     "answer_text": "Executive Committee of Senate\n(12:00)"
+  },
+  {
+    "question": "What event is scheduled for November 17, 2026?",
+    "answer_text": "Executive Committee of Senate\n(12:00)",
+    "answer_start": 2209
+  },
+  {
+    "question": "What is scheduled for November 17, 2026?",
+    "answer_text": "Executive Committee of Senate\n(12:00)",
+    "answer_start": 2209
+  },
+  {
+    "question": "November 17, 2026 - what event?",
+    "answer_text": "Executive Committee of Senate\n(12:00)",
+    "answer_start": 2209
+  },
+  {
+    "question": "November 17, 2026: what's on?",
+    "answer_text": "Executive Committee of Senate\n(12:00)",
+    "answer_start": 2209
+  },
+  {
+    "question": "What's on November 17, 2026?",
+    "answer_text": "Executive Committee of Senate\n(12:00)",
+    "answer_start": 2209
   },
   {
     "question": "What meetings are scheduled for November 18, 2026?",
@@ -555,9 +3305,59 @@
     "answer_text": "Executive Management Committee (09:00)\nManagement and Unions (14:00)"
   },
   {
+    "question": "What event is scheduled for November 18, 2026?",
+    "answer_text": "Executive Management Committee (09:00)\nManagement and Unions (14:00)",
+    "answer_start": 8834
+  },
+  {
+    "question": "What is scheduled for November 18, 2026?",
+    "answer_text": "Executive Management Committee (09:00)\nManagement and Unions (14:00)",
+    "answer_start": 8834
+  },
+  {
+    "question": "November 18, 2026 - what event?",
+    "answer_text": "Executive Management Committee (09:00)\nManagement and Unions (14:00)",
+    "answer_start": 8834
+  },
+  {
+    "question": "November 18, 2026: what's on?",
+    "answer_text": "Executive Management Committee (09:00)\nManagement and Unions (14:00)",
+    "answer_start": 8834
+  },
+  {
+    "question": "What's on November 18, 2026?",
+    "answer_text": "Executive Management Committee (09:00)\nManagement and Unions (14:00)",
+    "answer_start": 8834
+  },
+  {
     "question": "What events and meetings are scheduled for November 19, 2026?",
     "answer_start": 17377,
     "answer_text": "International Men’s Day\nSARETEC Governance Board (@09:00)\nPeople’s Management Forum (09:00)\nVC’s Excellence Awards  (Student Leadership & Support Staff service excellence) (18:00)"
+  },
+  {
+    "question": "What event is scheduled for November 19, 2026?",
+    "answer_text": "International Men’s Day\nSARETEC Governance Board (@09:00)\nPeople’s Management Forum (09:00)\nVC’s Excellence Awards  (Student Leadership & Support Staff service excellence) (18:00)",
+    "answer_start": 17377
+  },
+  {
+    "question": "What is scheduled for November 19, 2026?",
+    "answer_text": "International Men’s Day\nSARETEC Governance Board (@09:00)\nPeople’s Management Forum (09:00)\nVC’s Excellence Awards  (Student Leadership & Support Staff service excellence) (18:00)",
+    "answer_start": 17377
+  },
+  {
+    "question": "November 19, 2026 - what event?",
+    "answer_text": "International Men’s Day\nSARETEC Governance Board (@09:00)\nPeople’s Management Forum (09:00)\nVC’s Excellence Awards  (Student Leadership & Support Staff service excellence) (18:00)",
+    "answer_start": 17377
+  },
+  {
+    "question": "November 19, 2026: what's on?",
+    "answer_text": "International Men’s Day\nSARETEC Governance Board (@09:00)\nPeople’s Management Forum (09:00)\nVC’s Excellence Awards  (Student Leadership & Support Staff service excellence) (18:00)",
+    "answer_start": 17377
+  },
+  {
+    "question": "What's on November 19, 2026?",
+    "answer_text": "International Men’s Day\nSARETEC Governance Board (@09:00)\nPeople’s Management Forum (09:00)\nVC’s Excellence Awards  (Student Leadership & Support Staff service excellence) (18:00)",
+    "answer_start": 17377
   },
   {
     "question": "What events and meetings are scheduled for November 20, 2026?",
@@ -565,9 +3365,59 @@
     "answer_text": "Council Strategic Planning (09:00)\nEnd of assessments"
   },
   {
+    "question": "What event is scheduled for November 20, 2026?",
+    "answer_text": "Council Strategic Planning (09:00)\nEnd of assessments",
+    "answer_start": 17560
+  },
+  {
+    "question": "What is scheduled for November 20, 2026?",
+    "answer_text": "Council Strategic Planning (09:00)\nEnd of assessments",
+    "answer_start": 17560
+  },
+  {
+    "question": "November 20, 2026 - what event?",
+    "answer_text": "Council Strategic Planning (09:00)\nEnd of assessments",
+    "answer_start": 17560
+  },
+  {
+    "question": "November 20, 2026: what's on?",
+    "answer_text": "Council Strategic Planning (09:00)\nEnd of assessments",
+    "answer_start": 17560
+  },
+  {
+    "question": "What's on November 20, 2026?",
+    "answer_text": "Council Strategic Planning (09:00)\nEnd of assessments",
+    "answer_start": 17560
+  },
+  {
     "question": "What meeting is scheduled for November 21, 2026?",
     "answer_start": 4202,
     "answer_text": "Council\n(09:00)"
+  },
+  {
+    "question": "What event is scheduled for November 21, 2026?",
+    "answer_text": "Council\n(09:00)",
+    "answer_start": 4202
+  },
+  {
+    "question": "What is scheduled for November 21, 2026?",
+    "answer_text": "Council\n(09:00)",
+    "answer_start": 4202
+  },
+  {
+    "question": "November 21, 2026 - what event?",
+    "answer_text": "Council\n(09:00)",
+    "answer_start": 4202
+  },
+  {
+    "question": "November 21, 2026: what's on?",
+    "answer_text": "Council\n(09:00)",
+    "answer_start": 4202
+  },
+  {
+    "question": "What's on November 21, 2026?",
+    "answer_text": "Council\n(09:00)",
+    "answer_start": 4202
   },
   {
     "question": "What meeting is scheduled for November 23, 2026?",
@@ -575,9 +3425,59 @@
     "answer_text": " 2026\nSUNDAY\nMONDAY\nTUESDA"
   },
   {
+    "question": "What event is scheduled for November 23, 2026?",
+    "answer_text": " 2026\nSUNDAY\nMONDAY\nTUESDA",
+    "answer_start": 8
+  },
+  {
+    "question": "What is scheduled for November 23, 2026?",
+    "answer_text": " 2026\nSUNDAY\nMONDAY\nTUESDA",
+    "answer_start": 8
+  },
+  {
+    "question": "November 23, 2026 - what event?",
+    "answer_text": " 2026\nSUNDAY\nMONDAY\nTUESDA",
+    "answer_start": 8
+  },
+  {
+    "question": "November 23, 2026: what's on?",
+    "answer_text": " 2026\nSUNDAY\nMONDAY\nTUESDA",
+    "answer_start": 8
+  },
+  {
+    "question": "What's on November 23, 2026?",
+    "answer_text": " 2026\nSUNDAY\nMONDAY\nTUESDA",
+    "answer_start": 8
+  },
+  {
     "question": "What event and forum are scheduled for December 1, 2026?",
     "answer_start": 18057,
     "answer_text": "World Aids Day\nStrategic Deans and Directors Forum (09:00)"
+  },
+  {
+    "question": "What event is scheduled for December 1, 2026?",
+    "answer_text": "World Aids Day\nStrategic Deans and Directors Forum (09:00)",
+    "answer_start": 18057
+  },
+  {
+    "question": "What is scheduled for December 1, 2026?",
+    "answer_text": "World Aids Day\nStrategic Deans and Directors Forum (09:00)",
+    "answer_start": 18057
+  },
+  {
+    "question": "December 1, 2026 - what event?",
+    "answer_text": "World Aids Day\nStrategic Deans and Directors Forum (09:00)",
+    "answer_start": 18057
+  },
+  {
+    "question": "December 1, 2026: what's on?",
+    "answer_text": "World Aids Day\nStrategic Deans and Directors Forum (09:00)",
+    "answer_start": 18057
+  },
+  {
+    "question": "What's on December 1, 2026?",
+    "answer_text": "World Aids Day\nStrategic Deans and Directors Forum (09:00)",
+    "answer_start": 18057
   },
   {
     "question": "What forum is scheduled for December 2, 2026?",
@@ -585,9 +3485,59 @@
     "answer_text": "Strategic Deans and Directors Forum (09:00)"
   },
   {
+    "question": "What event is scheduled for December 2, 2026?",
+    "answer_text": "Strategic Deans and Directors Forum (09:00)",
+    "answer_start": 18072
+  },
+  {
+    "question": "What is scheduled for December 2, 2026?",
+    "answer_text": "Strategic Deans and Directors Forum (09:00)",
+    "answer_start": 18072
+  },
+  {
+    "question": "December 2, 2026 - what event?",
+    "answer_text": "Strategic Deans and Directors Forum (09:00)",
+    "answer_start": 18072
+  },
+  {
+    "question": "December 2, 2026: what's on?",
+    "answer_text": "Strategic Deans and Directors Forum (09:00)",
+    "answer_start": 18072
+  },
+  {
+    "question": "What's on December 2, 2026?",
+    "answer_text": "Strategic Deans and Directors Forum (09:00)",
+    "answer_start": 18072
+  },
+  {
     "question": "What special day and forum are scheduled for December 3, 2026?",
     "answer_start": 18164,
     "answer_text": "International Disability Day\nStrategic Deans and Directors Forum (09:00)"
+  },
+  {
+    "question": "What event is scheduled for December 3, 2026?",
+    "answer_text": "International Disability Day\nStrategic Deans and Directors Forum (09:00)",
+    "answer_start": 18164
+  },
+  {
+    "question": "What is scheduled for December 3, 2026?",
+    "answer_text": "International Disability Day\nStrategic Deans and Directors Forum (09:00)",
+    "answer_start": 18164
+  },
+  {
+    "question": "December 3, 2026 - what event?",
+    "answer_text": "International Disability Day\nStrategic Deans and Directors Forum (09:00)",
+    "answer_start": 18164
+  },
+  {
+    "question": "December 3, 2026: what's on?",
+    "answer_text": "International Disability Day\nStrategic Deans and Directors Forum (09:00)",
+    "answer_start": 18164
+  },
+  {
+    "question": "What's on December 3, 2026?",
+    "answer_text": "International Disability Day\nStrategic Deans and Directors Forum (09:00)",
+    "answer_start": 18164
   },
   {
     "question": "What meeting is scheduled for December 4, 2026?",
@@ -595,9 +3545,59 @@
     "answer_text": "Management Committee Meeting / Strategic Planning Session (09:00)"
   },
   {
+    "question": "What event is scheduled for December 4, 2026?",
+    "answer_text": "Management Committee Meeting / Strategic Planning Session (09:00)",
+    "answer_start": 18239
+  },
+  {
+    "question": "What is scheduled for December 4, 2026?",
+    "answer_text": "Management Committee Meeting / Strategic Planning Session (09:00)",
+    "answer_start": 18239
+  },
+  {
+    "question": "December 4, 2026 - what event?",
+    "answer_text": "Management Committee Meeting / Strategic Planning Session (09:00)",
+    "answer_start": 18239
+  },
+  {
+    "question": "December 4, 2026: what's on?",
+    "answer_text": "Management Committee Meeting / Strategic Planning Session (09:00)",
+    "answer_start": 18239
+  },
+  {
+    "question": "What's on December 4, 2026?",
+    "answer_text": "Management Committee Meeting / Strategic Planning Session (09:00)",
+    "answer_start": 18239
+  },
+  {
     "question": "What event is scheduled for December 7, 2026?",
     "answer_start": 9298,
     "answer_text": "Publication of Results"
+  },
+  {
+    "question": "What is scheduled for December 7, 2026?",
+    "answer_text": "Publication of Results",
+    "answer_start": 9298
+  },
+  {
+    "question": "December 7, 2026 - what event?",
+    "answer_text": "Publication of Results",
+    "answer_start": 9298
+  },
+  {
+    "question": "December 7, 2026: what's on?",
+    "answer_text": "Publication of Results",
+    "answer_start": 9298
+  },
+  {
+    "question": "What's on December 7, 2026?",
+    "answer_text": "Publication of Results",
+    "answer_start": 9298
+  },
+  {
+    "question": "Tell me what's scheduled for December 7, 2026",
+    "answer_text": "Publication of Results",
+    "answer_start": 9298
   },
   {
     "question": "What events are scheduled for December 9, 2026?",
@@ -605,9 +3605,59 @@
     "answer_text": "WCED SCHOOLS CLOSE\nSUMMER GRADUATION"
   },
   {
+    "question": "What event is scheduled for December 9, 2026?",
+    "answer_text": "WCED SCHOOLS CLOSE\nSUMMER GRADUATION",
+    "answer_start": 18351
+  },
+  {
+    "question": "What is scheduled for December 9, 2026?",
+    "answer_text": "WCED SCHOOLS CLOSE\nSUMMER GRADUATION",
+    "answer_start": 18351
+  },
+  {
+    "question": "December 9, 2026 - what event?",
+    "answer_text": "WCED SCHOOLS CLOSE\nSUMMER GRADUATION",
+    "answer_start": 18351
+  },
+  {
+    "question": "December 9, 2026: what's on?",
+    "answer_text": "WCED SCHOOLS CLOSE\nSUMMER GRADUATION",
+    "answer_start": 18351
+  },
+  {
+    "question": "What's on December 9, 2026?",
+    "answer_text": "WCED SCHOOLS CLOSE\nSUMMER GRADUATION",
+    "answer_start": 18351
+  },
+  {
     "question": "What events are scheduled for December 11, 2026?",
     "answer_start": 18502,
     "answer_text": "END OF TERM 4\nEnd of Year for Academic Staff"
+  },
+  {
+    "question": "What event is scheduled for December 11, 2026?",
+    "answer_text": "END OF TERM 4\nEnd of Year for Academic Staff",
+    "answer_start": 18502
+  },
+  {
+    "question": "What is scheduled for December 11, 2026?",
+    "answer_text": "END OF TERM 4\nEnd of Year for Academic Staff",
+    "answer_start": 18502
+  },
+  {
+    "question": "December 11, 2026 - what event?",
+    "answer_text": "END OF TERM 4\nEnd of Year for Academic Staff",
+    "answer_start": 18502
+  },
+  {
+    "question": "December 11, 2026: what's on?",
+    "answer_text": "END OF TERM 4\nEnd of Year for Academic Staff",
+    "answer_start": 18502
+  },
+  {
+    "question": "What's on December 11, 2026?",
+    "answer_text": "END OF TERM 4\nEnd of Year for Academic Staff",
+    "answer_start": 18502
   },
   {
     "question": "What event is scheduled for December 14, 2026?",
@@ -615,9 +3665,59 @@
     "answer_text": "Publication of Results FEBE"
   },
   {
+    "question": "What is scheduled for December 14, 2026?",
+    "answer_text": "Publication of Results FEBE",
+    "answer_start": 9451
+  },
+  {
+    "question": "December 14, 2026 - what event?",
+    "answer_text": "Publication of Results FEBE",
+    "answer_start": 9451
+  },
+  {
+    "question": "December 14, 2026: what's on?",
+    "answer_text": "Publication of Results FEBE",
+    "answer_start": 9451
+  },
+  {
+    "question": "What's on December 14, 2026?",
+    "answer_text": "Publication of Results FEBE",
+    "answer_start": 9451
+  },
+  {
+    "question": "Tell me what's scheduled for December 14, 2026",
+    "answer_text": "Publication of Results FEBE",
+    "answer_start": 9451
+  },
+  {
     "question": "What holiday is on December 16, 2026?",
     "answer_start": 18593,
     "answer_text": "DAY OF RECONCILIATION"
+  },
+  {
+    "question": "What event is scheduled for December 16, 2026?",
+    "answer_text": "DAY OF RECONCILIATION",
+    "answer_start": 18593
+  },
+  {
+    "question": "What is scheduled for December 16, 2026?",
+    "answer_text": "DAY OF RECONCILIATION",
+    "answer_start": 18593
+  },
+  {
+    "question": "December 16, 2026 - what event?",
+    "answer_text": "DAY OF RECONCILIATION",
+    "answer_start": 18593
+  },
+  {
+    "question": "December 16, 2026: what's on?",
+    "answer_text": "DAY OF RECONCILIATION",
+    "answer_start": 18593
+  },
+  {
+    "question": "What's on December 16, 2026?",
+    "answer_text": "DAY OF RECONCILIATION",
+    "answer_start": 18593
   },
   {
     "question": "What event is scheduled for December 18, 2026?",
@@ -625,13 +3725,88 @@
     "answer_text": "End of Year for Admin Staff"
   },
   {
+    "question": "What is scheduled for December 18, 2026?",
+    "answer_text": "End of Year for Admin Staff",
+    "answer_start": 18621
+  },
+  {
+    "question": "December 18, 2026 - what event?",
+    "answer_text": "End of Year for Admin Staff",
+    "answer_start": 18621
+  },
+  {
+    "question": "December 18, 2026: what's on?",
+    "answer_text": "End of Year for Admin Staff",
+    "answer_start": 18621
+  },
+  {
+    "question": "What's on December 18, 2026?",
+    "answer_text": "End of Year for Admin Staff",
+    "answer_start": 18621
+  },
+  {
+    "question": "Tell me what's scheduled for December 18, 2026",
+    "answer_text": "End of Year for Admin Staff",
+    "answer_start": 18621
+  },
+  {
     "question": "What holiday is on December 25, 2026?",
     "answer_start": 18670,
     "answer_text": "CHRISTMAS DAY"
   },
   {
+    "question": "What event is scheduled for December 25, 2026?",
+    "answer_text": "CHRISTMAS DAY",
+    "answer_start": 18670
+  },
+  {
+    "question": "What is scheduled for December 25, 2026?",
+    "answer_text": "CHRISTMAS DAY",
+    "answer_start": 18670
+  },
+  {
+    "question": "December 25, 2026 - what event?",
+    "answer_text": "CHRISTMAS DAY",
+    "answer_start": 18670
+  },
+  {
+    "question": "December 25, 2026: what's on?",
+    "answer_text": "CHRISTMAS DAY",
+    "answer_start": 18670
+  },
+  {
+    "question": "What's on December 25, 2026?",
+    "answer_text": "CHRISTMAS DAY",
+    "answer_start": 18670
+  },
+  {
     "question": "What holiday is on December 26, 2026?",
     "answer_start": 18687,
     "answer_text": "DAY OF GOODWILL"
+  },
+  {
+    "question": "What event is scheduled for December 26, 2026?",
+    "answer_text": "DAY OF GOODWILL",
+    "answer_start": 18687
+  },
+  {
+    "question": "What is scheduled for December 26, 2026?",
+    "answer_text": "DAY OF GOODWILL",
+    "answer_start": 18687
+  },
+  {
+    "question": "December 26, 2026 - what event?",
+    "answer_text": "DAY OF GOODWILL",
+    "answer_start": 18687
+  },
+  {
+    "question": "December 26, 2026: what's on?",
+    "answer_text": "DAY OF GOODWILL",
+    "answer_start": 18687
+  },
+  {
+    "question": "What's on December 26, 2026?",
+    "answer_text": "DAY OF GOODWILL",
+    "answer_start": 18687
   }
 ]

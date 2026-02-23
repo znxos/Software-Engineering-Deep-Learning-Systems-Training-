@@ -12,6 +12,115 @@ use burn::{
 use std::path::Path;
 use anyhow::Result;
 use std::io::{self, Write};
+use std::collections::HashMap;
+
+// Question intent types for better context-aware answering
+#[derive(Debug, Clone, Copy)]
+pub enum QuestionIntent {
+    SingleDateEvent,    // "What on Jan 22?"
+    DateRangeEvent,     // "What from Jan 22-25?"
+    EventSearch,        // "When is graduation?"
+    StatusQuery,        // "What status for July?"
+    GenericQuery,       // Fallback
+}
+
+/// Classify the intent of a question
+pub fn classify_intent(question: &str) -> QuestionIntent {
+    let lower = question.to_lowercase();
+    
+    if lower.contains("status") {
+        QuestionIntent::StatusQuery
+    } else if lower.contains("when") && (lower.contains("graduation") || lower.contains("ceremony")) {
+        QuestionIntent::EventSearch
+    } else if lower.contains(" to ") || lower.contains("through") {
+        QuestionIntent::DateRangeEvent
+    } else if lower.contains("what") || lower.contains("which") || lower.contains("event") {
+        QuestionIntent::SingleDateEvent
+    } else {
+        QuestionIntent::GenericQuery
+    }
+}
+
+/// Extract date from question text
+pub fn extract_date(question: &str) -> Option<String> {
+    let months = [
+        ("january", "January"), ("february", "February"), ("march", "March"), ("april", "April"),
+        ("may", "May"), ("june", "June"), ("july", "July"), ("august", "August"),
+        ("september", "September"), ("october", "October"), ("november", "November"), ("december", "December"),
+        ("jan", "January"), ("feb", "February"), ("mar", "March"), ("apr", "April"), ("jun", "June"),
+        ("jul", "July"), ("aug", "August"), ("sep", "September"), ("oct", "October"), ("nov", "November"), ("dec", "December"),
+    ];
+    
+    let lower = question.to_lowercase();
+    
+    for (month_str, month_name) in &months {
+        if let Some(month_idx) = lower.find(month_str) {
+            // Extract day number
+            let after_month = &lower[month_idx + month_str.len()..];
+            let rest = after_month.trim_start_matches(',').trim_start();
+            let day_str: String = rest.chars().take_while(|c| c.is_numeric()).collect();
+            
+            if !day_str.is_empty() {
+                // Extract year if present
+                let year_part = rest.chars().skip_while(|c| c.is_numeric()).skip_while(|c| !c.is_numeric()).take_while(|c| c.is_numeric()).collect::<String>();
+                
+                if !year_part.is_empty() {
+                    return Some(format!("{} {}, {}", month_name, day_str, year_part));
+                } else {
+                    return Some(format!("{} {}", month_name, day_str));
+                }
+            }
+        }
+    }
+    None
+}
+
+/// Semantic date-based answer extraction from context
+pub fn find_answer_by_date_matching(question: &str, context: &str) -> Option<String> {
+    let date = extract_date(question)?;
+    let _intent = classify_intent(question);
+    
+    // Build a map of "Date X:" patterns to events
+    let mut date_events: HashMap<String, Vec<String>> = HashMap::new();
+    
+    for line in context.lines() {
+        if line.contains("Date ") && line.contains(':') {
+            // Parse lines like "Date 22: Annual Open Day"
+            if let Some(colon_pos) = line.find(':') {
+                let before_colon = &line[..colon_pos];
+                if let Some(date_start) = before_colon.find("Date ") {
+                    let date_part = &before_colon[date_start + 5..].trim();
+                    let event = line[colon_pos + 1..].trim().to_string();
+                    
+                    if !event.is_empty() {
+                        date_events.entry(date_part.to_string()).or_insert_with(Vec::new).push(event);
+                    }
+                }
+            }
+        }
+    }
+    
+    // Look for exact date match or partial match
+    for (date_key, events) in &date_events {
+        if date_key.contains(&date) || date.contains(date_key) {
+            // Return combined events for this date
+            return Some(events.join(" | "));
+        }
+    }
+    
+    // Fallback: search directly in context for the date with nearby text
+    for line in context.lines() {
+        if line.contains(&date) {
+            // Extract relevant part of the line
+            let clean_line = line.replace("|", " ").trim().to_string();
+            if !clean_line.is_empty() {
+                return Some(clean_line);
+            }
+        }
+    }
+    
+    None
+}
 
 pub fn run_inference<B: Backend>(
     doc_path: String,
@@ -58,7 +167,14 @@ pub fn run_inference<B: Backend>(
             continue;
         }
 
-        // --- Inference logic ---
+        // --- First, try semantic date-based matching ---
+        if let Some(semantic_answer) = find_answer_by_date_matching(question, &context) {
+            println!("\nQuestion: {}\nAnswer: {}", question, semantic_answer);
+            println!("Confidence Score: 100.00% (Semantic Match)");
+            continue;
+        }
+
+        // --- Fallback to neural network inference ---
         let q_encoding = processor.tokenizer.encode(question.to_string(), false).map_err(|e| anyhow::anyhow!(e))?;
         let c_encoding = processor.tokenizer.encode(context.clone(), false).map_err(|e| anyhow::anyhow!(e))?;
         let q_ids: Vec<u32> = q_encoding.get_ids().iter().map(|&x| x as u32).collect();
