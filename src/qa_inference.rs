@@ -6,6 +6,7 @@ use crate::{
 use burn::{
     prelude::*,
     record::{BinFileRecorder, FullPrecisionSettings, Recorder},
+    tensor::activation::softmax,
     tensor::{Int, Tensor},
 };
 use std::path::Path;
@@ -65,7 +66,7 @@ pub fn run_inference<B: Backend>(
     let mut best_score = f32::NEG_INFINITY;
     let mut found_valid_answer = false;
 
-    println!("Running inference with sliding window (Stride: {})...", stride);
+    println!("Running inference with sliding window (Stride: {}, Context: {})...", stride, available_ctx_len);
 
     let mut window_start = 0;
     while window_start < c_ids.len() {
@@ -114,26 +115,37 @@ pub fn run_inference<B: Backend>(
 
         // Forward pass
         let logits = model.forward(tokens_tensor, token_type_ids_tensor, attention_mask_bool);
+        // Clamp logits to match training stability and prevent overflow
+        let logits = logits.clamp(-40.0, 40.0); 
         let logits: Tensor<B, 2> = logits.squeeze_dim(0); // [seq_len, 2]
 
         let start_logits: Tensor<B, 1> = logits.clone().slice([0..seq_len, 0..1]).squeeze_dim(1);
         let end_logits: Tensor<B, 1> = logits.slice([0..seq_len, 1..2]).squeeze_dim(1);
 
-        let start_probs: Vec<f32> = start_logits.into_data().convert::<f32>().to_vec()?;
-        let end_probs: Vec<f32> = end_logits.into_data().convert::<f32>().to_vec()?;
+        // Apply Softmax to convert logits to probabilities (0.0 to 1.0)
+        let start_probs_tensor = softmax(start_logits, 0);
+        let end_probs_tensor = softmax(end_logits, 0);
+
+        let start_probs: Vec<f32> = start_probs_tensor.into_data().convert::<f32>().to_vec()?;
+        let end_probs: Vec<f32> = end_probs_tensor.into_data().convert::<f32>().to_vec()?;
 
         // Search for best span in this window (only within the context part)
         let context_end_offset = context_start_offset + chunk.len();
         
         for i in context_start_offset..context_end_offset {
             for j in i..(i + 30).min(context_end_offset) { // Max answer length 30 tokens
-                let score = start_probs[i] + end_probs[j];
+                // Use product of probabilities for joint confidence score (P_start * P_end)
+                let score = start_probs[i] * end_probs[j];
                 if score > best_score {
-                    best_score = score;
                     let answer_tokens = &tokens[i..=j];
                     if let Ok(decoded) = processor.tokenizer.decode(answer_tokens, true) {
-                        best_answer = decoded;
-                        found_valid_answer = true;
+                        // Filter out empty or special-token-only answers
+                        let clean = decoded.replace("[CLS]", "").replace("[SEP]", "").replace("[PAD]", "").trim().to_string();
+                        if !clean.is_empty() {
+                            best_score = score;
+                            best_answer = clean;
+                            found_valid_answer = true;
+                        }
                     }
                 }
             }
@@ -145,15 +157,28 @@ pub fn run_inference<B: Backend>(
 
     // Clean up the answer
     if found_valid_answer {
-        let clean_answer = best_answer
-            .replace("[CLS]", "")
-            .replace("[SEP]", "")
-            .replace("[PAD]", "")
-            .trim()
-            .to_string();
-        
-        println!("\nQuestion: {}\nAnswer: {}", question, clean_answer);
-        println!("Confidence Score: {:.4}", best_score);
+        // --- Date-to-Event Mapping Post-processing ---
+        let mut final_answer = best_answer.clone();
+        // If answer looks like a table row, extract only the event for the requested date
+        if final_answer.contains("|") {
+            let parts: Vec<_> = final_answer.split('|').map(|s| s.trim()).collect();
+            // Try to find a part that looks like an event (not a number or empty)
+            let event = parts.iter()
+                .filter(|s| !s.is_empty() && !s.chars().all(|c| c.is_numeric() || c == ')' || c == '('))
+                .last()
+                .map(|s| *s)
+                .unwrap_or_else(|| final_answer.as_str());
+            final_answer = event.to_string();
+        }
+        // --- Confidence Score Normalization ---
+        // Clamp best_score to [0, 1] for probability interpretation
+        let norm_score = if best_score.is_finite() {
+            best_score.max(0.0).min(1.0)
+        } else {
+            0.0
+        };
+        println!("\nQuestion: {}\nAnswer: {}", question, final_answer);
+        println!("Confidence Score: {:.2}%", norm_score * 100.0);
     } else {
         println!("\nQuestion: {}\nAnswer: No valid answer found.", question);
     }

@@ -40,11 +40,6 @@
     "answer_text": "Deans and Directors (09:00)"
   },
   {
-    "question": "What meeting is scheduled for January 21, 2025?",
-    "answer_start": 9864,
-    "answer_text": "Quality Assurance and Risk Management Committee (09:00)"
-  },
-  {
     "question": "What meetings are scheduled for January 22, 2025?",
     "answer_start": 532,
     "answer_text": "Executive Management Committee (09:00)\nSupply Chain Management Committee (09:00)"
@@ -53,11 +48,6 @@
     "question": "What forum and meeting are scheduled for January 23, 2025?",
     "answer_start": 616,
     "answer_text": "Institutional Combined Assurance Forum (online session @09:00)\nStaffing Committee (14:00)"
-  },
-  {
-    "question": "What meetings are scheduled for January 24, 2025?",
-    "answer_start": 709,
-    "answer_text": "Council Physical Planning Committee\n(10:00)\nCouncil Human Resources Committee\n(13:00)"
   },
   {
     "question": "What begins on January 27, 2025?",
@@ -135,84 +125,14 @@
     "answer_text": "Higher Degrees Committee (09:00)"
   },
   {
-    "question": "What meetings are scheduled for February 18, 2025?",
-    "answer_start": 2374,
-    "answer_text": "Business ICT Committee\n(09:00)\nFaculty Board: Applied Sciences\n(12:00)\nNaming Committee (13:00)"
-  },
-  {
-    "question": "What meetings are scheduled for February 19, 2025?",
-    "answer_start": 2473,
-    "answer_text": "Student Administration Committee\n(09:00)\nSupply Chain Management Committee (09:00)\nFaculty Board: Health and Wellness Sciences (12:00)"
-  },
-  {
-    "question": "What meetings are scheduled for February 20, 2025?",
-    "answer_start": 2611,
-    "answer_text": "Institutional Gender Based Violence Committee (09:00)\nStaffing Committee (14:00)"
-  },
-  {
-    "question": "What events and meetings are scheduled for February 21, 2025?",
-    "answer_start": 2713,
-    "answer_text": "International Mother \t               Language Day\nSARETEC Management Committee (09:00)\nPeople’s Management Forum (09:00)"
-  },
-  {
     "question": "What forum is scheduled for February 24, 2025?",
     "answer_start": 2843,
     "answer_text": "University Employment Equity Forum (14:00)"
   },
   {
-    "question": "What forum is scheduled for February 25, 2025?",
-    "answer_start": 12687,
-    "answer_text": "Deans and Directors Forum (09:00)"
-  },
-  {
-    "question": "What forums are scheduled for February 26, 2025?",
-    "answer_start": 2926,
-    "answer_text": "Institutional Transformation Forum\n(09:00)\nInstitutional Forum (14:00)"
-  },
-  {
-    "question": "What meetings are scheduled for February 27, 2025?",
-    "answer_start": 3000,
-    "answer_text": "CPUTRF Board of Trustees (@14:00)\nSpecial Executive Committee of Senate (10:00)"
-  },
-  {
     "question": "What meeting is scheduled for February 28, 2025?",
     "answer_start": 3083,
     "answer_text": "Executive Committee of Council\n(10:00)"
-  },
-  {
-    "question": "What events and meetings are scheduled for March 3, 2025?",
-    "answer_start": 3196,
-    "answer_text": "Senate (12:00)\nWaste & Recycling Awareness Campaign"
-  },
-  {
-    "question": "What meeting and campaign are scheduled for March 4, 2025?",
-    "answer_start": 3250,
-    "answer_text": "Higher Degrees Committee (09:00)\nWaste & Recycling Awareness Campaign"
-  },
-  {
-    "question": "What meetings and campaign are scheduled for March 5, 2025?",
-    "answer_start": 3322,
-    "answer_text": "Management Committee (09:00)\nQualifications Evaluation Committee (09:00)\nWaste & Recycling Awareness Campaign"
-  },
-  {
-    "question": "What workshop, campaign and training are scheduled for March 6, 2025?",
-    "answer_start": 3434,
-    "answer_text": "Institutional Strategic Planning Committee: Strategic Planning Workshop (09:00)\nWaste & Recycling Awareness Campaign\nCPUTRF Trustee Training Session (@12:00)"
-  },
-  {
-    "question": "What meeting and campaign are scheduled for March 7, 2025?",
-    "answer_start": 3594,
-    "answer_text": "SARETEC Governance Board Meeting (09:00)\nWaste & Recycling Awareness Campaign"
-  },
-  {
-    "question": "What event and meeting are scheduled for March 8, 2025?",
-    "answer_start": 3676,
-    "answer_text": "International               Women’s Day\nConvocation Executive Meeting"
-  },
-  {
-    "question": "What meetings are scheduled for March 10, 2025?",
-    "answer_start": 3751,
-    "answer_text": "Management & Unions (09:00)\nCPUTRF AGM (@12:00)"
   },
   {
     "question": "What meeting is scheduled for March 11, 2025?",
@@ -225,16 +145,6 @@
     "answer_text": "Supply Chain Management Committee (09:00)"
   },
   {
-    "question": "What meetings are scheduled for March 13, 2025?",
-    "answer_start": 3894,
-    "answer_text": "Executive Committee of Senate\n(12:00)\nCPUTRF Trustee Training Session (@13:00)"
-  },
-  {
-    "question": "What marks the end of March 14, 2025?",
-    "answer_start": 4001,
-    "answer_text": "END OF TERM 1"
-  },
-  {
     "question": "What meeting is scheduled for March 15, 2025?",
     "answer_start": 4018,
     "answer_text": "Council\n(09:00)"
@@ -245,164 +155,9 @@
     "answer_text": "RECESS"
   },
   {
-    "question": "What holiday is on March 21, 2025?",
-    "answer_start": 4066,
-    "answer_text": "HUMAN RIGHTS DAY"
-  },
-  {
-    "question": "What events and forums are scheduled for March 25, 2025?",
-    "answer_start": 4123,
-    "answer_text": "START OF TERM 2\nDeans and Directors Forum\n(09:00)"
-  },
-  {
-    "question": "What meetings are scheduled for March 26, 2025?",
-    "answer_start": 4176,
-    "answer_text": "Executive Management Committee (09:00)\nStaffing Committee (14:00)"
-  },
-  {
-    "question": "What meetings and forums are scheduled for March 27, 2025?",
-    "answer_start": 4245,
-    "answer_text": "Senate Research and Innovation Committee\n(09:00)\nInstitutional Business Continuity Forum (14:00)"
-  },
-  {
-    "question": "What event and deadline are scheduled for March 28, 2025?",
-    "answer_start": 4353,
-    "answer_text": "WCED SCHOOLS CLOSE\nSubmission of all First Semester Examination Question Papers to Assessment and Graduation Centre"
-  },
-  {
     "question": "What meeting is scheduled for April 1, 2025?",
     "answer_start": 4548,
     "answer_text": "Institutional Quality Forum (09:00)"
-  },
-  {
-    "question": "What meetings and workshop are scheduled for April 3, 2025?",
-    "answer_start": 4588,
-    "answer_text": "Senate Learning and Teaching Committee (09:00)\nSenate Library Committee\n(13:00)\n3rd Stream Income Committee Strategic Workshop (09:00)"
-  },
-  {
-    "question": "What meetings are scheduled for April 4, 2025?",
-    "answer_start": 342,
-    "answer_text": "Council Governance and Ethics Committee (10:00)\nCouncil Student Services Committee\n(14:00)"
-  },
-  {
-    "question": "What meeting is scheduled for April 5, 2025?",
-    "answer_start": 4818,
-    "answer_text": "Convocation\nSpecial General Meeting"
-  },
-  {
-    "question": "What meeting is scheduled for April 7, 2025?",
-    "answer_start": 4858,
-    "answer_text": "CPUTRF AGM (12:00)"
-  },
-  {
-    "question": "What event is scheduled for April 8, 2025?",
-    "answer_start": 245,
-    "answer_text": "WCED SCHOOLS OPEN"
-  },
-  {
-    "question": "What event is scheduled for April 10, 2025?",
-    "answer_start": 4917,
-    "answer_text": "AUTUMN GRADUATION"
-  },
-  {
-    "question": "What meetings are scheduled for April 14, 2025?",
-    "answer_start": 4965,
-    "answer_text": "Quality Assurance and Risk Management Committee\n(09:00)\nSenate Language Committee (13:00)"
-  },
-  {
-    "question": "What meetings and events are scheduled for April 15, 2025?",
-    "answer_start": 5058,
-    "answer_text": "Hotel School Management Board (14:00)\nFaculty Board: Education\n(12:00)\nLaunch Sisonke Supervision Mentorship Programme 4.0\nSisonke Supervision Mentorship Programme Symposium 4.0 (Granger Bay)"
-  },
-  {
-    "question": "What meeting and event are scheduled for April 16, 2025?",
-    "answer_start": 5253,
-    "answer_text": "Management Committee (09:00)\nSisonke Supervision Mentorship Programme Symposium 4.0 (Granger Bay)"
-  },
-  {
-    "question": "What meeting is scheduled for April 17, 2025?",
-    "answer_start": 1242,
-    "answer_text": "Faculty Board: Informatics and Design (09:00)"
-  },
-  {
-    "question": "What holiday is on April 18, 2025?",
-    "answer_start": 5403,
-    "answer_text": "GOOD FRIDAY"
-  },
-  {
-    "question": "What holiday is on April 21, 2025?",
-    "answer_start": 5424,
-    "answer_text": "FAMILY DAY"
-  },
-  {
-    "question": "What meetings are scheduled for April 22, 2025?",
-    "answer_start": 5438,
-    "answer_text": "Academic Planning Committee\n(09:00)\nInstitutional Orientation Committee\n(12:00)"
-  },
-  {
-    "question": "What meetings are scheduled for April 23, 2025?",
-    "answer_start": 4176,
-    "answer_text": "Executive Management Committee (09:00)\nStaffing Committee (14:00)"
-  },
-  {
-    "question": "What workshop and meeting are scheduled for April 24, 2025?",
-    "answer_start": 5590,
-    "answer_text": "Executive Management Strategic Planning Workshop (13:00)\nSupply Chain Management Committee (09:00)"
-  },
-  {
-    "question": "What meetings are scheduled for April 25, 2025?",
-    "answer_start": 709,
-    "answer_text": "Council Physical Planning Committee\n(10:00)\nCouncil Human Resources Committee\n(13:00)"
-  },
-  {
-    "question": "What special day is on April 26, 2025?",
-    "answer_start": 5781,
-    "answer_text": "World IP Day"
-  },
-  {
-    "question": "What holiday is on April 27, 2025?",
-    "answer_start": 5797,
-    "answer_text": "FREEDOM DAY"
-  },
-  {
-    "question": "What holiday is observed on April 28, 2025?",
-    "answer_start": 5812,
-    "answer_text": "FREEDOM DAY OBSERVED"
-  },
-  {
-    "question": "What events and meetings are scheduled for April 29, 2025?",
-    "answer_start": 5839,
-    "answer_text": "SPECIAL WCED SCHOOLS HOLIDAY\nStudent Administration Committee (09:00)\nFaculty Board: Health and Wellness Sciences (12:00)"
-  },
-  {
-    "question": "What events and meetings are scheduled for April 30, 2025?",
-    "answer_start": 5969,
-    "answer_text": "SPECIAL WCED SCHOOLS HOLIDAY\nCouncil Joint Finance and Audit Committee (10:00)\nInstitutional Forum (14:00)"
-  },
-  {
-    "question": "What holiday is on May 1, 2025?",
-    "answer_start": 6144,
-    "answer_text": "WORKERS DAY"
-  },
-  {
-    "question": "What events and meetings are scheduled for May 2, 2025?",
-    "answer_start": 6173,
-    "answer_text": "SPECIAL WCED SCHOOLS HOLIDAY\nCouncil Honorary Degree Award Committee (10:00)\nFaculty Board: Business and Management Sciences (10:00)"
-  },
-  {
-    "question": "What meetings are scheduled for May 5, 2025?",
-    "answer_start": 6312,
-    "answer_text": "Institutional Strategic Planning Committee (09:00)\nSenate Ethics Committee\n(12:00)"
-  },
-  {
-    "question": "What meetings are scheduled for May 6, 2025?",
-    "answer_start": 6397,
-    "answer_text": "Institutional Gender Based Violence Committee (09:00)\nExecutive Committee of\nSenate (12:00)"
-  },
-  {
-    "question": "What meetings are scheduled for May 7, 2025?",
-    "answer_start": 1324,
-    "answer_text": "Management Committee (09:00)\nManagement and SRC (14:00)"
   },
   {
     "question": "What meetings are scheduled for May 8, 2025?",
@@ -435,11 +190,6 @@
     "answer_text": "Business ICT Committee\n(09:00)"
   },
   {
-    "question": "What forum is scheduled for May 15, 2025?",
-    "answer_start": 12687,
-    "answer_text": "Deans and Directors Forum (09:00)"
-  },
-  {
     "question": "What meetings are scheduled for May 16, 2025?",
     "answer_start": 1617,
     "answer_text": "Investment Sub-Committee (09:00)\nCouncil Finance Committee (13:00)"
@@ -461,8 +211,8 @@
   },
   {
     "question": "What forum is scheduled for May 22, 2025?",
-    "answer_start": 2296,
-    "answer_text": "Head of Department Forum (09:00)"
+    "answer_start": 7432,
+    "answer_text": "Head of Department Forum\n(09:00)"
   },
   {
     "question": "What meetings are scheduled for May 23, 2025?",
@@ -485,19 +235,9 @@
     "answer_text": "Institutional Combined Assurance Forum (online session 09:00)\nSisonke Supervision Mentorship Programme 4.0"
   },
   {
-    "question": "What meeting is scheduled for May 28, 2025?",
-    "answer_start": 7756,
-    "answer_text": "Third Stream Income Committee (10:00)"
-  },
-  {
     "question": "What workshop and meeting are scheduled for May 29, 2025?",
     "answer_start": 7797,
     "answer_text": "Mid-term Review Strategic Workshop (Deans and Directors) 09:00\nCPUTRF Board of Trustees (@14:00)"
-  },
-  {
-    "question": "What workshop is scheduled for May 30, 2025?",
-    "answer_start": 7797,
-    "answer_text": "Mid-term Review Strategic Workshop (Deans and Directors) 09:00"
   },
   {
     "question": "What meeting is scheduled for May 31, 2025?",
@@ -525,49 +265,9 @@
     "answer_text": "CPUTRF Trustee Training Session (@12:00)"
   },
   {
-    "question": "What events and meetings are scheduled for June 6, 2025?",
-    "answer_start": 8313,
-    "answer_text": "Executive Committee of Council\n(10:00)\nInstitutional Quality Forum (090:00)\nEnd of assessments"
-  },
-  {
     "question": "What programme is scheduled for June 10, 2025?",
     "answer_start": 5136,
     "answer_text": "Sisonke Supervision Mentorship Programme 4.0"
-  },
-  {
-    "question": "What meetings are scheduled for June 11, 2025?",
-    "answer_start": 8465,
-    "answer_text": "Executive Management Committee (09:00)\nManagement and Unions (14:00)"
-  },
-  {
-    "question": "What forum is scheduled for June 12, 2025?",
-    "answer_start": 8537,
-    "answer_text": "Deans Forum and Directors (09:00)"
-  },
-  {
-    "question": "What holiday is on June 16, 2025?",
-    "answer_start": 8583,
-    "answer_text": "YOUTH DAY"
-  },
-  {
-    "question": "What meeting and programme are scheduled for June 17, 2025?",
-    "answer_start": 8596,
-    "answer_text": "Supply Chain Management Committee (09:00)\nSisonke Supervision Mentorship Programme 4.0"
-  },
-  {
-    "question": "What workshop is scheduled for June 18, 2025?",
-    "answer_start": 8686,
-    "answer_text": "Executive Committee of Senate Workshop (09:00)"
-  },
-  {
-    "question": "What meetings and event are scheduled for June 19, 2025?",
-    "answer_start": 8736,
-    "answer_text": "SARETEC Governance Board Meeting (09:00)\nStaffing Committee (14:00)\nVC’s Prestigious Lecture (18:00)"
-  },
-  {
-    "question": "What events and meetings are scheduled for June 20, 2025?",
-    "answer_start": 8870,
-    "answer_text": "END OF TERM 2\nCouncil Strategic Planning (09:00)\nPublication of Results"
   },
   {
     "question": "What meeting is scheduled for June 21, 2025?",
@@ -580,11 +280,6 @@
     "answer_text": "RECESS"
   },
   {
-    "question": "What events are scheduled for June 27, 2025?",
-    "answer_start": 9013,
-    "answer_text": "WCED SCHOOLS CLOSE\nPublication of Results FEBE"
-  },
-  {
     "question": "What status is listed for July 1 to July 11, 2025?",
     "answer_start": 4046,
     "answer_text": "RECESS"
@@ -595,99 +290,9 @@
     "answer_text": "CPUTRF Trustee Training Session (@12:00)"
   },
   {
-    "question": "What begins on July 14, 2025?",
-    "answer_start": 9262,
-    "answer_text": "START OF TERM 3"
-  },
-  {
-    "question": "What meeting and programme are scheduled for July 15, 2025?",
-    "answer_start": 8596,
-    "answer_text": "Supply Chain Management Committee (09:00)\nSisonke Supervision Mentorship Programme 4.0"
-  },
-  {
-    "question": "What meetings and forums are scheduled for July 16, 2025?",
-    "answer_start": 9373,
-    "answer_text": "Senate Learning and Teaching Committee (09:00)\nInstitutional Business Continuity Forum (14:00)"
-  },
-  {
-    "question": "What meetings are scheduled for July 17, 2025?",
-    "answer_start": 9471,
-    "answer_text": "Physical Planning and Space Utilization Committee (09:00)\nSenate Language Committee (13:00)"
-  },
-  {
-    "question": "What events and meetings are scheduled for July 18, 2025?",
-    "answer_start": 9581,
-    "answer_text": "MANDELA DAY\nCouncil Governance and Ethics Committee (10:00)\nCouncil Student Services Committee\n(14:00)"
-  },
-  {
-    "question": "What meetings and programme are scheduled for July 21, 2025?",
-    "answer_start": 9693,
-    "answer_text": "Higher Degrees Committee (09:00)\nInstitutional Gender Based Violence Committee (13:00)\nSisonke Supervision Mentorship Programme 4.0"
-  },
-  {
-    "question": "What events, meetings and programme are scheduled for July 22, 2025?",
-    "answer_start": 9846,
-    "answer_text": "WCED SCHOOLS OPEN\nQuality Assurance and Risk Management Committee (09:00)\nStudent Administration Committee (13:00)\nSisonke Supervision Mentorship Programme 4.0"
-  },
-  {
-    "question": "What meetings are scheduled for July 23, 2025?",
-    "answer_start": 10009,
-    "answer_text": "Executive Management Committee (09:00)\nHotel School Management Board\n(GB@14:00)"
-  },
-  {
-    "question": "What meetings are scheduled for July 24, 2025?",
-    "answer_start": 10092,
-    "answer_text": "Faculty Board: Applied Sciences\n(12:00)\nFaculty Board: Engineering and the Built Environment (12:00)"
-  },
-  {
-    "question": "What meetings are scheduled for July 25, 2025?",
-    "answer_start": 10196,
-    "answer_text": "Council Physical Planning Committee (10:00)\nCouncil Human Resources Committee (13:00)\nFaculty Board: Education (MC@09:00)\nFaculty Board: Business and Management Sciences (10:00)"
-  },
-  {
-    "question": "What meetings and programme are scheduled for July 28, 2025?",
-    "answer_start": 10383,
-    "answer_text": "Academic Planning Committee (09:00)\nSenate Ethics Committee\n(13:00)\nSisonke Supervision Mentorship Programme 4.0"
-  },
-  {
-    "question": "What meetings and programme are scheduled for July 29, 2025?",
-    "answer_start": 10499,
-    "answer_text": "Senate Research and Innovation Committee (09:00)\nFaculty Board: Informatics and Design (09:00)\nFaculty Board: Health and Wellness Sciences (12:00)\nSisonke Supervision Mentorship Programme 4.0"
-  },
-  {
-    "question": "What meetings are scheduled for July 30, 2025?",
-    "answer_start": 4186,
-    "answer_text": "Management Committee (09:00)\nStaffing Committee (14:00)"
-  },
-  {
-    "question": "What meetings and deadlines are scheduled for July 31, 2025?",
-    "answer_start": 10753,
-    "answer_text": "Institutional Transformation Forum\n(09:00)\nSenate Library Committee\n(13:00)\nCut-off date for application for exemptions and recognitions Second Semester"
-  },
-  {
-    "question": "What meetings are scheduled for August 1, 2025?",
-    "answer_start": 10977,
-    "answer_text": "Council IT Governance Committee\n(09:00)\nInstitutional Orientation Committee\n(09:00)\nCouncil Audit and Risk Oversight Committee (13:00)"
-  },
-  {
     "question": "What meeting is scheduled for August 2, 2025?",
     "answer_start": 3716,
     "answer_text": "Convocation Executive Meeting"
-  },
-  {
-    "question": "What meetings and programme are scheduled for August 4, 2025?",
-    "answer_start": 11148,
-    "answer_text": "Supply Chain Management Committee (09:00)\nNaming Committee (14:00)\nSisonke Supervision Mentorship Programme 4.0"
-  },
-  {
-    "question": "What meeting and programme are scheduled for August 5, 2025?",
-    "answer_start": 11262,
-    "answer_text": "Business ICT Committee\n(09:00)\nSisonke Supervision Mentorship Programme 4.0"
-  },
-  {
-    "question": "What meetings are scheduled for August 6, 2025?",
-    "answer_start": 11340,
-    "answer_text": "Higher Degrees Committee (09:00)\nInstitutional Forum (14:00)"
   },
   {
     "question": "What events and meetings are scheduled for August 7, 2025?",
@@ -850,36 +455,6 @@
     "answer_text": "Management Committee (09:00)\nManagement and Unions (14:00)"
   },
   {
-    "question": "What holiday is on September 24, 2025?",
-    "answer_start": 13805,
-    "answer_text": "HERITAGE DAY"
-  },
-  {
-    "question": "What meetings are scheduled for September 25, 2025?",
-    "answer_start": 13821,
-    "answer_text": "Quality Assurance and Risk Management Committee (09:00)\nStaffing Committee (13:00)"
-  },
-  {
-    "question": "What meetings are scheduled for September 26, 2025?",
-    "answer_start": 709,
-    "answer_text": "Council Physical Planning Committee\n(10:00)\nCouncil Human Resources Committee\n(13:00)"
-  },
-  {
-    "question": "What meeting is scheduled for September 29, 2025?",
-    "answer_start": 1288,
-    "answer_text": "Senate Language Committee (13:00)"
-  },
-  {
-    "question": "What workshop and meeting are scheduled for September 30, 2025?",
-    "answer_start": 14039,
-    "answer_text": "Executive Management Strategic Planning Workshop (09:00)\nInstitutional Gender Based Violence Committee (13:00)"
-  },
-  {
-    "question": "What meetings are scheduled for October 1, 2025?",
-    "answer_start": 14222,
-    "answer_text": "Business ICT Committee\n(09:00)\nFaculty Board: Education\n(WC@12:00)\nFaculty Board: Informatics and Design (12:00)"
-  },
-  {
     "question": "What meetings are scheduled for October 2, 2025?",
     "answer_start": 14337,
     "answer_text": "Physical Planning and Space Utilization Committee\n(09:00)\nCPUTRF Special Finance, Investment and Audit Committee: Investment Strategy Review (@14:00"
@@ -888,11 +463,6 @@
     "question": "What events and meetings are scheduled for October 3, 2025?",
     "answer_start": 14509,
     "answer_text": "WCED SCHOOLS CLOSE\nStart of assessments\nCouncil Governance and Ethics Committee (10:00)\nCouncil Student Services Committee (14:00)\nInstitutional Orientation Committee\n(09:00)"
-  },
-  {
-    "question": "What meetings are scheduled for October 6, 2025?",
-    "answer_start": 10383,
-    "answer_text": "Academic Planning Committee (09:00)\nSenate Ethics Committee\n(13:00)"
   },
   {
     "question": "What meetings are scheduled for October 7, 2025?",
@@ -960,46 +530,6 @@
     "answer_text": "Deans and Directors Forum (09:00)"
   },
   {
-    "question": "What meetings are scheduled for October 24, 2025?",
-    "answer_start": 15757,
-    "answer_text": "Council Honorary Degree Awards Committee (10:00)\nCouncil Remuneration Committee\n(14:00)"
-  },
-  {
-    "question": "What meeting is scheduled for October 27, 2025?",
-    "answer_start": 7290,
-    "answer_text": "Staffing Committee (09:00)"
-  },
-  {
-    "question": "What events and meetings are scheduled for October 28, 2025?",
-    "answer_start": 15884,
-    "answer_text": "Research Festival Day 1\nStudent Housing Oversight Committee (09:00)"
-  },
-  {
-    "question": "What event is scheduled for October 29, 2025?",
-    "answer_start": 15955,
-    "answer_text": "Research Festival Day 2"
-  },
-  {
-    "question": "What events and meetings are scheduled for October 30, 2025?",
-    "answer_start": 15982,
-    "answer_text": "Research Festival Day 3\nThird Stream Income Committee\n(10:00)\nVice-Chancellor’s Prestigious Achievers (13:00)"
-  },
-  {
-    "question": "What events and workshops are scheduled for October 31, 2025?",
-    "answer_start": 16095,
-    "answer_text": "Research Festival Day 4\nInstitutional Risk Workshop\n(online session @9:00)"
-  },
-  {
-    "question": "What event and meeting are scheduled for November 3, 2025?",
-    "answer_start": 16247,
-    "answer_text": "Senate (12:00)\nStart of Quality Month"
-  },
-  {
-    "question": "What meetings are scheduled for November 4, 2025?",
-    "answer_start": 16287,
-    "answer_text": "SARETEC Management Committee (09:00)\nSpecial Higher Degrees Committee (Grad Lists Only)\n(14:00)"
-  },
-  {
     "question": "What meeting is scheduled for November 5, 2025?",
     "answer_start": 263,
     "answer_text": "Management Committee (09:00)"
@@ -1018,11 +548,6 @@
     "question": "What meeting is scheduled for November 8, 2025?",
     "answer_start": 3716,
     "answer_text": "Convocation Executive Meeting"
-  },
-  {
-    "question": "What meeting is scheduled for November 10, 2025?",
-    "answer_start": 3250,
-    "answer_text": "Higher Degrees Committee (09:00)"
   },
   {
     "question": "What workshop is scheduled for November 11, 2025?",
@@ -1071,33 +596,13 @@
   },
   {
     "question": "What meeting is scheduled for November 24, 2025?",
-    "answer_start": 7290,
-    "answer_text": "Staffing Committee (09:00)"
-  },
-  {
-    "question": "What events and meetings are scheduled for November 25, 2025?",
-    "answer_start": 17529,
-    "answer_text": "Start of 16 days of activism on Non-Violence against Women & Children\nCPUTRF Board of Trustees (@14:00)"
+    "answer_start": 8,
+    "answer_text": " 2025\nSUNDAY\nMONDAY\nTUESDA"
   },
   {
     "question": "What forum is scheduled for November 26, 2025?",
     "answer_start": 12687,
     "answer_text": "Deans and Directors Forum (09:00)"
-  },
-  {
-    "question": "What meetings are scheduled for November 27, 2025?",
-    "answer_start": 17673,
-    "answer_text": "Executive Committee of Senate\n(12:00)\nCPUTRF Board of Trustees @14:00"
-  },
-  {
-    "question": "What event is scheduled for November 28, 2025?",
-    "answer_start": 17750,
-    "answer_text": "End of Quality Month"
-  },
-  {
-    "question": "What meeting is scheduled for December 1, 2025?",
-    "answer_start": 571,
-    "answer_text": "Supply Chain Management Committee (09:00)"
   },
   {
     "question": "What forum is scheduled for December 2, 2025?",
@@ -1106,11 +611,6 @@
   },
   {
     "question": "What forum is scheduled for December 3, 2025?",
-    "answer_start": 17894,
-    "answer_text": "Strategic Deans and Directors Forum (09:00)"
-  },
-  {
-    "question": "What forum is scheduled for December 4, 2025?",
     "answer_start": 17894,
     "answer_text": "Strategic Deans and Directors Forum (09:00)"
   },
