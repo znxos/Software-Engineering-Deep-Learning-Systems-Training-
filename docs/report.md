@@ -37,6 +37,8 @@ By following these steps—correcting your Cargo.toml, ensuring your PATH is set
 cargo run -- infer --doc-path "data\calander_2026.docx" --question "When is the 
 start of year administrative staff?" --model-path "model_epoch_12"
 
+cargo run --release -- infer --doc-path "data\calendar_2026.docx" --model-path "model_epoch_28"
+
 # Tokenizer
 https://huggingface.co/google-bert/bert-base-uncased/tree/main
 

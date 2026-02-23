@@ -27,15 +27,11 @@ enum Action {
         #[arg(long)]
         model_path: Option<String>,
     },
-    /// Ask a question about a document
+    /// Ask a question about a document interactively
     Infer {
         /// Path to the .docx document
         #[arg(long)]
         doc_path: String,
-
-        /// Question to ask
-        #[arg(long)]
-        question: String,
 
         /// Path to the trained model weights
         #[arg(long)]
@@ -58,8 +54,8 @@ fn main() {
         Action::Train { model_path } => {
             training::run_training::<MyAutodiffBackend>(device.clone(), model_path);
         }
-        Action::Infer { doc_path, question, model_path } => {
-            if let Err(e) = qa_inference::run_inference::<MyBackend>(doc_path, question, model_path, device.clone()) {
+        Action::Infer { doc_path, model_path } => {
+            if let Err(e) = qa_inference::run_inference::<MyBackend>(doc_path, String::new(), model_path, device.clone()) {
                 eprintln!("Inference failed: {}", e);
             }
         }
