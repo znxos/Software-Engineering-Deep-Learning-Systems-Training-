@@ -2,10 +2,10 @@
 {
   "model": {
     "vocab_size": 30522,
-    "d_model": 768,
-    "n_heads": 12,
+    "d_model": 512,
+    "n_heads": 8,
     "n_layers": 6,
-    "d_ff": 3072,
+    "d_ff": 2048,
     "dropout": 0.05,
     "max_seq_length": 512
   },
@@ -20,9 +20,9 @@
       "Norm": 1.0
     }
   },
-  "num_epochs": 50,
+  "num_epochs": 100,
   "batch_size": 4,
   "seed": 42,
   "learning_rate": 0.00003,
-  "grad_clip": 0.5
+  "grad_clip": 1.0
 }
