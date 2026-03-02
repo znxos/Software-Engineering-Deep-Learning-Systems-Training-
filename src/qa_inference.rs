@@ -170,7 +170,6 @@ pub fn run_inference<B: Backend>(
         // --- First, try semantic date-based matching ---
         if let Some(semantic_answer) = find_answer_by_date_matching(question, &context) {
             println!("\nQuestion: {}\nAnswer: {}", question, semantic_answer);
-            println!("Confidence Score: 100.00% (Semantic Match)");
             continue;
         }
 
@@ -261,13 +260,7 @@ pub fn run_inference<B: Backend>(
                     .unwrap_or_else(|| final_answer.as_str());
                 final_answer = event.to_string();
             }
-            let norm_score = if best_score.is_finite() {
-                best_score.max(0.0).min(1.0)
-            } else {
-                0.0
-            };
             println!("\nQuestion: {}\nAnswer: {}", question, final_answer);
-            println!("Confidence Score: {:.2}%", norm_score * 100.0);
         } else {
             println!("\nQuestion: {}\nAnswer: No valid answer found.", question);
         }

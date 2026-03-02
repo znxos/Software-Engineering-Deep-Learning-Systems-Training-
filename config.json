@@ -20,9 +20,9 @@
       "Norm": 1.0
     }
   },
-  "num_epochs": 100,
-  "batch_size": 4,
+  "num_epochs": 50,
+  "batch_size": 8,
   "seed": 42,
-  "learning_rate": 0.00003,
+  "learning_rate": 0.00002,
   "grad_clip": 1.0
 }

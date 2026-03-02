@@ -196,10 +196,6 @@ pub fn run_training<B: AutodiffBackend>(device: B::Device, model_path: Option<St
                 continue;
             }
 
-            // Debug: Check logits for NaN/Inf before loss computation
-            let logits_max = logits.clone().max().into_scalar().to_f32();
-            let logits_min = logits.clone().min().into_scalar().to_f32();
-
             // Compute loss
             let loss = compute_span_loss(
                 logits,
@@ -211,9 +207,7 @@ pub fn run_training<B: AutodiffBackend>(device: B::Device, model_path: Option<St
 
             if !loss_val.is_finite() {
                 consecutive_nans += 1;
-                eprintln!("Warning: NaN/inf loss at epoch {} iter {} (reason: bad loss value)", epoch, iter_idx);
-                eprintln!("  Logits range: [{:.6}, {:.6}]", logits_min, logits_max);
-                eprintln!("  Loss value: {}", loss_val);
+                eprintln!("Warning: NaN/inf loss at epoch {} iter {} (reason: bad loss value: {})", epoch, iter_idx, loss_val);
                 
                 if consecutive_nans >= max_consecutive_nans {
                     panic!(
@@ -233,8 +227,14 @@ pub fn run_training<B: AutodiffBackend>(device: B::Device, model_path: Option<St
             let grads = GradientsParams::from_grads(grads, &model);
 
             // Optimizer step with adaptive learning rate
-            let effective_lr = config.learning_rate;
+            // Linear learning rate decay to improve accuracy and convergence
+            let progress = (epoch as f64 - 1.0) / config.num_epochs as f64;
+            let effective_lr = config.learning_rate * (1.0 - progress).max(0.1);
+            
             model = optim.step(effective_lr, model, grads);
+            
+            // Explicitly drop tensors to help WGPU memory management
+            std::mem::drop(loss);
 
             if iter_idx % 10 == 0 {
                 let avg_loss = epoch_loss / batch_count.max(1) as f32;
