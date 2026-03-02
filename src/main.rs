@@ -1,8 +1,7 @@
+#![recursion_limit = "256"]
 // src/main.rs
-use burn::backend::{ndarray::NdArrayDevice, Autodiff, NdArray};
-#[cfg(feature = "rocm")]
-use burn::backend::rocm::{Rocm, RocmDevice};
-use burn::tensor::backend::AutodiffBackend;
+use burn::backend::{Autodiff};
+use burn::backend::wgpu::{WgpuDevice, Wgpu};
 use clap::Parser;
 
 mod data;
@@ -10,13 +9,12 @@ mod model;
 mod training;
 mod qa_inference;
 
+type MyBackend = Wgpu;
+type MyAutodiffBackend = Autodiff<MyBackend>;
+
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
 struct Args {
-    /// Device to use: 'cpu' or 'rocm'
-    #[arg(long, default_value = "cpu")]
-    device: String,
-
     #[command(subcommand)]
     action: Action,
 }
@@ -24,16 +22,16 @@ struct Args {
 #[derive(Parser, Debug)]
 enum Action {
     /// Train the Q&A model
-    Train,
-    /// Ask a question about a document
+    Train {
+        /// Optional path to resume training from a checkpoint
+        #[arg(long)]
+        model_path: Option<String>,
+    },
+    /// Ask a question about a document interactively
     Infer {
         /// Path to the .docx document
         #[arg(long)]
         doc_path: String,
-
-        /// Question to ask
-        #[arg(long)]
-        question: String,
 
         /// Path to the trained model weights
         #[arg(long)]
@@ -43,36 +41,21 @@ enum Action {
 
 fn main() {
     let args = Args::parse();
+    // Initialize a WGPU device. You can control the underlying graphics API
+    // via the `WGPU_BACKEND` environment variable (e.g. "vulkan", "dx12", "metal").
+    let device = WgpuDevice::default();
 
-    match args.device.as_str() {
-        "cpu" => {
-            let device = NdArrayDevice::default();
-            run_backend::<Autodiff<NdArray>>(args.action, device);
-        }
-        "rocm" => {
-            #[cfg(feature = "rocm")]
-            {
-                let device = RocmDevice::default();
-                run_backend::<Autodiff<Rocm>>(args.action, device);
-            }
-            #[cfg(not(feature = "rocm"))]
-            {
-                panic!("ROCm feature is not enabled. Please compile with --features rocm");
-            }
-        }
-        _ => {
-            panic!("Invalid device: {}. Supported: cpu, rocm", args.device);
-        }
-    }
-}
+    // Optionally initialize the runtime to a specific graphics API. If you
+    // want a specific API, uncomment and change the line below. The project
+    // documentation suggests setting `WGPU_BACKEND` in the environment instead.
+    // burn::backend::wgpu::init_setup::<burn::backend::wgpu::graphics::Vulkan>(&device, Default::default());
 
-fn run_backend<B: AutodiffBackend>(action: Action, device: B::Device) {
-    match action {
-        Action::Train => {
-            training::run_training::<B>(device);
+    match args.action {
+        Action::Train { model_path } => {
+            training::run_training::<MyAutodiffBackend>(device.clone(), model_path);
         }
-        Action::Infer { doc_path, question, model_path } => {
-            if let Err(e) = qa_inference::run_inference::<B::InnerBackend>(doc_path, question, model_path, device) {
+        Action::Infer { doc_path, model_path } => {
+            if let Err(e) = qa_inference::run_inference::<MyBackend>(doc_path, String::new(), model_path, device.clone()) {
                 eprintln!("Inference failed: {}", e);
             }
         }

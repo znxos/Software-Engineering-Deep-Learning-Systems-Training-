@@ -87,7 +87,9 @@ impl<B: Backend> QAModel<B> {
         let token_type_embeds = self.token_type_embedding.forward(token_type_ids);
 
         // Combine embeddings (token + position + token type)
-        let x = token_embeds + pos_embeds + token_type_embeds;
+        // Scale embeddings to prevent large initial values
+        let scale = (self.d_model as f32).sqrt().recip();
+        let x = (token_embeds + pos_embeds + token_type_embeds) * scale;
 
         // Transformer Encoder
         let input = TransformerEncoderInput::new(x).mask_pad(mask.equal_elem(false));

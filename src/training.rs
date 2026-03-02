@@ -9,11 +9,11 @@ use burn::{
     prelude::*,
     optim::{AdamConfig, Optimizer, GradientsParams},
     data::dataloader::DataLoaderBuilder,
-    nn::loss::CrossEntropyLoss,
     tensor::backend::AutodiffBackend,
-    record::{BinFileRecorder, FullPrecisionSettings},
+    record::{BinFileRecorder, FullPrecisionSettings, Recorder},
 };
-use burn::module::Module;
+use burn::module::{Module, AutodiffModule};
+use burn::nn::loss::CrossEntropyLossConfig;
 
 #[derive(Deserialize, Debug)]
 pub struct TrainingConfig {
@@ -23,43 +23,41 @@ pub struct TrainingConfig {
     pub batch_size: usize,
     pub seed: u64,
     pub learning_rate: f64,
-    pub grad_clip: f64,
 }
 
-// The loss function for Q&A uses a safer approach that avoids CrossEntropyLoss panics
-// We use MSE loss between logits and one-hot encoded target positions
-fn calculate_loss<B: AutodiffBackend>(
-    logits: Tensor<B, 3>, // [batch_size, seq_length, 2]
+/// Compute span extraction loss using L2 regularization on logits
+fn compute_span_loss<B: Backend>(
+    logits: Tensor<B, 3>,
     start_positions: Tensor<B, 1, Int>,
     end_positions: Tensor<B, 1, Int>,
-    device: &B::Device,
 ) -> Tensor<B, 1> {
-    let [batch_size, seq_length, num_logits] = logits.dims();
-
-    // Guard: must have 2 logits per token (start and end)
-    if num_logits < 2 || seq_length == 0 || batch_size == 0 {
-        return Tensor::zeros([batch_size], device);
+    let [batch_size, seq_length, _] = logits.dims();
+    let device = logits.device();
+    
+    if batch_size == 0 || seq_length == 0 {
+        return Tensor::from_floats([0.0], &device);
     }
 
-    // Extract start and end logits safely
-    let start_logits = logits.clone().slice([0..batch_size, 0..seq_length, 0..1]).reshape([batch_size, seq_length]);
-    let end_logits = logits.slice([0..batch_size, 0..seq_length, 1..2]).reshape([batch_size, seq_length]);
+    // FIX: Clamp logits to prevent numerical instability (NaNs)
+    // Range [-40.0, 40.0] prevents exp() underflow/overflow while keeping gradients alive.
+    let logits = logits.clamp(-40.0, 40.0);
 
-    // Clamp positions to valid range [0, seq_length-1]
-    let max_pos = (seq_length.saturating_sub(1)) as i32;
-    let start_pos_clamped = start_positions.clamp_min(0).clamp_max(max_pos);
-    let end_pos_clamped = end_positions.clamp_min(0).clamp_max(max_pos);
+    // Split logits into start and end: [batch_size, seq_length]
+    let start_logits: Tensor<B, 2> = logits
+        .clone()
+        .slice([0..batch_size, 0..seq_length, 0..1])
+        .squeeze_dim(2);
+    let end_logits: Tensor<B, 2> = logits
+        .slice([0..batch_size, 0..seq_length, 1..2])
+        .squeeze_dim(2);
 
-    // Use CrossEntropyLoss if batch_size > 1 for better convergence, otherwise use simpler approach
-    if batch_size > 1 {
-        let loss_start = CrossEntropyLoss::new(None, device).forward(start_logits, start_pos_clamped.clone());
-        let loss_end = CrossEntropyLoss::new(None, device).forward(end_logits, end_pos_clamped);
-        (loss_start + loss_end) / 2.0
-    } else {
-        // For batch_size == 1, return a minimal loss to avoid CrossEntropyLoss panics
-        // This is a workaround - validation loss won't be meaningful but training won't crash
-        Tensor::full([1], 1.0, device)
-    }
+    let loss_fn = CrossEntropyLossConfig::new()
+        .init(&device);
+
+    let start_loss = loss_fn.forward(start_logits, start_positions);
+    let end_loss = loss_fn.forward(end_logits, end_positions);
+
+    (start_loss + end_loss) / 2.0
 }
 
 fn calculate_accuracy<B: Backend>(
@@ -67,52 +65,83 @@ fn calculate_accuracy<B: Backend>(
     start_positions: Tensor<B, 1, Int>,
     end_positions: Tensor<B, 1, Int>,
 ) -> f32 {
-    let [batch_size, seq_length, num_logits] = logits.dims();
+    let [batch_size, seq_length, _] = logits.dims();
     
-    // Guard against invalid dimensions
-    if seq_length == 0 || batch_size == 0 || num_logits < 2 {
+    if seq_length == 0 || batch_size == 0 {
         return 0.0;
     }
     
-    let start_logits = logits.clone().slice([0..batch_size, 0..seq_length, 0..1]).reshape([batch_size, seq_length]);
-    let end_logits = logits.slice([0..batch_size, 0..seq_length, 1..2]).reshape([batch_size, seq_length]);
+    let start_logits: Tensor<B, 2> = logits
+        .clone()
+        .slice([0..batch_size, 0..seq_length, 0..1])
+        .squeeze_dim(2);
+    let end_logits: Tensor<B, 2> = logits
+        .slice([0..batch_size, 0..seq_length, 1..2])
+        .squeeze_dim(2);
 
-    let start_pred = start_logits.argmax(1).squeeze();
-    let end_pred = end_logits.argmax(1).squeeze();
+    let start_pred = start_logits.argmax(1).squeeze_dim(1);
+    let end_pred = end_logits.argmax(1).squeeze_dim(1);
 
-    let correct_starts = start_pred.clone().equal(start_positions.clone()).int().sum().into_scalar();
-    let correct_ends = end_pred.equal(end_positions).int().sum().into_scalar();
+    let correct_starts = start_pred
+        .clone()
+        .equal(start_positions.clone())
+        .int()
+        .sum()
+        .into_scalar()
+        .to_f32();
+    let correct_ends = end_pred
+        .equal(end_positions)
+        .int()
+        .sum()
+        .into_scalar()
+        .to_f32();
 
-    // Exact match accuracy
-    (correct_starts.to_f32() + correct_ends.to_f32()) / (2.0 * batch_size as f32)
+    let total = (2.0 * batch_size as f32).max(1.0);
+    ((correct_starts + correct_ends) / total).clamp(0.0, 1.0)
 }
 
-pub fn run_training<B: AutodiffBackend>(device: B::Device) {
-    let config_path = "config.json"; // A file where you store your hyperparameters
+pub fn run_training<B: AutodiffBackend>(device: B::Device, model_path: Option<String>) {
+    let config_path = "config.json";
     let config_str = std::fs::read_to_string(config_path).expect("Config file not found");
-    let mut config_value: serde_json::Value = serde_json::from_str(&config_str).expect("Invalid config JSON");
-    if config_value.get("grad_clip").is_none() {
-        config_value["grad_clip"] = serde_json::json!(1.0);
-    }
-    let config: TrainingConfig = serde_json::from_value(config_value).expect("Failed to deserialize TrainingConfig");
-    // Ensure `grad_clip` is read so the field is not reported as unused.
-    let _ = config.grad_clip;
+    let config: TrainingConfig = serde_json::from_str(&config_str).expect("Failed to deserialize TrainingConfig");
+
+    println!("Training config: learning_rate={}, batch_size={}, num_epochs={}", 
+             config.learning_rate, config.batch_size, config.num_epochs);
 
     // Initialize model
     let mut model: crate::model::QAModel<B> = config.model.init::<B>(&device);
+
+    let mut start_epoch = 1;
+    if let Some(path) = model_path {
+        println!("Resuming training from {}...", path);
+        if let Some(idx) = path.rfind("epoch_") {
+            if let Ok(epoch_num) = path[idx + 6..].parse::<usize>() {
+                start_epoch = epoch_num + 1;
+            }
+        }
+        let recorder = BinFileRecorder::<FullPrecisionSettings>::new();
+        let record = recorder
+            .load(path.into(), &device)
+            .expect("Failed to load model checkpoint");
+        model = model.load_record(record);
+    }
+
     let mut optim = config.optimizer.init();
 
-    // Load dataset from the 'data' folder
+    // Load dataset
     let dataset = crate::data::load_dataset_from_data_folder("data")
-        .expect("Failed to load dataset. Make sure .docx files have corresponding .json files.");
+        .expect("Failed to load dataset");
     let processor = QAProcessor::new("data/tokenizer.json", config.model.max_seq_length);
     let mut tokenized_items: Vec<_> = dataset
         .iter()
         .filter_map(|it| processor.process(it))
         .collect();
 
-    // Manually split the data since random_split is not available
-    // Note: This is a simple split, not a random shuffle.
+    if tokenized_items.is_empty() {
+        eprintln!("ERROR: No tokenized items found!");
+        return;
+    }
+
     let split_index = (tokenized_items.len() as f64 * 0.9).floor() as usize;
     let val_items = tokenized_items.split_off(split_index);
 
@@ -136,67 +165,160 @@ pub fn run_training<B: AutodiffBackend>(device: B::Device) {
         .num_workers(4)
         .build(val_dataset);
 
+    let total_iters = (train_count + config.batch_size - 1) / config.batch_size;
+
     // Training loop
-    for epoch in 1..=config.num_epochs {
-        // Training phase
+    for epoch in start_epoch..=config.num_epochs {
         model = model.train();
+        let mut epoch_loss: f32 = 0.0;
+        let mut batch_count: usize = 0;
+        let mut consecutive_nans: usize = 0;
+        let max_consecutive_nans = 50;
+
         for (iter_idx, batch) in train_dataloader.iter().enumerate() {
-            let logits = model.forward(batch.tokens, batch.token_type_ids, batch.attention_mask);
-            // Defensive check: ensure logits has the expected last-dimension (2 logits: start/end).
+            // Debug first batch
+            if iter_idx == 0 && epoch == 1 {
+                eprintln!("DEBUG: First batch stats:");
+                eprintln!("  Tokens shape: {:?}", batch.tokens.dims());
+                eprintln!("  Start indices: {:?}", batch.start_indices.dims());
+                eprintln!("  End indices: {:?}", batch.end_indices.dims());
+            }
+
+            // Forward pass
+            let logits = model.forward(
+                batch.tokens.clone(),
+                batch.token_type_ids.clone(),
+                batch.attention_mask.clone(),
+            );
+
             let dims = logits.dims();
-            if dims[2] < 2 {
-                eprintln!("Warning: skipping batch due to unexpected logits shape: {:?}", dims);
+            if dims[0] == 0 || dims[1] == 0 || dims[2] < 2 {
                 continue;
             }
-            let loss = calculate_loss(logits, batch.start_indices, batch.end_indices, &device);
-            
-            // Backpropagation and optimizer step
+
+            // Compute loss
+            let loss = compute_span_loss(
+                logits,
+                batch.start_indices.clone(),
+                batch.end_indices.clone(),
+            );
+
+            let loss_val = loss.clone().into_scalar().to_f32();
+
+            if !loss_val.is_finite() {
+                consecutive_nans += 1;
+                eprintln!("Warning: NaN/inf loss at epoch {} iter {} (reason: bad loss value: {})", epoch, iter_idx, loss_val);
+                
+                if consecutive_nans >= max_consecutive_nans {
+                    panic!(
+                        "Training diverged: Too many consecutive NaN iterations ({}). Increase learning rate or check data.",
+                        consecutive_nans
+                    );
+                }
+                continue;
+            }
+
+            consecutive_nans = 0;
+            epoch_loss += loss_val;
+            batch_count += 1;
+
+            // Backward pass
             let grads = loss.backward();
             let grads = GradientsParams::from_grads(grads, &model);
-            model = optim.step(config.learning_rate, model, grads);
+
+            // Optimizer step with adaptive learning rate
+            // Linear learning rate decay to improve accuracy and convergence
+            let progress = (epoch as f64 - 1.0) / config.num_epochs as f64;
+            let effective_lr = config.learning_rate * (1.0 - progress).max(0.1);
+            
+            model = optim.step(effective_lr, model, grads);
+            
+            // Explicitly drop tensors to help WGPU memory management
+            std::mem::drop(loss);
 
             if iter_idx % 10 == 0 {
-                println!("Epoch {} | Train Iter {} | Loss: {:.4}", epoch, iter_idx, loss.into_scalar());
+                let avg_loss = epoch_loss / batch_count.max(1) as f32;
+                println!(
+                    "Epoch {} | Iter {}/{} | Loss: {:.6} | Avg: {:.6}",
+                    epoch, iter_idx, total_iters, loss_val, avg_loss
+                );
             }
         }
 
-        // Validation phase
-        model = model.eval();
-        let mut total_val_loss: f32 = 0.0;
-        let mut total_val_accuracy: f32 = 0.0;
-        let mut val_batches = 0;
-
-        for batch in val_dataloader.iter() {
-            let logits = model.forward(batch.tokens, batch.token_type_ids, batch.attention_mask);
-            let dims = logits.dims();
-            if dims[2] < 2 {
-                eprintln!("Warning: skipping validation batch due to unexpected logits shape: {:?}", dims);
-                continue;
-            }
-            let loss = calculate_loss(logits.clone(), batch.start_indices.clone(), batch.end_indices.clone(), &device);
-            let accuracy = calculate_accuracy(logits, batch.start_indices, batch.end_indices);
-
-            total_val_loss += loss.into_scalar().to_f32();
-            total_val_accuracy += accuracy;
-            val_batches += 1;
-        }
-
-        let avg_val_loss = if val_batches == 0 {
-            println!("Warning: no validation batches were produced — skipping averaging.");
-            0.0
+        let avg_epoch_loss = if batch_count > 0 {
+            epoch_loss / batch_count as f32
         } else {
-            total_val_loss / val_batches as f32
+            0.0
         };
 
-        let avg_val_accuracy = if val_batches == 0 { 0.0 } else { total_val_accuracy / val_batches as f32 };
-        println!("\n--- Epoch {} Validation ---", epoch);
-        println!("Avg Loss: {:.4} | Avg Accuracy: {:.4}\n", avg_val_loss, avg_val_accuracy);
+        // Validation phase
+        let model_valid = model.valid();
+        let mut val_loss: f32 = 0.0;
+        let mut val_accuracy: f32 = 0.0;
+        let mut val_batches: usize = 0;
 
-        // Save a checkpoint after each epoch
+        for batch in val_dataloader.iter() {
+            let tokens = batch.tokens.inner();
+            let token_type_ids = batch.token_type_ids.inner();
+            let attention_mask = batch.attention_mask.inner();
+            let start_indices = batch.start_indices.inner();
+            let end_indices = batch.end_indices.inner();
+
+            let logits = model_valid.forward(
+                tokens,
+                token_type_ids,
+                attention_mask,
+            );
+
+            let dims = logits.dims();
+            if dims[0] == 0 || dims[1] == 0 || dims[2] < 2 {
+                continue;
+            }
+
+            let loss = compute_span_loss(
+                logits.clone(),
+                start_indices.clone(),
+                end_indices.clone(),
+            );
+            let loss_f32 = loss.into_scalar().to_f32();
+            
+            if loss_f32.is_finite() {
+                val_loss += loss_f32;
+                val_accuracy += calculate_accuracy(
+                    logits,
+                    start_indices,
+                    end_indices,
+                );
+                val_batches += 1;
+            }
+        }
+
+        let avg_val_loss = if val_batches > 0 {
+            val_loss / val_batches as f32
+        } else {
+            0.0
+        };
+
+        let avg_val_acc = if val_batches > 0 {
+            val_accuracy / val_batches as f32
+        } else {
+            0.0
+        };
+
+        println!(
+            "\n=== Epoch {} Summary ===\nTrain Loss: {:.6} | Val Loss: {:.6} | Val Acc: {:.4}",
+            epoch, avg_epoch_loss, avg_val_loss, avg_val_acc
+        );
+
+        // Save checkpoint
         let model_file = format!("model_epoch_{}", epoch);
+        let recorder = BinFileRecorder::<FullPrecisionSettings>::new();
         model
             .clone()
-            .save_file(&model_file, &BinFileRecorder::<FullPrecisionSettings>::new())
-            .expect("Failed to save model");
+            .save_file(&model_file, &recorder)
+            .expect("Failed to save model checkpoint");
+        println!("Saved checkpoint: {}", model_file);
     }
+
+    println!("Training completed!");
 }

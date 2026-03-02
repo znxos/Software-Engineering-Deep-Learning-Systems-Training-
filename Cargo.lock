@@ -7206,6 +7206,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "burn",
+ "burn-wgpu",
  "clap",
  "docx-rs",
  "rand 0.8.5",

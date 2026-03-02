@@ -1,27 +1,28 @@
 [package]
 name = "word-doc-qa"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-burn = { version = "0.20.1", features = ["train", "ndarray", "autodiff", "rocm"] }
+burn = { version = "0.20.1", features = ["train", "wgpu", "autodiff"] }
+burn-wgpu = "0.20.1"
+
 docx-rs = "0.4"
 tokenizers = "0.15"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 
-rand = "0.8" # Added for data shuffling
-# Add this for handling command-line arguments and other utilities
+rand = "0.8"
 anyhow = "1.0"
 clap = { version = "4.0", features = ["derive"] }
 
 [dev-dependencies]
-burn = { version = "0.20.1" } # , features = ["test"] | version 0.20.1 does not have feature called test
+burn = { version = "0.20.1", features = ["std"] } 
 
-# Workaround for Rust compiler ICE with complex trait bounds
 [profile.release]
-lto = false
-opt-level = 2
-incremental = false
+lto = "thin"
+opt-level = 3
+codegen-units = 1
+panic = "abort"

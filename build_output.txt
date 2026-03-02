@@ -1,8 +1,0 @@
-﻿cargo :     Blocking waiting for file lock on artifact directory
-At line:1 char:69
-+ ... oads\2026\Software Engineering\Semester_1" ; cargo build 2>&1 | Out-F ...
-+                                                  ~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (    Blocking wa...ifact directory 
-   :String) [], RemoteException
-    + FullyQualifiedErrorId : NativeCommandError
- 
